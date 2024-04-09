@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Underwater.unity
     guid: 8f13baf597afeb0439dd082a5fa3c275
+  - enabled: 1
+    path: Assets/Scenes/FishMarket.unity
+    guid: 30a1e722d3873da4cbd9a0eb21dbba11
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
