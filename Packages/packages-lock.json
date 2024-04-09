@@ -65,7 +65,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.feature.development": {
-      "version": "1.0.2",
+      "version": "1.0.1",
       "depth": 0,
       "source": "builtin",
       "dependencies": {
