@@ -26,13 +26,13 @@ public class MenuArrowScript : MonoBehaviour
     {
         if (foldTimer > 0)
         {
-            UI.transform.position += new Vector3(25f, 0, 0);
-            foldTimer -= 25f;
+            UI.transform.position += new Vector3(50f, 0, 0);
+            foldTimer -= 50f;
         }
         else if (foldTimer < 0)
         {
-            UI.transform.position += new Vector3(-25f, 0, 0);
-            foldTimer += 25f;
+            UI.transform.position += new Vector3(-50f, 0, 0);
+            foldTimer += 50f;
         }
     }
 }
