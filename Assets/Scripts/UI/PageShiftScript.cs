@@ -6,20 +6,19 @@ public class MenuArrowScript : MonoBehaviour
 {
     public GameObject UI;
     public bool folded = false;
+    public float foldSide;
     public float foldTimer = 0;
 
     public void onClick()
     {
-        if (folded && foldTimer == 0)
+        if (foldSide == 1)
         {
-            foldTimer = 250;
-            folded = false;
+            foldTimer = 1200;
         }
         
-        if (!folded && foldTimer == 0)
+        if (foldSide == -1)
         {
-            foldTimer = -250;
-            folded = true;
+            foldTimer = -1200;
         }
     }
 
@@ -27,13 +26,13 @@ public class MenuArrowScript : MonoBehaviour
     {
         if (foldTimer > 0)
         {
-            UI.transform.position += new Vector3(12.5f, 0, 0);
-            foldTimer -= 12.5f;
+            UI.transform.position += new Vector3(25f, 0, 0);
+            foldTimer -= 25f;
         }
         else if (foldTimer < 0)
         {
-            UI.transform.position += new Vector3(-12.5f, 0, 0);
-            foldTimer += 12.5f;
+            UI.transform.position += new Vector3(-25f, 0, 0);
+            foldTimer += 25f;
         }
     }
 }
