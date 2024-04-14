@@ -12,10 +12,16 @@ public class ObjectManager : MonoBehaviour
     public static bool isHoldingObject = false;
     private Vector3 originalPosition;
     private SpriteRenderer selectedObjectRenderer;
+    private bool allowMovement = false;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonUp(0))
+        {
+            allowMovement = false;
+        }
+
+        if (Input.GetMouseButton(0))
         {
             // Raycast to determine if an object is clicked
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
@@ -25,11 +31,15 @@ public class ObjectManager : MonoBehaviour
                 StartMovingObject(hit.collider.gameObject);
             }
 
-            if (isMovingObject && hit.collider != null && hit.collider.CompareTag("BuildableObject"))
+            if (Input.GetMouseButtonDown(0) && isMovingObject && hit.collider != null && hit.collider.CompareTag("BuildableObject"))
+            {
+                allowMovement = true;
+            }
+
+            if (allowMovement)
             {
                 isHoldingObject = true;
                 MoveSelectedObject();
-                Debug.Log("True");
             } else {
                 isHoldingObject = false;
             }
@@ -59,7 +69,7 @@ public class ObjectManager : MonoBehaviour
         // Snap the object to the grid
         Vector3 newPosition = mousePosition;
         newPosition.x = Mathf.Round(newPosition.x / objectSnapDistance) * objectSnapDistance;
-        newPosition.y = -9.2f; // Place the object at the bottom of the game area
+        newPosition.y = -9.2f + selectedObject.GetComponent<SpriteRenderer>().bounds.extents.y;
         selectedObject.transform.position = newPosition;
     }
 

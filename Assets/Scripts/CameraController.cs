@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
     public float maxY = 5f;
 
     private Vector3 dragOrigin;
+    private bool allowMovement = false;
 
     void Update()
     {
@@ -16,9 +17,10 @@ public class CameraController : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 dragOrigin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                allowMovement = true;
             }
-
-            if (Input.GetMouseButton(0))
+            
+            if (Input.GetMouseButton(0) && allowMovement)
             {
                 Vector3 difference = dragOrigin - Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Vector3 newPosition = transform.position + difference;
@@ -27,6 +29,11 @@ public class CameraController : MonoBehaviour
                 newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
 
                 transform.position = newPosition;
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                allowMovement = false;
             }
         }
     }
