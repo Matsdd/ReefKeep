@@ -6,12 +6,17 @@ public class PlaceNewItem : MonoBehaviour
 
     public void PlaceItem()
     {
-        // Instantiate a new instance of the item prefab
-        GameObject newItem = Instantiate(itemPrefab);
+        if (GameManager.instance.ChangeMoney(-10))
+        {
+            // Instantiate a new instance of the item prefab
+            GameObject newItem = Instantiate(itemPrefab);
 
-        // Set the position of the new item in the scene
-        newItem.transform.position = new Vector3(0f, -9.2f + newItem.GetComponent<SpriteRenderer>().bounds.extents.y, 0f); // Set the desired position
-
-        // Optionally, set other properties of the new item
+            // Set the position of the new item in the scene
+            newItem.transform.position = new Vector3(0f, -9.2f + newItem.GetComponent<SpriteRenderer>().bounds.extents.y, 0f); // Set the desired position
+        }
+        else
+        {
+            Debug.Log("Not enough Money!");
+        }
     }
 }
