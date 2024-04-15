@@ -3,9 +3,12 @@ using UnityEngine;
 public class ObjectManager : MonoBehaviour
 {
     public GameObject[] buildableObjects;
-    public float objectSnapDistance = 0.5f;
     public GameObject placeButton;
     public GameObject cancelButton;
+
+    private float objectSnapDistance = 0.5f;
+    private float minX = -14f;
+    private float maxX = 14f;
 
     private GameObject selectedObject;
     private bool isMovingObject = false;
@@ -69,6 +72,7 @@ public class ObjectManager : MonoBehaviour
         // Snap the object to the grid
         Vector3 newPosition = mousePosition;
         newPosition.x = Mathf.Round(newPosition.x / objectSnapDistance) * objectSnapDistance;
+        newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
         newPosition.y = -9.2f + selectedObject.GetComponent<SpriteRenderer>().bounds.extents.y;
         selectedObject.transform.position = newPosition;
     }
