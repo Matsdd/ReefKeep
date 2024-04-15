@@ -472,9 +472,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1760c299c6925847b11008a890e7a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildableObjects:
-  - {fileID: 0}
-  objectSnapDistance: 0.5
+  objectPrefabs:
+  - {fileID: 2407354619270565587, guid: bab1b99cfc3125041a721bf389ab90c1, type: 3}
   placeButton: {fileID: 60548393}
   cancelButton: {fileID: 2132161486}
 --- !u!4 &302685587
@@ -613,7 +612,6 @@ GameObject:
   - component: {fileID: 566400238}
   - component: {fileID: 566400237}
   - component: {fileID: 566400236}
-  - component: {fileID: 566400235}
   m_Layer: 5
   m_Name: Place Rock
   m_TagString: Untagged
@@ -641,19 +639,6 @@ RectTransform:
   m_AnchoredPosition: {x: -296, y: 214}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &566400235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 566400233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0e28b5ac6068f84885445f50a1a496d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 2407354619270565587, guid: bab1b99cfc3125041a721bf389ab90c1, type: 3}
 --- !u!114 &566400236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,16 +683,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 566400235}
-        m_TargetAssemblyTypeName: PlaceNewItem, Assembly-CSharp
-        m_MethodName: PlaceItem
-        m_Mode: 1
+      - m_Target: {fileID: 302685586}
+        m_TargetAssemblyTypeName: ObjectManager, Assembly-CSharp
+        m_MethodName: CreateObject
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Rock
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &566400237
@@ -984,7 +969,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Buy Rock: 10'
+  m_text: Place Rock
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
