@@ -1,30 +1,8 @@
 using UnityEngine;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-
-// Define a custom class to represent the saved data for each placed item
-[Serializable]
-public class PlacedObjectData
-{
-    public int id;
-    public string objectName;
-    public Vector3 position;
-
-    public PlacedObjectData(int id, string objectName, Vector3 position)
-    {
-        this.id = id;
-        this.objectName = objectName;
-        this.position = position;
-    }
-}
 
 public class ObjectManager : MonoBehaviour
 {
-    // List to store the placed item data
-    private List<PlacedObjectData> placedObjects = new List<PlacedObjectData>();
-    private int nextObjectId = 1;
-
     public GameObject[] objectPrefabs;
     public GameObject placeButton;
     public GameObject cancelButton;
@@ -40,68 +18,6 @@ public class ObjectManager : MonoBehaviour
     private Vector3 originalPosition;
     private SpriteRenderer selectedObjectRenderer;
 
-    void Start()
-    {
-        LoadPlacedObjects();
-    }
-
-    public void SavePlacedObject(string objectName, Vector3 position)
-    {
-        int id = GetOrCreateObjectId(objectName);
-        PlacedObjectData data = placedObjects.Find(obj => obj.id == id);
-        if (data != null)
-        {
-            data.position = position;
-        }
-        else
-        {
-            placedObjects.Add(new PlacedObjectData(id, objectName, position));
-        }
-        PlayerPrefs.SetString("PlacedObjects", JsonUtility.ToJson(placedObjects));
-        PlayerPrefs.Save();
-    }
-
-    public void LoadPlacedObjects()
-    {
-        string json = PlayerPrefs.GetString("PlacedObjects", "");
-        Debug.Log("Loaded PlacedObjects JSON: " + json);
-
-        if (!string.IsNullOrEmpty(json))
-        {
-            placedObjects = JsonUtility.FromJson<List<PlacedObjectData>>(json);
-            nextObjectId = placedObjects.Count > 0 ? placedObjects.Max(obj => obj.id) + 1 : 1;
-
-            foreach (PlacedObjectData objectData in placedObjects)
-            {
-                // Find prefab by ID or name, instead of name
-                GameObject prefab = objectPrefabs.FirstOrDefault(obj => obj.name == objectData.objectName);
-                if (prefab != null)
-                {
-                    GameObject newObj = Instantiate(prefab, objectData.position, Quaternion.identity);
-                    Debug.Log("Instantiated object: " + newObj.name);
-                }
-                else
-                {
-                    Debug.LogError("Object prefab not found for name: " + objectData.objectName);
-                }
-            }
-        }
-    }
-
-    private int GetOrCreateObjectId(string objectName)
-    {
-        PlacedObjectData data = placedObjects.Find(obj => obj.objectName == objectName);
-        if (data != null)
-        {
-            return data.id;
-        }
-        else
-        {
-            int newId = nextObjectId++;
-            return newId;
-        }
-    }
-
     public void CreateObject(string objectName)
     {
         // Find the corresponding item prefab by name
@@ -112,11 +28,7 @@ public class ObjectManager : MonoBehaviour
             GameObject newItem = Instantiate(prefab);
 
             // Set the position of the new item in the scene
-            newItem.transform.position = new Vector3(0f, -9.2f + newItem.GetComponent<SpriteRenderer>().bounds.extents.y, 0f); // Set the desired position
-
-            // Save the position of the newly placed item
-            SavePlacedObject(objectName, newItem.transform.position);
-            Debug.Log(objectName);
+            newItem.transform.position = new Vector3(0f, -12.4f + newItem.GetComponent<SpriteRenderer>().bounds.extents.y, 0f); // Set the desired position
         }
         else
         {
@@ -200,14 +112,6 @@ public class ObjectManager : MonoBehaviour
 
     public void ConfirmMovingObject()
     {
-        // Save object
-        if (selectedObject != null)
-        {
-            string objectName = selectedObject.name.Replace("(Clone)", "").Trim();
-            SavePlacedObject(objectName, selectedObject.transform.position);
-            Debug.Log("Saved object: " + objectName);
-        }
-
         // Restore the original color and clear the selected object
         if (selectedObject != null)
         {
