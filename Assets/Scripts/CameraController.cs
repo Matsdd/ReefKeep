@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float minX = -10f;
-    public float maxX = 10f;
-    public float minY = -5f;
-    public float maxY = 5f;
+    private float minX = -19.6f;
+    private float maxX = 19.6f;
+    private float minY = -11.2f;
+    private float maxY = 11.2f;
 
     private Vector3 dragOrigin;
     private bool allowMovement = false;

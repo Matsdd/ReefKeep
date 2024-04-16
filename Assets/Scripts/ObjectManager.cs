@@ -13,6 +13,7 @@ public class ObjectManager : MonoBehaviour
     private Vector3 originalPosition;
     private SpriteRenderer selectedObjectRenderer;
     private bool allowMovement = false;
+    private float groundLevel = -12.4f;
 
     void Update()
     {
@@ -69,7 +70,7 @@ public class ObjectManager : MonoBehaviour
         // Snap the object to the grid
         Vector3 newPosition = mousePosition;
         newPosition.x = Mathf.Round(newPosition.x / objectSnapDistance) * objectSnapDistance;
-        newPosition.y = -9.2f + selectedObject.GetComponent<SpriteRenderer>().bounds.extents.y;
+        newPosition.y = groundLevel + selectedObject.GetComponent<SpriteRenderer>().bounds.extents.y;
         selectedObject.transform.position = newPosition;
     }
 

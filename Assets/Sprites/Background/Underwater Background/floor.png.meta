@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 43440294f0486334fbb07adb3e548b5a
+guid: 8e152947a0003ff4eb79a0f28663a05d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -95,13 +95,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: back3_0
+      name: floor_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 480
-        height: 270
+        width: 960
+        height: 540
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -109,8 +109,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0e6d35da3ef65943a91e25d5f983cf4
-      internalID: 475412166
+      spriteID: 7e77b553264526149be625c398b6651c
+      internalID: 2029948677
       vertices: []
       indices: 
       edges: []
@@ -118,7 +118,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: be2a6a2348b49e5459a80ee6aeb6f6f3
+    spriteID: e7b32e339fce6134ea4a3bc8934e89f1
     internalID: 0
     vertices: []
     indices: 
@@ -126,7 +126,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      back3_0: 475412166
+      floor_0: 2029948677
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
