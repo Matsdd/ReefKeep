@@ -1,19 +1,40 @@
 using UnityEngine;
+using System;
 
 public class ObjectManager : MonoBehaviour
 {
-    public GameObject[] buildableObjects;
-    public float objectSnapDistance = 0.5f;
+    public GameObject[] objectPrefabs;
     public GameObject placeButton;
     public GameObject cancelButton;
+
+    private float objectSnapDistance = 0.5f;
+    private float minX = -14f;
+    private float maxX = 14f;
 
     private GameObject selectedObject;
     private bool isMovingObject = false;
     public static bool isHoldingObject = false;
+    private bool allowMovement = false;
     private Vector3 originalPosition;
     private SpriteRenderer selectedObjectRenderer;
-    private bool allowMovement = false;
-    private float groundLevel = -12.4f;
+
+    public void CreateObject(string objectName)
+    {
+        // Find the corresponding item prefab by name
+        GameObject prefab = Array.Find(objectPrefabs, item => item.name == objectName);
+        if (prefab != null)
+        {
+            // Instantiate the item prefab
+            GameObject newItem = Instantiate(prefab);
+
+            // Set the position of the new item in the scene
+            newItem.transform.position = new Vector3(0f, -12.4f + newItem.GetComponent<SpriteRenderer>().bounds.extents.y, 0f); // Set the desired position
+        }
+        else
+        {
+            Debug.LogError("Item prefab not found for name: " + objectName);
+        }
+    }
 
     void Update()
     {
@@ -41,7 +62,9 @@ public class ObjectManager : MonoBehaviour
             {
                 isHoldingObject = true;
                 MoveSelectedObject();
-            } else {
+            }
+            else
+            {
                 isHoldingObject = false;
             }
         }
@@ -70,7 +93,8 @@ public class ObjectManager : MonoBehaviour
         // Snap the object to the grid
         Vector3 newPosition = mousePosition;
         newPosition.x = Mathf.Round(newPosition.x / objectSnapDistance) * objectSnapDistance;
-        newPosition.y = groundLevel + selectedObject.GetComponent<SpriteRenderer>().bounds.extents.y;
+        newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
+        newPosition.y = -9.2f + selectedObject.GetComponent<SpriteRenderer>().bounds.extents.y;
         selectedObject.transform.position = newPosition;
     }
 
@@ -88,12 +112,17 @@ public class ObjectManager : MonoBehaviour
 
     public void ConfirmMovingObject()
     {
-        selectedObjectRenderer.color = Color.white;
-        selectedObject = null;
-        isMovingObject = false;
+        // Restore the original color and clear the selected object
+        if (selectedObject != null)
+        {
+            selectedObjectRenderer.color = Color.white;
+            selectedObject = null;
+            isMovingObject = false;
+        }
 
         // Hide move buttons
         placeButton.SetActive(false);
         cancelButton.SetActive(false);
     }
+
 }
