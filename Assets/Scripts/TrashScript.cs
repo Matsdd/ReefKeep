@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TrashScript : MonoBehaviour
 {
     public GameObject trash;
     GameObject obj;
+
+    float speed = 2f;
+    float height = 0.01f;
 
     void Update()
     {
@@ -23,9 +24,6 @@ public class TrashScript : MonoBehaviour
             }
         }
     }
-
-    float speed = 2f;
-    float height = 0.01f;
 
     private void FixedUpdate()
     {
