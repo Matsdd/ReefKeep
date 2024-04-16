@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -252,9 +252,9 @@ RectTransform:
   - {fileID: 1629915971}
   m_Father: {fileID: 168146300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -302.5, y: -224}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 83, y: 17.399994}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &60548395
@@ -520,9 +520,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1760c299c6925847b11008a890e7a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildableObjects:
-  - {fileID: 0}
-  objectSnapDistance: 0.5
+  objectPrefabs:
+  - {fileID: 2407354619270565587, guid: bab1b99cfc3125041a721bf389ab90c1, type: 3}
   placeButton: {fileID: 60548393}
   cancelButton: {fileID: 2132161486}
 --- !u!4 &302685587
@@ -680,9 +679,9 @@ RectTransform:
   - {fileID: 1084314395}
   m_Father: {fileID: 168146300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -296, y: 214}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 83, y: -18.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &566400235
@@ -694,10 +693,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 566400233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0e28b5ac6068f84885445f50a1a496d, type: 3}
+  m_Script: {fileID: 11500000, guid: e1760c299c6925847b11008a890e7a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 2407354619270565587, guid: bab1b99cfc3125041a721bf389ab90c1, type: 3}
+  objectPrefabs: []
+  placeButton: {fileID: 0}
+  cancelButton: {fileID: 0}
 --- !u!114 &566400236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,16 +743,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 566400235}
-        m_TargetAssemblyTypeName: PlaceNewItem, Assembly-CSharp
-        m_MethodName: PlaceItem
-        m_Mode: 1
+      - m_Target: {fileID: 302685586}
+        m_TargetAssemblyTypeName: ObjectManager, Assembly-CSharp
+        m_MethodName: CreateObject
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Rock
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &566400237
@@ -1688,9 +1689,9 @@ RectTransform:
   - {fileID: 1126645820}
   m_Father: {fileID: 168146300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -302.5, y: -187.3}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 83, y: 54.1}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2132161488
