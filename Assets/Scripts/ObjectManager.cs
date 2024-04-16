@@ -1,5 +1,14 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
+
+[System.Serializable]
+public class EcosystemObject
+{
+    public string objectType;
+    public float xCoordinate;
+}
+
 
 public class ObjectManager : MonoBehaviour
 {
@@ -12,12 +21,20 @@ public class ObjectManager : MonoBehaviour
     private float maxX = 14f;
     private float objectY = -15.9f;
 
-    private GameObject selectedObject;
+    public GameObject selectedObject;
     private bool isMovingObject = false;
     public static bool isHoldingObject = false;
     private bool allowMovement = false;
     private Vector3 originalPosition;
     private SpriteRenderer selectedObjectRenderer;
+
+    private List<EcosystemObject> placedObjects = new List<EcosystemObject>(); // List to store placed objects
+
+    void Start()
+    {
+        // Load the ecosystem when the game starts
+        //LoadEcosystem();
+    }
 
     void Update()
     {
@@ -55,15 +72,14 @@ public class ObjectManager : MonoBehaviour
 
     public void CreateObject(string objectName)
     {
-        // Find the corresponding item prefab by name
         GameObject prefab = Array.Find(objectPrefabs, item => item.name == objectName);
         if (prefab != null)
         {
-            // Instantiate the item prefab
             GameObject newItem = Instantiate(prefab);
+            newItem.transform.position = new Vector3(0f, objectY + newItem.GetComponent<SpriteRenderer>().bounds.extents.y, 0f);
 
-            // Set the position of the new item in the scene
-            newItem.transform.position = new Vector3(0f, objectY + newItem.GetComponent<SpriteRenderer>().bounds.extents.y, 0f); // Set the desired position
+            // Add the placed object to the list
+            //AddPlacedObject(objectName, newItem.transform.position.x);
         }
         else
         {
@@ -82,14 +98,13 @@ public class ObjectManager : MonoBehaviour
         // Show move buttons
         placeButton.SetActive(true);
         cancelButton.SetActive(true);
-
     }
 
     void MoveSelectedObject()
     {
         // Get the mouse position in world space
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0; // Ensure the z-coordinate is zero
+        mousePosition.z = 0;
 
         // Snap the object to the grid
         Vector3 newPosition = mousePosition;
@@ -116,14 +131,60 @@ public class ObjectManager : MonoBehaviour
         // Restore the original color and clear the selected object
         if (selectedObject != null)
         {
+            string objectType = selectedObject.name; // Assuming object name is unique
+            float xCoordinate = selectedObject.transform.position.x;
+
+            int existingIndex = placedObjects.FindIndex(obj => obj.objectType == objectType);
+            if (existingIndex != -1)
+            {
+                placedObjects[existingIndex].xCoordinate = xCoordinate;
+            }
+            else
+            {
+                //AddPlacedObject(objectType, xCoordinate);
+            }
+
             selectedObjectRenderer.color = Color.white;
             selectedObject = null;
             isMovingObject = false;
         }
 
-        // Hide move buttons
         placeButton.SetActive(false);
         cancelButton.SetActive(false);
+
+        // Save the updated ecosystem
+        //SaveEcosystem();
     }
 
+    //    void addplacedobject(string objecttype, float xcoordinate)
+    //    {
+    //        ecosystemobject newobject = new ecosystemobject();
+    //        newobject.objecttype = objecttype;
+    //        newobject.xcoordinate = xcoordinate;
+    //        placedobjects.add(newobject);
+    //    }
+
+    //    void saveecosystem()
+    //    {
+    //        debug.log("list: " + placedobjects);
+    //        saveloadmanager.saveecosystem(placedobjects);
+    //    }
+
+    //    void loadecosystem()
+    //    {
+    //        placedobjects = saveloadmanager.loadecosystem();
+    //        foreach (var obj in placedobjects)
+    //        {
+    //            gameobject prefab = array.find(objectprefabs, item => item.name == obj.objecttype);
+    //            if (prefab != null)
+    //            {
+    //                gameobject newitem = instantiate(prefab);
+    //                newitem.transform.position = new vector3(obj.xcoordinate, objecty + newitem.getcomponent<spriterenderer>().bounds.extents.y, 0f);
+    //            }
+    //            else
+    //            {
+    //                debug.logerror("item prefab not found for name: " + obj.objecttype);
+    //            }
+    //        }
+    //    }
 }
