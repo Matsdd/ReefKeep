@@ -144,4 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796ddd5210b6ffb4ab91e5cf5608ed49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oil: {fileID: 0}
   trash: {fileID: 6225952158611857439}
+  sort: 0
+  dupeChance: 1000
