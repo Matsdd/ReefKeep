@@ -25,8 +25,8 @@ public class ObjectManager : MonoBehaviour
     public GameObject cancelButton;
 
     private readonly float objectSnapDistance = 0.5f;
-    private readonly float minX = -14f;
-    private readonly float maxX = 14f;
+    private readonly float minX = -25f;
+    private readonly float maxX = 25f;
     private readonly float objectY = -15.9f;
 
     public GameObject selectedObject;
@@ -153,25 +153,9 @@ public class ObjectManager : MonoBehaviour
         // Restore the original color and clear the selected object
         if (selectedObject != null)
         {
-            string objectType = selectedObject.name.Replace("(Clone)", "");
+            // Edit the existing list
             float xCoordinate = selectedObject.transform.position.x;
-
-            // Find the index of the object with the same type and coordinates
-            int existingIndex = placedObjectsList.FindIndex(obj => obj.objectType == objectType && Mathf.Approximately(obj.xCoordinate, originalPosition.x));
-
-            // Check if the object with the same type and coordinates exists
-            if (existingIndex != -1)
-            {
-                // Update the x coordinate of the existing object
-                placedObjectsList[existingIndex].xCoordinate = xCoordinate;
-                // Save the updated ecosystem
-                SaveEcosystem();
-            }
-
-            else
-            {
-                Debug.LogError("Error confirming object into list!" + existingIndex);
-            }
+            EditObjectInList(xCoordinate);
 
             selectedObjectRenderer.color = Color.white;
             selectedObject = null;
@@ -189,6 +173,28 @@ public class ObjectManager : MonoBehaviour
         newObject.objectType = objectType;
         newObject.xCoordinate = xCoordinate;
         placedObjectsList.Add(newObject);
+        SaveEcosystem();
+    }
+
+    // Function to edit an item with the old X value
+    private void EditObjectInList(float xCoordinate)
+    {
+        // Find the index of the object with the same type and coordinates
+        int existingIndex = placedObjectsList.FindIndex(obj => Mathf.Approximately(obj.xCoordinate, originalPosition.x));
+
+        // Check if the object with the same type and coordinates exists
+        if (existingIndex != -1)
+        {
+            // Update the x coordinate of the existing object
+            placedObjectsList[existingIndex].xCoordinate = xCoordinate;
+            // Save the updated ecosystem
+            SaveEcosystem();
+        }
+
+        else
+        {
+            Debug.LogError("Error confirming object into list!" + existingIndex);
+        }
     }
 
     private void SaveEcosystem()
@@ -235,7 +241,8 @@ public class ObjectManager : MonoBehaviour
                 GameObject prefab = Array.Find(objectPrefabs, item => item.name == obj.objectType);
                 if (prefab != null)
                 {
-                    CreateNewObject(obj.objectType, obj.xCoordinate);
+                    GameObject newItem = Instantiate(prefab);
+                    newItem.transform.position = new Vector3(obj.xCoordinate, objectY + newItem.GetComponent<SpriteRenderer>().bounds.extents.y, 0f);
                 }
                 else
                 {
