@@ -1,7 +1,14 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
-using UnityEditor;
+using System.IO;
+
+[Serializable]
+public class EcosystemData
+{
+    public List<EcosystemObject> ecosystemObjects;
+}
+
 
 [Serializable]
 public class EcosystemObject
@@ -33,12 +40,7 @@ public class ObjectManager : MonoBehaviour
 
     void Start()
     {
-        // Load the ecosystem when the game starts
-        // LoadEcosystem();
-
-        AddObjectToList("Rock", 0);
-        Debug.Log(placedObjectsList);
-        SaveEcosystem();
+        LoadEcosystem();
     }
 
     void Update()
@@ -151,14 +153,21 @@ public class ObjectManager : MonoBehaviour
         // Restore the original color and clear the selected object
         if (selectedObject != null)
         {
-            string objectType = selectedObject.name;
+            string objectType = selectedObject.name.Replace("(Clone)", "");
             float xCoordinate = selectedObject.transform.position.x;
 
-            int existingIndex = placedObjectsList.FindIndex(obj => obj.objectType == objectType && obj.xCoordinate == originalPosition.x);
+            // Find the index of the object with the same type and coordinates
+            int existingIndex = placedObjectsList.FindIndex(obj => obj.objectType == objectType && Mathf.Approximately(obj.xCoordinate, originalPosition.x));
+
+            // Check if the object with the same type and coordinates exists
             if (existingIndex != -1)
             {
+                // Update the x coordinate of the existing object
                 placedObjectsList[existingIndex].xCoordinate = xCoordinate;
+                // Save the updated ecosystem
+                SaveEcosystem();
             }
+
             else
             {
                 Debug.LogError("Error confirming object into list!" + existingIndex);
@@ -171,8 +180,6 @@ public class ObjectManager : MonoBehaviour
 
         placeButton.SetActive(false);
         cancelButton.SetActive(false);
-
-        SaveEcosystem();
     }
 
     // Function to place a new object in the list
@@ -184,29 +191,61 @@ public class ObjectManager : MonoBehaviour
         placedObjectsList.Add(newObject);
     }
 
-    // Save the list into JSON
     private void SaveEcosystem()
     {
-        SaveLoadManager.SaveEcosystem(placedObjectsList);
+        // Create an instance of EcosystemData and assign the placedObjectsList to its ecosystemObjects field
+        EcosystemData data = new()
+        {
+            ecosystemObjects = placedObjectsList
+        };
+
+        // Serialize the data to JSON
+        string json = JsonUtility.ToJson(data);
+
+        // Write the JSON string to the file
+        string filePath = Application.persistentDataPath + "/ecosystem.json";
+        try
+        {
+            File.WriteAllText(filePath, json);
+            Debug.Log("Ecosystem Saved. File path: " + filePath);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Error saving ecosystem: " + e.Message);
+        }
     }
 
     private void LoadEcosystem()
     {
-        // Fill the list from the JSON
-        placedObjectsList = SaveLoadManager.LoadEcosystem();
-
-        // Loop through the list and create a new object for each
-        foreach (var obj in placedObjectsList)
+        // Read the JSON string from the file
+        string filePath = Application.persistentDataPath + "/ecosystem.json";
+        if (File.Exists(filePath))
         {
-            GameObject prefab = Array.Find(objectPrefabs, item => item.name == obj.objectType);
-            if (prefab != null)
+            string json = File.ReadAllText(filePath);
+
+            // Deserialize the JSON string to EcosystemData
+            EcosystemData data = JsonUtility.FromJson<EcosystemData>(json);
+
+            // Assign the list of EcosystemObject from EcosystemData to placedObjectsList
+            placedObjectsList = data.ecosystemObjects;
+
+            // Loop through the list and create objects
+            foreach (var obj in placedObjectsList)
             {
-                CreateNewObject(obj.objectType, obj.xCoordinate);
+                GameObject prefab = Array.Find(objectPrefabs, item => item.name == obj.objectType);
+                if (prefab != null)
+                {
+                    CreateNewObject(obj.objectType, obj.xCoordinate);
+                }
+                else
+                {
+                    Debug.LogError("Item prefab not found for name: " + obj.objectType);
+                }
             }
-            else
-            {
-                Debug.LogError("Item prefab not found for name: " + obj.objectType);
-            }
+        }
+        else
+        {
+            Debug.LogWarning("Ecosystem file not found: " + filePath);
         }
     }
 }
