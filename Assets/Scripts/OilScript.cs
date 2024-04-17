@@ -10,7 +10,6 @@ public class OilScript : MonoBehaviour
         float size = Mathf.Round(Random.Range(2, 4));
         for (int i = 0; i  < size; i++)
         {
-
             float oilx = Random.Range(size * -0.3f, size * 0.3f);
             float oily = Random.Range(size * -0.2f, size * 0.2f);
 
