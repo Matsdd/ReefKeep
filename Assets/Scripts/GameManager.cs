@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
         ChangeMoney(moneyPerSecond);
     }
 
+    // WARNING. TICKS CAN BE CHEATED BY CHANGING DEVICE DATE/TIME. CREATE A CHECK!!!
     private void AddOfflineIncome()
     {
         // Get the timestamp when the player last played
@@ -120,6 +121,7 @@ public class GameManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         // Save the current real-world time when the application quits
+        // WARNING. TICKS CAN BE CHEATED BY CHANGING DEVICE DATE/TIME. CREATE A CHECK!!!
         long ticks = System.DateTime.UtcNow.Ticks;
         PlayerPrefs.SetString("LastPlayTimeTicks", ticks.ToString());
         SavePlayerMoney();
