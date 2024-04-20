@@ -20,5 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Findex.unity
     guid: 0f9b082d052b9a546a5333bedea00eac
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 256ffa70a4bdd28458e94c359652c816, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 278f69e6f2d09d04f8ba05d88b4c7d05, type: 2}
   m_UseUCBPForAssetBundles: 0
