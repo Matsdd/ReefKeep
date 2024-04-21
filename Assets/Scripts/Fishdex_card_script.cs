@@ -10,6 +10,9 @@ public class Fishdex_card_script : MonoBehaviour
     {
         public string name;
         public Sprite image;
+        //public string likes;
+        //public string dislikes;
+        //public string funfact;
     }
 
     [SerializeField]
@@ -33,6 +36,12 @@ public class Fishdex_card_script : MonoBehaviour
     public FishButtonScript fishButtonScript;
 
     public FishImageScript fishImageScript;
+
+    //public FishLikesScript fishLikesScript;
+
+    //public FishDislikesScript fishDislikesScript;
+
+    //public FishFunFactScript fishFunFactScript;
 
 
 
