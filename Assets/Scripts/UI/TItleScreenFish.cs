@@ -8,6 +8,8 @@ public class TitleScreenFish : MonoBehaviour
     public float maxWaitTime = 0f; // Maximum time between each movement
     public float rotationSpeed = 5f; // Speed of rotation
 
+    private float currentScale = 1;
+    private float currentSpeed = 1;
     private Vector3 targetPosition;
     private Vector3 startPosition;
     private float waitTime;
@@ -55,14 +57,28 @@ public class TitleScreenFish : MonoBehaviour
 
     void MoveFish()
     {
+        // Move the fish towards the target position
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
-        // Rotate the fish to face the movement direction
-        Quaternion initialRotation = Quaternion.Euler(0, 0, -90);
-        Vector3 rotatedDirection = initialRotation * (targetPosition - transform.position);
-        Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, rotatedDirection);
+        // Calculate the rotation angle to face the target position
+        Vector3 direction = targetPosition - transform.position;
+        float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion targetRotation = Quaternion.Euler(0f, 0f, targetAngle);
+
+        // Smoothly rotate the fish towards the target rotation
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
+        // Flip the sprite based on the fish's movement direction
+        if (direction.x >= 0)
+        {
+            transform.localScale = new Vector3(-currentScale, currentScale, 1f);
+        }
+        else
+        {
+            transform.localScale = new Vector3(-currentScale, -currentScale, 1f);
+        }
+
+        // Check if the fish has reached the target position
         if (transform.position == targetPosition)
         {
             isMoving = false;
