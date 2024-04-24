@@ -5,9 +5,11 @@ public class VisitorCenterManager : MonoBehaviour
     public static VisitorCenterManager instance;
 
     public int storedMoney = 0;
-    private int moneyPerSecond = 1;
-    private int maxMoney = 1000;
     public int currentLevel = 1;
+
+    // First array int is unused because level starts at 1
+    private readonly int[] maxMoney = { 500, 1000, 2000, 3000 };
+    private readonly int[] upgradeCost = { 500, 1000, 2000, 3000 };
 
     private void Awake()
     {
@@ -37,14 +39,24 @@ public class VisitorCenterManager : MonoBehaviour
 
     public void UpgradeLevel()
     {
-        currentLevel++;
-        PlayerPrefs.SetInt("VisitorCenterLevel", currentLevel);
-        PlayerPrefs.Save();
+        if (currentLevel <= 2)
+        {
+            if (GameManager.instance.ChangeMoney(-upgradeCost[currentLevel]))
+            {
+                currentLevel++;
+                PlayerPrefs.SetInt("VisitorCenterLevel", currentLevel);
+                PlayerPrefs.Save();
+            }
+            else
+            {
+                Debug.Log("Not enough money!");
+            }
+        }
     }
 
     public void ChangeStoredMoney(int amount)
     {
-        if ((storedMoney + amount) <= maxMoney)
+        if ((storedMoney + amount) <= maxMoney[currentLevel])
         {
             storedMoney += amount;
             PlayerPrefs.SetInt("StoredMoney", storedMoney);
@@ -52,9 +64,16 @@ public class VisitorCenterManager : MonoBehaviour
         }
     }
 
+    private int CalcMoneyPerSec()
+    {
+        int moneyPerSec;
+        moneyPerSec = currentLevel;
+        return moneyPerSec;
+    }
+
     private void AddMoneyPerSecond()
     {
-        ChangeStoredMoney(moneyPerSecond);
+        ChangeStoredMoney(CalcMoneyPerSec());
     }
 
     public void ClaimMoney()
@@ -83,7 +102,7 @@ public class VisitorCenterManager : MonoBehaviour
             float timeDifferenceSeconds = timeDifferenceTicks / (float)System.TimeSpan.TicksPerSecond;
 
             // Calculate the offline income
-            int offlineIncome = Mathf.FloorToInt(timeDifferenceSeconds * moneyPerSecond);
+            int offlineIncome = Mathf.FloorToInt(timeDifferenceSeconds * CalcMoneyPerSec());
 
             // Add the offline income to the player's money
             if (offlineIncome > 0)
