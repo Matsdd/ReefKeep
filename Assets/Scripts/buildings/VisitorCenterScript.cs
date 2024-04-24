@@ -1,17 +1,73 @@
+using TMPro;
 using UnityEngine;
 
 public class VisitorCenterScript : MonoBehaviour
 {
+    public GameObject buildingCanvas;
+    public GameObject buildingMenu;
+    public GameObject upgradeConfirmMenu;
+    public TextMeshProUGUI levelText;
 
-    private int moneyPerSecond = 1; // Amount of money gained per minute
+    private int currentLevel = 1;
+
+    private int moneyPerSecond = 1;
+
 
     void Start()
     {
         // Calculate offline income
         AddOfflineIncome();
 
+        // Load the saved level from PlayerPrefs
+        currentLevel = PlayerPrefs.GetInt("VisitorCenterLevel", 1);
+        UpdateUi();
+
         // Start the income coroutine
         InvokeRepeating(nameof(AddMoneyPerSecond), 1f, 1f);
+    }
+
+    // Open the menu when clicking on the building
+    void OnMouseDown()
+    {
+        buildingCanvas.SetActive(true);
+        buildingMenu.SetActive(true);
+        upgradeConfirmMenu.SetActive(false);
+    }
+
+    // Close all menu's when clicking on Close button
+    public void CloseMenus()
+    {
+        buildingCanvas.SetActive(false);
+        buildingMenu.SetActive(false);
+        upgradeConfirmMenu.SetActive(false);
+    }
+
+    public void OpenUpgradeMenu()
+    {
+        upgradeConfirmMenu.SetActive(true);
+    }
+
+    public void ConfirmUpgrade()
+    {
+        // Upgrade building
+        currentLevel++;
+        UpdateUi();
+        SaveLevel();
+
+        // Close upgrade confirm menu
+        upgradeConfirmMenu.SetActive(false);
+    }
+
+    private void UpdateUi()
+    {
+        levelText.text = "Level: " + currentLevel;
+    }
+
+    private void SaveLevel()
+    {
+        // Save current level to PlayerPrefs
+        PlayerPrefs.SetInt("VisitorCenterLevel", currentLevel);
+        PlayerPrefs.Save();
     }
 
     private void AddMoneyPerSecond()

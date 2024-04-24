@@ -9,7 +9,6 @@ public class TitleScreenFish : MonoBehaviour
     public float rotationSpeed = 5f; // Speed of rotation
 
     private float currentScale = 1;
-    private float currentSpeed = 1;
     private Vector3 targetPosition;
     private Vector3 startPosition;
     private float waitTime;
