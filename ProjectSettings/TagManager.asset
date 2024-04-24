@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Trash
   - BuildableObject
+  - Sign
   layers:
   - Default
   - TransparentFX
