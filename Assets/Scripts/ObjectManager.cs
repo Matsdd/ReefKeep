@@ -112,7 +112,7 @@ public class ObjectManager : MonoBehaviour
             do
             {
                 // Use half the width of the sprite as the radius
-                colliders = Physics2D.OverlapCircleAll(spawnPosition, spriteWidth / 2f);
+                colliders = Physics2D.OverlapCircleAll(spawnPosition, (spriteWidth / 2f) - 3);
                 if (colliders.Length > 0)
                 {
                     // Filter colliders by tag
@@ -177,7 +177,7 @@ public class ObjectManager : MonoBehaviour
         newPosition.y = objectY + selectedObject.GetComponent<SpriteRenderer>().bounds.extents.y;
 
         // Check for collisions with objects
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(newPosition, selectedObjectRenderer.bounds.size.x / 2f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(newPosition, (selectedObjectRenderer.bounds.size.x / 2f) - 3);
 
         // Filter colliders by tag
         colliders = colliders.Where(c => c.CompareTag("BuildableObject")).ToArray();
