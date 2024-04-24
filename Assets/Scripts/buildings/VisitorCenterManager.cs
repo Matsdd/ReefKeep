@@ -1,78 +1,70 @@
-using TMPro;
 using UnityEngine;
 
-public class VisitorCenterScript : MonoBehaviour
+public class VisitorCenterManager : MonoBehaviour
 {
-    public GameObject buildingCanvas;
-    public GameObject buildingMenu;
-    public GameObject upgradeConfirmMenu;
-    public TextMeshProUGUI levelText;
+    public static VisitorCenterManager instance;
 
-    private int currentLevel = 1;
-
+    public int storedMoney = 0;
     private int moneyPerSecond = 1;
+    private int maxMoney = 1000;
+    public int currentLevel = 1;
 
+    private void Awake()
+    {
+        // Singleton pattern to ensure only one instance exists
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // Prevent from being destroyed when loading new scenes
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
+        currentLevel = PlayerPrefs.GetInt("VisitorCenterLevel", 1);
+        storedMoney = PlayerPrefs.GetInt("StoredMoney", 0);
+
         // Calculate offline income
         AddOfflineIncome();
-
-        // Load the saved level from PlayerPrefs
-        currentLevel = PlayerPrefs.GetInt("VisitorCenterLevel", 1);
-        UpdateUi();
 
         // Start the income coroutine
         InvokeRepeating(nameof(AddMoneyPerSecond), 1f, 1f);
     }
 
-    // Open the menu when clicking on the building
-    void OnMouseDown()
+    public void UpgradeLevel()
     {
-        buildingCanvas.SetActive(true);
-        buildingMenu.SetActive(true);
-        upgradeConfirmMenu.SetActive(false);
-    }
-
-    // Close all menu's when clicking on Close button
-    public void CloseMenus()
-    {
-        buildingCanvas.SetActive(false);
-        buildingMenu.SetActive(false);
-        upgradeConfirmMenu.SetActive(false);
-    }
-
-    public void OpenUpgradeMenu()
-    {
-        upgradeConfirmMenu.SetActive(true);
-    }
-
-    public void ConfirmUpgrade()
-    {
-        // Upgrade building
         currentLevel++;
-        UpdateUi();
-        SaveLevel();
-
-        // Close upgrade confirm menu
-        upgradeConfirmMenu.SetActive(false);
-    }
-
-    private void UpdateUi()
-    {
-        levelText.text = "Level: " + currentLevel;
-    }
-
-    private void SaveLevel()
-    {
-        // Save current level to PlayerPrefs
         PlayerPrefs.SetInt("VisitorCenterLevel", currentLevel);
         PlayerPrefs.Save();
     }
 
+    public void ChangeStoredMoney(int amount)
+    {
+        if ((storedMoney + amount) <= maxMoney)
+        {
+            storedMoney += amount;
+            PlayerPrefs.SetInt("StoredMoney", storedMoney);
+            PlayerPrefs.Save();
+        }
+    }
+
     private void AddMoneyPerSecond()
     {
-        GameManager.instance.ChangeMoney(moneyPerSecond);
+        ChangeStoredMoney(moneyPerSecond);
+    }
+
+    public void ClaimMoney()
+    {
+        if (storedMoney > 0)
+        {
+            GameManager.instance.ChangeMoney(storedMoney);
+            ChangeStoredMoney(-storedMoney);
+        }
+
     }
 
     // WARNING. TICKS CAN BE CHEATED BY CHANGING DEVICE DATE/TIME. CREATE A CHECK!!!
@@ -96,7 +88,7 @@ public class VisitorCenterScript : MonoBehaviour
             // Add the offline income to the player's money
             if (offlineIncome > 0)
             {
-                GameManager.instance.ChangeMoney(offlineIncome);
+                ChangeStoredMoney(offlineIncome);
             }
         }
         else
