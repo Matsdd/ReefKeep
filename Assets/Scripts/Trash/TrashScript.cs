@@ -2,10 +2,16 @@ using UnityEngine;
 
 public class TrashScript : MonoBehaviour
 {
+    public bool isCluster = false;
     public bool sideMovement = false;
     private float speed = 2f;
     private float height = 0.01f;
     private float sideSpeed = 0;
+
+    public static int trashCashMultiplier = 1;
+
+    public Canvas canvas;
+    public GameObject trashCluster;
 
     // Dit is misschien minder efficient omdat dit per trash word uitgevoerd, maar boeie voor nu.
     void Update()
@@ -16,15 +22,23 @@ public class TrashScript : MonoBehaviour
 
             if (hit.collider != null && hit.collider.gameObject.CompareTag("Trash"))
             {
-                Debug.Log("True");
-                Destroy(hit.transform.gameObject);
+                if (isCluster)
+                {
+                    canvas.enabled = true;
+                    TrashUIScript.trashCluster = trashCluster;
+                }
+                else
+                {
+                    Destroy(hit.transform.gameObject);
+                    GameManager.instance.ChangeMoney(10 * trashCashMultiplier);
+                }
             }
         }
     }
 
     private void FixedUpdate()
     {
-        //Sideways & vertical movement
+        //Sideways & vertical movement*
         Vector3 pos = transform.position;
         float newX = pos.x;
         if (sideMovement)
