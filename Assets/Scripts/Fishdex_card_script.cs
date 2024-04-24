@@ -70,8 +70,8 @@ public class Fishdex_card_script : MonoBehaviour
         int row = index / cardsPerRow;
         int col = index % cardsPerRow;
 
-        float xOffset = col * (cardWidth + cardSpacing) -295;
-        float yOffset = -row * (cardHeight + cardSpacing) +90;
+        float xOffset = col * (cardWidth + cardSpacing) -20;
+        float yOffset = -row * (cardHeight + cardSpacing);
 
         cardPrefab.transform.localPosition = new Vector3(xOffset, yOffset, 0f);
         Debug.Log("Fish Name:" + fishData.name);
