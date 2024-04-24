@@ -36,6 +36,7 @@ public class ObjectManager : MonoBehaviour
     private bool allowMovement = false;
     private Vector3 originalPosition;
     private SpriteRenderer selectedObjectRenderer;
+    private float holdTimer = 0;
 
     private List<EcosystemObject> placedObjectsList = new(); // List to store placed objects
 
@@ -49,6 +50,7 @@ public class ObjectManager : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             allowMovement = false;
+            holdTimer = 0;
         }
 
         if (Input.GetMouseButton(0))
@@ -59,7 +61,13 @@ public class ObjectManager : MonoBehaviour
             // If there is no object being moved, start moving the object
             if (!isMovingObject && hit.collider != null && hit.collider.CompareTag("BuildableObject"))
             {
-                StartMovingObject(hit.collider.gameObject);
+                // If held for 1 second
+                holdTimer += Time.deltaTime;
+                if (holdTimer >= 0.3f)
+                {
+                    StartMovingObject(hit.collider.gameObject);
+                    holdTimer = 0;
+                }
             }
 
             // If the current object is being clicked, allow movement
@@ -104,7 +112,7 @@ public class ObjectManager : MonoBehaviour
             do
             {
                 // Use half the width of the sprite as the radius
-                colliders = Physics2D.OverlapCircleAll(spawnPosition, spriteWidth / 2f);
+                colliders = Physics2D.OverlapCircleAll(spawnPosition, (spriteWidth / 2f) - 3);
                 if (colliders.Length > 0)
                 {
                     // Filter colliders by tag
@@ -169,7 +177,7 @@ public class ObjectManager : MonoBehaviour
         newPosition.y = objectY + selectedObject.GetComponent<SpriteRenderer>().bounds.extents.y;
 
         // Check for collisions with objects
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(newPosition, selectedObjectRenderer.bounds.size.x / 2f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(newPosition, (selectedObjectRenderer.bounds.size.x / 2f) - 3);
 
         // Filter colliders by tag
         colliders = colliders.Where(c => c.CompareTag("BuildableObject")).ToArray();
@@ -212,7 +220,6 @@ public class ObjectManager : MonoBehaviour
                 Debug.LogWarning("Cannot confirm movement. Object is colliding with another object.");
                 return;
             }
-
 
             // Edit the existing list
             float xCoordinate = selectedObject.transform.position.x;
