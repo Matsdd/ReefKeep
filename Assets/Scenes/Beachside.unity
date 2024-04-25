@@ -491,6 +491,7 @@ MonoBehaviour:
   moneyCapText: {fileID: 43548784}
   upgradeToLevelText: {fileID: 517440857}
   upgradeCostText: {fileID: 923024729}
+  upgradeButton: {fileID: 1239562475}
 --- !u!1 &183785308
 GameObject:
   m_ObjectHideFlags: 0

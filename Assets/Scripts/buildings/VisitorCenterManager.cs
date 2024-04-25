@@ -7,6 +7,9 @@ public class VisitorCenterManager : MonoBehaviour
     public int storedMoney = 0;
     public int currentLevel = 1;
 
+    private float moneyPerSecond = 0f;
+    private float moneyAccumulator = 0f;
+
     // First array int is unused because level starts at 1
     public readonly int[] maxMoney = { 500, 1000, 2000, 3000 };
     public readonly int[] upgradeCost = { 500, 1000, 2000, 3000 };
@@ -72,18 +75,34 @@ public class VisitorCenterManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    // Calculate the amount of money that needs to be add every second
-    public int CalcMoneyPerSec()
+    // Calculate the amount of money that needs to be add every second, can be decimal.
+    public float CalcMoneyPerSec()
     {
-        int moneyPerSec;
-        moneyPerSec = currentLevel;
+        // ADD CALCULATION BASED ON FISH HAPPINESS AND DIFFERENT SPECIES COUNT!!!!!!!!!!!!!!!!!!!!!!!!!!
+        float moneyPerSec;
+        moneyPerSec = currentLevel / 2f;
+        moneyPerSecond = moneyPerSec;
         return moneyPerSec;
     }
 
     // Add money to the building every second
     private void AddMoneyPerSecond()
     {
-        ChangeStoredMoney(CalcMoneyPerSec());
+        // Make sure to set the new moneyPerSecond
+        CalcMoneyPerSec();
+
+        // Add the integral part of moneyPerSecond to stored money
+        ChangeStoredMoney(Mathf.FloorToInt(moneyPerSecond));
+
+        // Accumulate the fractional part
+        moneyAccumulator += moneyPerSecond - Mathf.Floor(moneyPerSecond);
+
+        // If the accumulator is greater than or equal to 1, add one unit of money and subtract 1 from the accumulator
+        if (moneyAccumulator >= 1f)
+        {
+            ChangeStoredMoney(1);
+            moneyAccumulator -= 1f;
+        }
     }
 
     // Add the money in the building to actual money and reset it to 0

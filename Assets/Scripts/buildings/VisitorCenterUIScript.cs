@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VisitorCenterUIScript : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class VisitorCenterUIScript : MonoBehaviour
     public TextMeshProUGUI moneyCapText;
     public TextMeshProUGUI upgradeToLevelText;
     public TextMeshProUGUI upgradeCostText;
+    public Button upgradeButton;
 
     // Open the menu when clicking on the building
     void OnMouseDown()
@@ -57,10 +59,20 @@ public class VisitorCenterUIScript : MonoBehaviour
     public void UpdateUI()
     {
         levelText.text = "Level: " + VisitorCenterManager.instance.currentLevel;
-        moneyPerSecText.text = "Fishbucks/s = " + VisitorCenterManager.instance.CalcMoneyPerSec();
+        moneyPerSecText.text = "Fishbucks /s: " + VisitorCenterManager.instance.CalcMoneyPerSec();
         storedMoneyText.text = VisitorCenterManager.instance.storedMoney.ToString();
         moneyCapText.text = VisitorCenterManager.instance.maxMoney[VisitorCenterManager.instance.currentLevel].ToString();
         upgradeToLevelText.text = "Upgrade to level " + (VisitorCenterManager.instance.currentLevel + 1) + "?";
         upgradeCostText.text = VisitorCenterManager.instance.upgradeCost[VisitorCenterManager.instance.currentLevel].ToString();
+
+        if (VisitorCenterManager.instance.currentLevel >= 3)
+        {
+            upgradeButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            upgradeButton.gameObject.SetActive(true);
+        }
+
     }
 }
