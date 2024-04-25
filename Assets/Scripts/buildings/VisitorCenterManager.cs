@@ -27,6 +27,7 @@ public class VisitorCenterManager : MonoBehaviour
 
     void Start()
     {
+        // Get values from PlayerPrefs or set a default
         currentLevel = PlayerPrefs.GetInt("VisitorCenterLevel", 1);
         storedMoney = PlayerPrefs.GetInt("StoredMoney", 0);
 
@@ -39,8 +40,10 @@ public class VisitorCenterManager : MonoBehaviour
 
     public void UpgradeLevel()
     {
+        // Max level is 3
         if (currentLevel <= 2)
         {
+            // Try to buy the upgrade, cancel if not enough money
             if (GameManager.instance.ChangeMoney(-upgradeCost[currentLevel]))
             {
                 currentLevel++;
@@ -54,16 +57,22 @@ public class VisitorCenterManager : MonoBehaviour
         }
     }
 
+    // Changed the stored money inside the building
     public void ChangeStoredMoney(int amount)
     {
-        if ((storedMoney + amount) <= maxMoney[currentLevel])
-        {
-            storedMoney += amount;
-            PlayerPrefs.SetInt("StoredMoney", storedMoney);
-            PlayerPrefs.Save();
-        }
+        // Calculate the new stored money value
+        int newStoredMoney = storedMoney + amount;
+
+        // Cap the stored money at the maximum value if it exceeds it
+        newStoredMoney = Mathf.Min(newStoredMoney, maxMoney[currentLevel]);
+
+        // Update the stored money value
+        storedMoney = newStoredMoney;
+        PlayerPrefs.SetInt("StoredMoney", storedMoney);
+        PlayerPrefs.Save();
     }
 
+    // Calculate the amount of money that needs to be add every second
     public int CalcMoneyPerSec()
     {
         int moneyPerSec;
@@ -71,11 +80,13 @@ public class VisitorCenterManager : MonoBehaviour
         return moneyPerSec;
     }
 
+    // Add money to the building every second
     private void AddMoneyPerSecond()
     {
         ChangeStoredMoney(CalcMoneyPerSec());
     }
 
+    // Add the money in the building to actual money and reset it to 0
     public void ClaimMoney()
     {
         if (storedMoney > 0)
@@ -83,7 +94,6 @@ public class VisitorCenterManager : MonoBehaviour
             GameManager.instance.ChangeMoney(storedMoney);
             ChangeStoredMoney(-storedMoney);
         }
-
     }
 
     // WARNING. TICKS CAN BE CHEATED BY CHANGING DEVICE DATE/TIME. CREATE A CHECK!!!

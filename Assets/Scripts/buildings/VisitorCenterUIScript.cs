@@ -13,17 +13,15 @@ public class VisitorCenterUIScript : MonoBehaviour
     public TextMeshProUGUI upgradeToLevelText;
     public TextMeshProUGUI upgradeCostText;
 
-    void Update()
-    {
-        UpdateUI();
-    }
-
     // Open the menu when clicking on the building
     void OnMouseDown()
     {
         buildingCanvas.SetActive(true);
         buildingMenu.SetActive(true);
         upgradeConfirmMenu.SetActive(false);
+
+        // Start repeating UpdateUI to show the amount of money
+        InvokeRepeating(nameof(UpdateUI), 0f, 1f);
     }
 
     // Close all menu's when clicking on Close button
@@ -32,23 +30,30 @@ public class VisitorCenterUIScript : MonoBehaviour
         buildingCanvas.SetActive(false);
         buildingMenu.SetActive(false);
         upgradeConfirmMenu.SetActive(false);
+
+        // Stop repeatingly updating the UI when the menu is closed
+        CancelInvoke(nameof(UpdateUI));
     }
 
+    // Toggle the upgrade menu
     public void ToggleUpgradeMenu()
     {
         upgradeConfirmMenu.SetActive(!upgradeConfirmMenu.activeSelf);
+        UpdateUI();
     }
 
-
+    // Actually upgrade the building
     public void ConfirmUpgrade()
     {
         // Upgrade building
         VisitorCenterManager.instance.UpgradeLevel();
+        UpdateUI();
 
         // Close upgrade confirm menu
         upgradeConfirmMenu.SetActive(false);
     }
 
+    // Updates all the text in the UI. Call this when an update happens
     public void UpdateUI()
     {
         levelText.text = "Level: " + VisitorCenterManager.instance.currentLevel;
