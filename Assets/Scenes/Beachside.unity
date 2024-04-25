@@ -486,6 +486,11 @@ MonoBehaviour:
   buildingMenu: {fileID: 1450503901}
   upgradeConfirmMenu: {fileID: 1600393037}
   levelText: {fileID: 1297366170}
+  moneyPerSecText: {fileID: 1463084590}
+  storedMoneyText: {fileID: 2105145625}
+  moneyCapText: {fileID: 43548784}
+  upgradeToLevelText: {fileID: 517440857}
+  upgradeCostText: {fileID: 923024729}
 --- !u!1 &183785308
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +859,52 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &319758327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 319758329}
+  - component: {fileID: 319758328}
+  m_Layer: 0
+  m_Name: VisitorCenterManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &319758328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319758327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c23b02c0bedde24b908d0693c1f9712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedMoney: 0
+  currentLevel: 1
+--- !u!4 &319758329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319758327}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.3288581, y: -2.131614, z: 49.20994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1311,7 +1362,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 549934111}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 319758328}
+        m_TargetAssemblyTypeName: VisitorCenterManager, Assembly-CSharp
+        m_MethodName: ClaimMoney
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &549934111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1844,7 +1907,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.1}
+  m_Offset: {x: -0.000000022351742, y: 0.00029580295}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1854,7 +1917,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.3982255, y: 0.37206116}
   m_EdgeRadius: 0
 --- !u!212 &1054063150
 SpriteRenderer:
@@ -3392,6 +3455,7 @@ SceneRoots:
   - {fileID: 301921721}
   - {fileID: 1879077976}
   - {fileID: 65836010}
+  - {fileID: 319758329}
   - {fileID: 1479565111}
   - {fileID: 646291791}
   - {fileID: 57902343}

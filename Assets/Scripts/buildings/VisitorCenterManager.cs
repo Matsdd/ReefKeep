@@ -8,8 +8,8 @@ public class VisitorCenterManager : MonoBehaviour
     public int currentLevel = 1;
 
     // First array int is unused because level starts at 1
-    private readonly int[] maxMoney = { 500, 1000, 2000, 3000 };
-    private readonly int[] upgradeCost = { 500, 1000, 2000, 3000 };
+    public readonly int[] maxMoney = { 500, 1000, 2000, 3000 };
+    public readonly int[] upgradeCost = { 500, 1000, 2000, 3000 };
 
     private void Awake()
     {
@@ -64,7 +64,7 @@ public class VisitorCenterManager : MonoBehaviour
         }
     }
 
-    private int CalcMoneyPerSec()
+    public int CalcMoneyPerSec()
     {
         int moneyPerSec;
         moneyPerSec = currentLevel;
