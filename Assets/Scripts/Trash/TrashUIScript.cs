@@ -8,10 +8,11 @@ public class TrashUIScript : MonoBehaviour
     //0,yes,1,no
     public int buttonSort = 0;
     public float destroytimer = 0;
+    public bool clusterSide;
 
     public Canvas canvas;
     public TMP_Text canvasTxt;
-    public static GameObject trashCluster;
+    public static string trashCluster;
 
     public void onClick()
     {
@@ -21,10 +22,21 @@ public class TrashUIScript : MonoBehaviour
         }else if (buttonSort == 0)
         {
             if (GameManager.instance.ChangeMoney(-1000)) {
-                // -- check if enough money
                 if (trashCluster != null)
                 {
-                    Destroy(trashCluster);
+                    GameObject obj = GameObject.Find(trashCluster);
+                    Destroy(obj);
+
+                    //edit camera movement
+                    //slechte manier (:
+                    if (trashCluster == "TrashCollection1")
+                    {
+                        CameraController.maxX = 19.6f;
+                    }
+                    else
+                    {
+                        CameraController.minX = -19.6f;
+                    }
                 }
                 canvas.enabled = false;
             }

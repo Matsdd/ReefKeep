@@ -7,6 +7,7 @@ public class TrashScript : MonoBehaviour
     private float speed = 2f;
     private float height = 0.01f;
     private float sideSpeed = 0;
+    public bool clusterSide = false;
 
     public static int trashCashMultiplier = 1;
 
@@ -19,13 +20,16 @@ public class TrashScript : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            
 
             if (hit.collider != null && hit.collider.gameObject.CompareTag("Trash"))
             {
                 if (isCluster)
                 {
+
+                    TrashUIScript.trashCluster = hit.transform.name;
                     canvas.enabled = true;
-                    TrashUIScript.trashCluster = trashCluster;
+
                 }
                 else
                 {

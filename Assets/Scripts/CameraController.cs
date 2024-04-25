@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private float minX = -19.6f;
-    private float maxX = 19.6f;
+    public static float minX = -10;
+    public static float maxX = 10;
     private float minY = -11.2f;
     private float maxY = 11.2f;
 
