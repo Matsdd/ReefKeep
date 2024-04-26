@@ -14,6 +14,13 @@ public class VisitorCenterUIScript : MonoBehaviour
     public TextMeshProUGUI upgradeToLevelText;
     public TextMeshProUGUI upgradeCostText;
     public Button upgradeButton;
+    public SpriteRenderer buildingSpriteRenderer;
+
+    private void Start()
+    {
+        // Set the sprite after 1sec so the correct level can be loaded from PlayerPrefs
+        Invoke(nameof(UpdateSprite), 1f);
+    }
 
     // Open the menu when clicking on the building
     void OnMouseDown()
@@ -50,6 +57,7 @@ public class VisitorCenterUIScript : MonoBehaviour
         // Upgrade building
         VisitorCenterManager.instance.UpgradeLevel();
         UpdateUI();
+        UpdateSprite();
 
         // Close upgrade confirm menu
         upgradeConfirmMenu.SetActive(false);
@@ -73,6 +81,20 @@ public class VisitorCenterUIScript : MonoBehaviour
         {
             upgradeButton.gameObject.SetActive(true);
         }
+    }
 
+    public void UpdateSprite()
+    {
+        // Change the sprite based on the level
+        string spriteName = "VISITORCENTER_" + VisitorCenterManager.instance.currentLevel;
+        Sprite levelSprite = Resources.Load<Sprite>("Sprites/Buildings/" + spriteName);
+        if (levelSprite != null)
+        {
+            buildingSpriteRenderer.sprite = levelSprite;
+        }
+        else
+        {
+            Debug.LogError("Sprite not found with name: " + spriteName);
+        }
     }
 }

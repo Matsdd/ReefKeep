@@ -492,6 +492,7 @@ MonoBehaviour:
   upgradeToLevelText: {fileID: 517440857}
   upgradeCostText: {fileID: 923024729}
   upgradeButton: {fileID: 1239562475}
+  buildingSpriteRenderer: {fileID: 65836009}
 --- !u!1 &194268485
 GameObject:
   m_ObjectHideFlags: 0
