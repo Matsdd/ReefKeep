@@ -2050,6 +2050,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 383192286}
+  - component: {fileID: 383192287}
   m_Layer: 0
   m_Name: TrashManager
   m_TagString: Untagged
@@ -2072,6 +2073,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &383192287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383192285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec4488664d0efc40bc5194027a31386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trashSpawnrate: 1200
+  trashS: {fileID: 6225952158611857439, guid: 513663da68f4a0e4cae54ad5ceff2271, type: 3}
+  trashB: {fileID: 8321658290248540628, guid: 1315e8f837579a043901d4cd23f7e7a6, type: 3}
+  oil: {fileID: 3208890793714487069, guid: 29a9ddecfa2248441b7d4b97ce88e2c4, type: 3}
 --- !u!1 &387329915
 GameObject:
   m_ObjectHideFlags: 0

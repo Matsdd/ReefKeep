@@ -24,7 +24,7 @@ public class TrashScript : MonoBehaviour
 
             if (hit.collider != null && hit.collider.gameObject.CompareTag("Trash"))
             {
-                if (isCluster)
+                if (hit.transform.name == "TrashCollection1" || hit.transform.name == "TrashCollection2")
                 {
 
                     TrashUIScript.trashCluster = hit.transform.name;
@@ -47,12 +47,14 @@ public class TrashScript : MonoBehaviour
         float newX = pos.x;
         if (sideMovement)
         {
-            if (sideSpeed == 0)
+            if (pos.x < 19 && pos.x > -19)
             {
-                sideSpeed = Mathf.Round(Random.Range(-1.4f, 1.4f));
+                if (sideSpeed == 0)
+                {
+                    sideSpeed = Mathf.Round(Random.Range(-1.4f, 1.4f));
+                }
+                newX = pos.x + (sideSpeed * 0.001f);
             }
-
-            newX = pos.x + (sideSpeed * 0.001f);
         }
 
 

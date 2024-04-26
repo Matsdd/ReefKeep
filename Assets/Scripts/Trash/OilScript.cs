@@ -21,8 +21,7 @@ public class OilScript : MonoBehaviour
     {
         if (this.transform.childCount > 0)
         {
-            float duplicate = Mathf.Round(Random.Range(0, 250));
-            Debug.Log(duplicate);
+            float duplicate = Mathf.Round(Random.Range(0, 400));
             size = 1;
             if (duplicate == 1)
             {
