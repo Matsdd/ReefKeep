@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -19,9 +17,12 @@ public class TrashUIScript : MonoBehaviour
         if (buttonSort == 1)
         {
             canvas.enabled = false;
-        }else if (buttonSort == 0)
+        }
+
+        else if (buttonSort == 0)
         {
-            if (GameManager.instance.ChangeMoney(-1000)) {
+            if (GameManager.instance.ChangeMoney(-1000))
+            {
                 if (trashCluster != null)
                 {
                     GameObject obj = GameObject.Find(trashCluster);
@@ -33,7 +34,7 @@ public class TrashUIScript : MonoBehaviour
                     {
                         CameraController.maxX = 19.6f;
                     }
-                    else
+                    else if (trashCluster == "TrashCollection2")
                     {
                         CameraController.minX = -19.6f;
                     }

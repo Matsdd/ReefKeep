@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TrashManagerScript : MonoBehaviour
@@ -26,8 +24,9 @@ public class TrashManagerScript : MonoBehaviour
             {
                 //groot trash
                 Debug.Log("Groot");
-                Instantiate(trashB, new Vector3(randomX,randomY,0), quat);
-            }else if (randomNum == 3)
+                Instantiate(trashB, new Vector3(randomX, randomY, 0), quat);
+            }
+            else if (randomNum == 3)
             {
                 //oil
                 Debug.Log("Oil");

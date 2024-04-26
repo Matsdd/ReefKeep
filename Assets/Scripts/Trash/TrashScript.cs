@@ -20,16 +20,13 @@ public class TrashScript : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            
 
             if (hit.collider != null && hit.collider.gameObject.CompareTag("Trash"))
             {
                 if (hit.transform.name == "TrashCollection1" || hit.transform.name == "TrashCollection2")
                 {
-
                     TrashUIScript.trashCluster = hit.transform.name;
                     canvas.enabled = true;
-
                 }
                 else
                 {
@@ -42,7 +39,7 @@ public class TrashScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Sideways & vertical movement*
+        //Sideways & vertical movement
         Vector3 pos = transform.position;
         float newX = pos.x;
         if (sideMovement)
@@ -56,7 +53,6 @@ public class TrashScript : MonoBehaviour
                 newX = pos.x + (sideSpeed * 0.001f);
             }
         }
-
 
         float newY = Mathf.Sin(Time.time * speed) * height + pos.y;
         transform.position = new Vector3(newX, newY, pos.z);
