@@ -9,6 +9,25 @@ public class TrashManagerScript : MonoBehaviour
     public GameObject trashB;
     public GameObject oil;
 
+    public static int trashCashMultiplier = 1;
+
+    void Update()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+            if (hit.collider != null && hit.collider.gameObject.CompareTag("Trash"))
+            {
+                Destroy(hit.transform.gameObject);
+                GameManager.instance.ChangeMoney(10 * trashCashMultiplier);
+            }else if (hit.collider != null && hit.collider.gameObject.CompareTag("Oil"))
+            {
+                Destroy(hit.transform.gameObject);
+            }
+        }
+    }
+
 
     private void FixedUpdate()
     {
