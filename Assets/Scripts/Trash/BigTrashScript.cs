@@ -3,16 +3,30 @@ using UnityEngine;
 public class BigTrashScript : MonoBehaviour
 {
     public GameObject canvas;
+    public GameObject BigTrash1;
+    public GameObject BigTrash2;
 
-    private int BigTrash1 = 1;
-    private int BigTrash2 = 2;
+    private int BigTrash1Alive = 1;
+    private int BigTrash2Alive = 1;
 
     private string trashCluster;
 
     private void Start()
     {
-        BigTrash1 = PlayerPrefs.GetInt("BigTrash1", 1);
-        BigTrash2 = PlayerPrefs.GetInt("BigTrash2", 1);
+        BigTrash1Alive = PlayerPrefs.GetInt("BigTrash1", 1);
+        BigTrash2Alive = PlayerPrefs.GetInt("BigTrash2", 1);
+
+        if (BigTrash1Alive == 0)
+        {
+            Destroy(BigTrash1);
+            CameraController.minX = -19.6f;
+        }
+
+        if (BigTrash2Alive == 0)
+        {
+            Destroy(BigTrash2);
+            CameraController.maxX = 19.6f;
+        }
     }
 
     void Update()
@@ -46,10 +60,12 @@ public class BigTrashScript : MonoBehaviour
                 if (trashCluster == "BigTrash1")
                 {
                     CameraController.minX = -19.6f;
+                    PlayerPrefs.SetInt("BigTrash1", 0);
                 }
                 else if (trashCluster == "BigTrash2")
                 {
                     CameraController.maxX = 19.6f;
+                    PlayerPrefs.SetInt("BigTrash2", 0);
                 }
             }
             else

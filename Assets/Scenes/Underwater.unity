@@ -843,6 +843,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 2023660493}
+  BigTrash1: {fileID: 409029803}
+  BigTrash2: {fileID: 1003150932}
 --- !u!1 &409029803
 GameObject:
   m_ObjectHideFlags: 0
