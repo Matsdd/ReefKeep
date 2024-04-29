@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class TrashManagerScript : MonoBehaviour
 {
-    //Hoe groter hoe kleiner de kans dat trash spawnt
-    public int trashSpawnrate = 1200;
-
     public GameObject trashS;
     public GameObject trashB;
     public GameObject oil;
@@ -17,11 +14,14 @@ public class TrashManagerScript : MonoBehaviour
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
+            // If clicked on trash, destory is and give money
             if (hit.collider != null && hit.collider.gameObject.CompareTag("Trash"))
             {
                 Destroy(hit.transform.gameObject);
                 GameManager.instance.ChangeMoney(10 * trashCashMultiplier);
             }
+
+            // If clicked on oil, destory it and give no money to prevent infinite money with spread
             else if (hit.collider != null && hit.collider.gameObject.CompareTag("Oil"))
             {
                 Destroy(hit.transform.gameObject);
@@ -29,34 +29,34 @@ public class TrashManagerScript : MonoBehaviour
         }
     }
 
+    // Randomly spawn new trash
     private void FixedUpdate()
     {
-        float randomNum = Mathf.Round(Random.Range(0, trashSpawnrate));
+        // Generate a random number, make bigger to make trash more rare
+        float randomNum = Mathf.Round(Random.Range(0, 1500));
         if (randomNum == 1)
         {
             float randomX = Random.Range(-10, 10);
             float randomY = Random.Range(-12, 12);
-            Quaternion quat = new Quaternion(0, 0, 0, 0);
 
+            // Generate a random number to choose trash type
             randomNum = Mathf.Round(Random.Range(0, 5));
             if (randomNum >= 4)
             {
-                //groot trash
-                Debug.Log("Groot");
-                Instantiate(trashB, new Vector3(randomX, randomY, 0), quat);
+                // Big trash
+                Instantiate(trashB, new Vector3(randomX, randomY, 0), Quaternion.identity);
             }
             else if (randomNum == 3)
             {
-                //oil
-                Debug.Log("Oil");
-                Instantiate(oil, new Vector3(randomX, randomY, 0), quat);
+                // Oil
+                Instantiate(oil, new Vector3(randomX, randomY, 0), Quaternion.identity);
             }
             else
             {
-                //kleine trash
-                Debug.Log("Klein");
-                Instantiate(trashS, new Vector3(randomX, randomY, 0), quat);
+                // Small Trash
+                Instantiate(trashS, new Vector3(randomX, randomY, 0), Quaternion.identity);
             }
         }
     }
+
 }

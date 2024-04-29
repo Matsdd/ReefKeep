@@ -5,27 +5,25 @@ public class OilScript : MonoBehaviour
     public GameObject oil;
     public GameObject oilParent;
 
-    float size;
-
+    // Spawn some children oil
     private void Start()
     {
-        size = Mathf.Round(Random.Range(2, 4));
-        for (int i = 0; i  < size; i++)
+        for (int i = 0; i < Mathf.Round(Random.Range(2, 4)); i++)
         {
-            addChild();
+            AddChild();
         }
-        
     }
 
     private void FixedUpdate()
     {
+        // Check if there are still oil children
         if (this.transform.childCount > 0)
         {
+            // Randomly spawn a new oil child
             float duplicate = Mathf.Round(Random.Range(0, 400));
-            size = 1;
             if (duplicate == 1)
             {
-                addChild();
+                AddChild();
             }
         }
         else
@@ -34,14 +32,15 @@ public class OilScript : MonoBehaviour
         }
     }
 
-    public void addChild()
+    public void AddChild()
     {
-        float oilx = Random.Range(size * -0.3f, size * 0.3f);
-        float oily = Random.Range(size * -0.2f, size * 0.2f);
+        // Set random position
+        float oilx = Random.Range(1f, 4f);
+        float oily = Random.Range(1f, 4f);
 
-        GameObject oilBit = Instantiate(oil, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
+        // Spawn the oil, set parent, set position
+        GameObject oilBit = Instantiate(oil, new Vector3(0, 0, 0), Quaternion.identity);
         oilBit.transform.parent = this.transform;
-
         oilBit.transform.position = new Vector3(oilx + this.transform.position.x, oily + this.transform.position.y, 0);
     }
 }
