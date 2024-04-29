@@ -24,6 +24,7 @@ public class ObjectManager : MonoBehaviour
     public GameObject[] objectPrefabs;
     public GameObject placeButton;
     public GameObject cancelButton;
+    public GameObject deleteButton;
 
     private readonly float objectSnapDistance = 0.5f;
     private readonly float minX = -25f;
@@ -161,6 +162,7 @@ public class ObjectManager : MonoBehaviour
         // Show move buttons
         placeButton.SetActive(true);
         cancelButton.SetActive(true);
+        deleteButton.SetActive(true);
     }
 
     // Actually move the selected object
@@ -206,6 +208,7 @@ public class ObjectManager : MonoBehaviour
         // Hide move buttons
         placeButton.SetActive(false);
         cancelButton.SetActive(false);
+        deleteButton.SetActive(false);
     }
 
     // Confirm movement of the object into the new position
@@ -222,8 +225,8 @@ public class ObjectManager : MonoBehaviour
             }
 
             // Edit the existing list
-            float xCoordinate = selectedObject.transform.position.x;
-            EditObjectInList(xCoordinate);
+            float xCoordinateNew = selectedObject.transform.position.x;
+            EditObjectInList(xCoordinateNew);
 
             selectedObjectRenderer.color = Color.white;
             selectedObject = null;
@@ -232,6 +235,7 @@ public class ObjectManager : MonoBehaviour
 
         placeButton.SetActive(false);
         cancelButton.SetActive(false);
+        deleteButton.SetActive(false);
     }
 
     // Function to place a new object in the list
@@ -245,17 +249,52 @@ public class ObjectManager : MonoBehaviour
     }
 
     // Function to edit an item with the old X value
-    private void EditObjectInList(float xCoordinate)
+    private void EditObjectInList(float xCoordinateNew)
     {
         // Find the index of the object with the same type and coordinates
         int existingIndex = placedObjectsList.FindIndex(obj => Mathf.Approximately(obj.xCoordinate, originalPosition.x));
 
-        // Check if the object with the same type and coordinates exists
+        // Check if the object with the same coordinates exists
         if (existingIndex != -1)
         {
             // Update the x coordinate of the existing object
-            placedObjectsList[existingIndex].xCoordinate = xCoordinate;
-            // Save the updated ecosystem
+            placedObjectsList[existingIndex].xCoordinate = xCoordinateNew;
+            SaveEcosystem();
+        }
+
+        else
+        {
+            Debug.LogError("Error confirming object into list!" + existingIndex);
+        }
+    }
+
+    // Function to delete an item with the old X value
+    public void DeleteObjectFromList()
+    {
+        // Find the index of the object with the same type and coordinates
+        int existingIndex = placedObjectsList.FindIndex(obj => Mathf.Approximately(obj.xCoordinate, originalPosition.x));
+
+        // Check if the object with the same coordinates exists
+        if (existingIndex != -1)
+        {
+            // Delete the object from the scene
+            if (selectedObject != null)
+            {
+                Destroy(selectedObject);
+                isMovingObject = false;
+
+                // Hide move buttons
+                placeButton.SetActive(false);
+                cancelButton.SetActive(false);
+                deleteButton.SetActive(false);
+            }
+            else
+            {
+                Debug.LogError("No selected object to delete.");
+            }
+
+            // Delete the object from the list
+            placedObjectsList.RemoveAt(existingIndex);
             SaveEcosystem();
         }
 
@@ -321,23 +360,6 @@ public class ObjectManager : MonoBehaviour
         else
         {
             Debug.LogWarning("Ecosystem file not found: " + filePath);
-        }
-    }
-
-    public void ClearEcosystem()
-    {
-
-        // Write an empty string to the file
-        string filePath = Application.persistentDataPath + "/ecosystem.json";
-        try
-        {
-            File.WriteAllText(filePath, "{}");
-            Debug.Log("Ecosystem Saved. File path: " + filePath);
-            LoadEcosystem();
-        }
-        catch (Exception e)
-        {
-            Debug.LogError("Error saving ecosystem: " + e.Message);
         }
     }
 }
