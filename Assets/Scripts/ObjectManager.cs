@@ -72,7 +72,7 @@ public class ObjectManager : MonoBehaviour
             }
 
             // If the current object is being clicked, allow movement
-            if (Input.GetMouseButtonDown(0) && isMovingObject && hit.collider != null && hit.collider.gameObject == selectedObject)
+            if (Input.GetMouseButton(0) && isMovingObject && hit.collider != null && hit.collider.gameObject == selectedObject)
             {
                 allowMovement = true;
             }
