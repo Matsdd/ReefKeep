@@ -21,13 +21,13 @@ public class TrashManagerScript : MonoBehaviour
             {
                 Destroy(hit.transform.gameObject);
                 GameManager.instance.ChangeMoney(10 * trashCashMultiplier);
-            }else if (hit.collider != null && hit.collider.gameObject.CompareTag("Oil"))
+            }
+            else if (hit.collider != null && hit.collider.gameObject.CompareTag("Oil"))
             {
                 Destroy(hit.transform.gameObject);
             }
         }
     }
-
 
     private void FixedUpdate()
     {
