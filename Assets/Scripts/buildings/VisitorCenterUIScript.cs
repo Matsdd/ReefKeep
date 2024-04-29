@@ -97,4 +97,9 @@ public class VisitorCenterUIScript : MonoBehaviour
             Debug.LogError("Sprite not found with name: " + spriteName);
         }
     }
+
+    public void ClaimButton()
+    {
+        VisitorCenterManager.instance.ClaimMoney();
+    }
 }

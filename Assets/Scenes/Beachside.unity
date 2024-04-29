@@ -1397,9 +1397,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 319758328}
-        m_TargetAssemblyTypeName: VisitorCenterManager, Assembly-CSharp
-        m_MethodName: ClaimMoney
+      - m_Target: {fileID: 65836011}
+        m_TargetAssemblyTypeName: VisitorCenterUIScript, Assembly-CSharp
+        m_MethodName: ClaimButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
