@@ -4,7 +4,16 @@ public class BigTrashScript : MonoBehaviour
 {
     public GameObject canvas;
 
+    private int BigTrash1 = 1;
+    private int BigTrash2 = 2;
+
     private string trashCluster;
+
+    private void Start()
+    {
+        BigTrash1 = PlayerPrefs.GetInt("BigTrash1", 1);
+        BigTrash2 = PlayerPrefs.GetInt("BigTrash2", 1);
+    }
 
     void Update()
     {
