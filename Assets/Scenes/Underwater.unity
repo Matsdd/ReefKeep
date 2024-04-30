@@ -826,7 +826,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec4488664d0efc40bc5194027a31386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashSpawnrate: 1200
   trashS: {fileID: 6225952158611857439, guid: 513663da68f4a0e4cae54ad5ceff2271, type: 3}
   trashB: {fileID: 8321658290248540628, guid: 1315e8f837579a043901d4cd23f7e7a6, type: 3}
   oil: {fileID: 3208890793714487069, guid: 29a9ddecfa2248441b7d4b97ce88e2c4, type: 3}
@@ -1143,7 +1142,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 383192288}
         m_TargetAssemblyTypeName: BigTrashScript, Assembly-CSharp
-        m_MethodName: onClickX
+        m_MethodName: OnClickX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1408,7 +1407,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 383192288}
         m_TargetAssemblyTypeName: BigTrashScript, Assembly-CSharp
-        m_MethodName: onClickV
+        m_MethodName: OnClickV
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
