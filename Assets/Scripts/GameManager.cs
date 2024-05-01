@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     private int money = 0;
     public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI messageText;
 
     private void Awake()
     {
@@ -73,5 +75,45 @@ public class GameManager : MonoBehaviour
         {
             moneyText.text = "Money: " + money.ToString();
         }
+    }
+
+    // Function to show the player a message
+    public void ShowMessage(string message)
+    {
+        // Set and show the message text
+        messageText.text = message;
+
+        // Make sure the alpla is 1
+        Color textColor = messageText.color;
+        textColor.a = 1f;
+        messageText.color = textColor;
+
+        messageText.enabled = true;
+
+        StartCoroutine(HideMessage());
+    }
+
+    // Function to hide the message
+    private IEnumerator HideMessage()
+    {
+        // Wait for 2 seconds before starting the fade-out effect
+        yield return new WaitForSeconds(1.5f);
+
+        // Fade away the text color gradually
+        for (int i = 0; i < 20; i++)
+        {
+            yield return new WaitForSeconds(0.05f);
+
+            // Calculate the new alpha value
+            float newAlpha = messageText.color.a - 0.05f;
+
+            // Set the new alpha value for the text color
+            Color textColor = messageText.color;
+            textColor.a = newAlpha;
+            messageText.color = textColor;
+        }
+
+        // Disable the text
+        messageText.enabled = false;
     }
 }
