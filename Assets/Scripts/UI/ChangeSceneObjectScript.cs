@@ -2,10 +2,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class ButtonScript : MonoBehaviour
+public class ChangeSceneObjectScript : MonoBehaviour
 {
     public int scene;
 
+    // Script to change scenes for objects
     void OnMouseDown()
     {
         // Load scene
