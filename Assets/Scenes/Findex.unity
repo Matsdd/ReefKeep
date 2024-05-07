@@ -510,6 +510,7 @@ GameObject:
   m_Component:
   - component: {fileID: 379250373}
   - component: {fileID: 379250375}
+  - component: {fileID: 379250376}
   - component: {fileID: 379250374}
   m_Layer: 5
   m_Name: Fish title
@@ -579,6 +580,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379250372}
   m_CullTransparentMesh: 1
+--- !u!114 &379250376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379250372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0de48131f1e63143b8c720cd87b1a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &457129575
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,6 +604,8 @@ GameObject:
   - component: {fileID: 457129579}
   - component: {fileID: 457129578}
   - component: {fileID: 457129577}
+  - component: {fileID: 457129581}
+  - component: {fileID: 457129580}
   m_Layer: 5
   m_Name: Button (Legacy) (1)
   m_TagString: Untagged
@@ -661,7 +676,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 457129578}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 457129580}
+        m_TargetAssemblyTypeName: PanelCloserScript, Assembly-CSharp
+        m_MethodName: ClosePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &457129578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,6 +727,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457129575}
   m_CullTransparentMesh: 1
+--- !u!114 &457129580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457129575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74408339f5e64724ab1c93b0bbd0a861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Panel: {fileID: 599773256}
+--- !u!114 &457129581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457129575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a65f7399b6b6eb4ab3948e89497888d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &599773256
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,7 +808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.8688526, b: 1, a: 1}
+  m_Color: {r: 0.5802777, g: 0.5802777, b: 0.754717, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1737,6 +1789,7 @@ GameObject:
   - component: {fileID: 1922606161}
   - component: {fileID: 1922606160}
   - component: {fileID: 1922606159}
+  - component: {fileID: 1922606162}
   - component: {fileID: 1922606158}
   m_Layer: 5
   m_Name: Fish type button
@@ -1801,7 +1854,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.6226415, g: 0.31425774, b: 0.31425774, a: 1}
+    m_SelectedColor: {r: 0.5308384, g: 0.6873876, b: 0.745283, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1821,13 +1874,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922606156}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1922606162}
+        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
+        m_MethodName: OpenPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1871,6 +1924,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922606156}
   m_CullTransparentMesh: 1
+--- !u!114 &1922606162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922606156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 523e8b15d3212db4b91dd7e8c302aeed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Panel: {fileID: 599773256}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

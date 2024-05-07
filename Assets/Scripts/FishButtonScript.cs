@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class FishButtonScript : MonoBehaviour
 {
+
+
     public void SetFishName(string fishName)
     {
         Debug.Log("Setting fish name: " + fishName);
