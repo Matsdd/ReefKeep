@@ -39,7 +39,7 @@ public class TrashManagerScript : MonoBehaviour
     private void FixedUpdate()
     {
         // Generate a random number, make bigger to make trash more rare
-        float randomNum = Mathf.Round(Random.Range(0, 200));
+        float randomNum = Mathf.Round(Random.Range(0, 2000));
         if (randomNum == 1)
         {
             SpawnTrash();
