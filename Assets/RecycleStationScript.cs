@@ -105,7 +105,7 @@ public class RecycleStationScript : MonoBehaviour
     public void UpdateSprite()
     {
         // Change the sprite based on the level
-        string spriteName = "VISITORCENTER_" + currentLevel;
+        string spriteName = "RECYCLER_" + currentLevel;
         Sprite levelSprite = Resources.Load<Sprite>("Sprites/Buildings/" + spriteName);
         if (levelSprite != null)
         {
