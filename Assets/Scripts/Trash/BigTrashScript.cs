@@ -3,6 +3,7 @@ using UnityEngine;
 public class BigTrashScript : MonoBehaviour
 {
     public GameObject canvas;
+    public CameraController CameraController;
     public GameObject BigTrash1;
     public GameObject BigTrash2;
 
@@ -18,13 +19,11 @@ public class BigTrashScript : MonoBehaviour
         if (BigTrash1Alive == 0)
         {
             Destroy(BigTrash1);
-            CameraController.minX = -19.6f;
         }
 
         if (BigTrash2Alive == 0)
         {
             Destroy(BigTrash2);
-            CameraController.maxX = 19.6f;
         }
     }
 
@@ -62,19 +61,18 @@ public class BigTrashScript : MonoBehaviour
                 GameObject obj = GameObject.Find(trashCluster);
                 Destroy(obj);
 
-                // Check which trash was deleted, set the camera and save to PlayerPrefs
+                // Check which trash was deleted and save to PlayerPrefs
                 if (trashCluster == "BigTrash1")
                 {
-                    CameraController.minX = -19.6f;
                     PlayerPrefs.SetInt("BigTrash1", 0);
                     PlayerPrefs.Save();
                 }
                 else if (trashCluster == "BigTrash2")
                 {
-                    CameraController.maxX = 19.6f;
                     PlayerPrefs.SetInt("BigTrash2", 0);
                     PlayerPrefs.Save();
                 }
+                CameraController.UpdateMaxPos();
             }
             else
             {

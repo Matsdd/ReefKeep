@@ -236,7 +236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &60548394
 RectTransform:
   m_ObjectHideFlags: 0
@@ -709,6 +709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 2023660493}
+  CameraController: {fileID: 363503229}
   BigTrash1: {fileID: 409029803}
   BigTrash2: {fileID: 1003150932}
 --- !u!1 &409029803
@@ -2668,7 +2669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1836717866
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3099,7 +3100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2132161487
 RectTransform:
   m_ObjectHideFlags: 0
