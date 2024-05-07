@@ -616,6 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232519676ddf98242b9cc4bee0a12586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentLevel: 1
   buildingCanvas: {fileID: 301338906}
   buildingMenu: {fileID: 1560193367}
   upgradeConfirmMenu: {fileID: 2147027434}
@@ -1445,8 +1446,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 65836011}
-        m_TargetAssemblyTypeName: VisitorCenterScript, Assembly-CSharp
+      - m_Target: {fileID: 63190541}
+        m_TargetAssemblyTypeName: RecycleStationScript, Assembly-CSharp
         m_MethodName: ConfirmUpgrade
         m_Mode: 1
         m_Arguments:
@@ -2738,8 +2739,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 65836011}
-        m_TargetAssemblyTypeName: VisitorCenterScript, Assembly-CSharp
+      - m_Target: {fileID: 63190541}
+        m_TargetAssemblyTypeName: RecycleStationScript, Assembly-CSharp
         m_MethodName: CloseMenus
         m_Mode: 1
         m_Arguments:
@@ -2871,8 +2872,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 65836011}
-        m_TargetAssemblyTypeName: VisitorCenterScript, Assembly-CSharp
+      - m_Target: {fileID: 63190541}
+        m_TargetAssemblyTypeName: RecycleStationScript, Assembly-CSharp
         m_MethodName: ToggleUpgradeMenu
         m_Mode: 1
         m_Arguments:

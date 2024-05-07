@@ -11,6 +11,7 @@ public class TrashManagerScript : MonoBehaviour
     private void Start()
     {
         AddOfflineTrash();
+        trashCashMultiplier = PlayerPrefs.GetInt("RecycleStationLevel", 1);
     }
 
     void Update()
@@ -38,10 +39,10 @@ public class TrashManagerScript : MonoBehaviour
     private void FixedUpdate()
     {
         // Generate a random number, make bigger to make trash more rare
-        float randomNum = Mathf.Round(Random.Range(0, 1500));
+        float randomNum = Mathf.Round(Random.Range(0, 200));
         if (randomNum == 1)
         {
-
+            SpawnTrash();
         }
     }
 
@@ -90,7 +91,7 @@ public class TrashManagerScript : MonoBehaviour
 
             // Cap the max to 10
             offlineTrash = Mathf.Min(offlineTrash, 10);
-            Debug.Log(offlineTrash);
+            Debug.Log("" + offlineTrash);
 
             // Add the offline income to the player's money
             for (int i = 0; i < offlineTrash; i++)

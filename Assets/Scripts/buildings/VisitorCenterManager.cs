@@ -11,8 +11,8 @@ public class VisitorCenterManager : MonoBehaviour
     private float moneyAccumulator = 0f;
 
     // First array int is unused because level starts at 1
-    public readonly int[] maxMoney = { 500, 1000, 2000, 3000 };
-    public readonly int[] upgradeCost = { 500, 1000, 2000, 3000 };
+    public readonly int[] maxMoney = { 0, 1000, 2000, 3000 };
+    public readonly int[] upgradeCost = { 0, 1000, 2000, 3000 };
 
     private void Awake()
     {

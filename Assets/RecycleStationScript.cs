@@ -4,6 +4,12 @@ using UnityEngine.UI;
 
 public class RecycleStationScript : MonoBehaviour
 {
+    public int currentLevel = 1;
+
+    // First array int is unused because level starts at 1
+    public readonly int[] moneyPerTrash = { 0, 10, 20, 30 };
+    public readonly int[] upgradeCost = { 0, 100, 200, 300 };
+
     public GameObject buildingCanvas;
     public GameObject buildingMenu;
     public GameObject upgradeConfirmMenu;
@@ -16,6 +22,9 @@ public class RecycleStationScript : MonoBehaviour
 
     private void Start()
     {
+        // Get values from PlayerPrefs or set a default
+        currentLevel = PlayerPrefs.GetInt("RecycleStationLevel", 1);
+
         // Set the sprite after 1sec so the correct level can be loaded from PlayerPrefs
         Invoke(nameof(UpdateSprite), 1f);
     }
@@ -51,8 +60,23 @@ public class RecycleStationScript : MonoBehaviour
     // Actually upgrade the building
     public void ConfirmUpgrade()
     {
-        // Upgrade building
-        VisitorCenterManager.instance.UpgradeLevel();
+        // Upgrade building, Max level is 3
+        if (currentLevel <= 2)
+        {
+            // Try to buy the upgrade, cancel if not enough money
+            if (GameManager.instance.ChangeMoney(-upgradeCost[currentLevel]))
+            {
+                currentLevel++;
+                PlayerPrefs.SetInt("RecycleStationLevel", currentLevel);
+                PlayerPrefs.Save();
+            }
+            else
+            {
+                GameManager.instance.ShowMessage("Not enough money!");
+            }
+        }
+
+        // Update UI
         UpdateUI();
         UpdateSprite();
 
@@ -63,12 +87,12 @@ public class RecycleStationScript : MonoBehaviour
     // Updates all the text in the UI. Call this when an update happens
     public void UpdateUI()
     {
-        levelText.text = "Level: " + VisitorCenterManager.instance.currentLevel;
-        moneyPerCleanText.text = "Fishbucks per Trash: " + 10;
-        upgradeToLevelText.text = "Upgrade to level " + (VisitorCenterManager.instance.currentLevel + 1) + "?";
-        upgradeCostText.text = VisitorCenterManager.instance.upgradeCost[VisitorCenterManager.instance.currentLevel].ToString();
+        levelText.text = "Level: " + currentLevel;
+        moneyPerCleanText.text = "Fishbucks per Trash: " + (currentLevel * 10);
+        upgradeToLevelText.text = "Upgrade to level " + (currentLevel + 1) + "?";
+        upgradeCostText.text = upgradeCost[currentLevel].ToString();
 
-        if (VisitorCenterManager.instance.currentLevel >= 3)
+        if (currentLevel >= 3)
         {
             upgradeButton.gameObject.SetActive(false);
         }
@@ -81,7 +105,7 @@ public class RecycleStationScript : MonoBehaviour
     public void UpdateSprite()
     {
         // Change the sprite based on the level
-        string spriteName = "VISITORCENTER_" + VisitorCenterManager.instance.currentLevel;
+        string spriteName = "VISITORCENTER_" + currentLevel;
         Sprite levelSprite = Resources.Load<Sprite>("Sprites/Buildings/" + spriteName);
         if (levelSprite != null)
         {
