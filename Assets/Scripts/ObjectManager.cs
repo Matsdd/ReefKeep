@@ -316,7 +316,7 @@ public class ObjectManager : MonoBehaviour
         string json = JsonUtility.ToJson(data);
 
         // Write the JSON string to the file
-        string filePath = Application.persistentDataPath + "/ecosystem.json";
+        string filePath = Application.persistentDataPath + "/underwaterObjects.json";
         try
         {
             File.WriteAllText(filePath, json);
@@ -331,7 +331,7 @@ public class ObjectManager : MonoBehaviour
     private void LoadEcosystem()
     {
         // Read the JSON string from the file
-        string filePath = Application.persistentDataPath + "/ecosystem.json";
+        string filePath = Application.persistentDataPath + "/underwaterObjects.json";
         if (File.Exists(filePath))
         {
             string json = File.ReadAllText(filePath);
