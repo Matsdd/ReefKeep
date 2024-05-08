@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class ChangeSceneObjectScript : MonoBehaviour
 {
     public int scene;
+    public AudioSource splash;
 
     // Script to change scenes for objects
     void OnMouseDown()
