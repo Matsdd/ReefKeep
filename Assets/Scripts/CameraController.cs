@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private float minX = -10f;
-    private float maxX = 10f;
-    private float minY = -11.2f;
-    private float maxY = 11.2f;
+    private float minX = -20f;
+    private float maxX = 20f;
+    private float minY = -16.1f;
+    private float maxY = 16.1f;
 
     private float zoomSpeed = 2.0f;
     private float minZoom = 1.0f;
@@ -44,12 +44,12 @@ public class CameraController : MonoBehaviour
         // Update the max pos depending if BigTrash is alive
         if (BigTrash1Alive == 0)
         {
-            minX = -19.6f;
+            minX = -28.6f;
         }
 
         if (BigTrash2Alive == 0)
         {
-            maxX = 19.6f;
+            maxX = 28.6f;
         }
     }
     private void HandleCameraMovement()
@@ -65,8 +65,12 @@ public class CameraController : MonoBehaviour
             Vector3 difference = dragOrigin - Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3 newPosition = transform.position + difference;
 
-            newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
-            newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
+            // Update the max pos depending on the zoom level
+            float cameraHeight = Camera.main.orthographicSize;
+            float cameraWidth = cameraHeight * Camera.main.aspect;
+
+            newPosition.x = Mathf.Clamp(newPosition.x, minX + cameraWidth, maxX - cameraWidth);
+            newPosition.y = Mathf.Clamp(newPosition.y, minY + cameraHeight, maxY - cameraHeight);
 
             transform.position = newPosition;
         }
@@ -85,5 +89,15 @@ public class CameraController : MonoBehaviour
         currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom);
 
         Camera.main.orthographicSize = currentZoom;
+
+        // Update the max pos depending on the zoom level
+        Vector3 newPosition = transform.position;
+        float cameraHeight = Camera.main.orthographicSize;
+        float cameraWidth = cameraHeight * Camera.main.aspect;
+
+        newPosition.x = Mathf.Clamp(newPosition.x, minX + cameraWidth, maxX - cameraWidth);
+        newPosition.y = Mathf.Clamp(newPosition.y, minY + cameraHeight, maxY - cameraHeight);
+
+        transform.position = newPosition;
     }
 }
