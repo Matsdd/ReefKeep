@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class SoundSettings : MonoBehaviour
 {
+    //geen flauw idee wtf hier allemaal gebeurt
     [SerializeField] Slider soundSlider;
     [SerializeField] AudioMixer masterMixer;
 

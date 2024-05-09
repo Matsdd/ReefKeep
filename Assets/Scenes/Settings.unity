@@ -2083,7 +2083,7 @@ GameObject:
   - component: {fileID: 1794787739}
   - component: {fileID: 1794787741}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Muzik
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
