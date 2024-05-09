@@ -35,8 +35,6 @@ public class CameraController : MonoBehaviour
 
     public void UpdateMaxPos()
     {
-        Debug.Log("UpdateMaxPos");
-
         // Get the state from PlayerPrefs (0=destroyed / 1=alive)
         int BigTrash1Alive = PlayerPrefs.GetInt("BigTrash1", 1);
         int BigTrash2Alive = PlayerPrefs.GetInt("BigTrash2", 1);
@@ -52,6 +50,8 @@ public class CameraController : MonoBehaviour
             maxX = 28.6f;
         }
     }
+
+    // Code for camera movement
     private void HandleCameraMovement()
     {
         if (Input.GetMouseButtonDown(0))
@@ -62,13 +62,15 @@ public class CameraController : MonoBehaviour
 
         if (Input.GetMouseButton(0) && allowMovement)
         {
+            // Calculate the difference and set the new positon
             Vector3 difference = dragOrigin - Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3 newPosition = transform.position + difference;
 
-            // Update the max pos depending on the zoom level
+            // Get camera zoom details
             float cameraHeight = Camera.main.orthographicSize;
             float cameraWidth = cameraHeight * Camera.main.aspect;
 
+            // Clamp the position to the border + camera zoom
             newPosition.x = Mathf.Clamp(newPosition.x, minX + cameraWidth, maxX - cameraWidth);
             newPosition.y = Mathf.Clamp(newPosition.y, minY + cameraHeight, maxY - cameraHeight);
 
@@ -81,6 +83,7 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    // Code for zoom, probably not working on mobile yet.
     private void HandleCameraZoom()
     {
         float scroll = Input.GetAxis("Mouse ScrollWheel");
