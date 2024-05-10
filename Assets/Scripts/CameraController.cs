@@ -2,39 +2,105 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public static float minX = -10;
-    public static float maxX = 10;
-    private float minY = -11.2f;
-    private float maxY = 11.2f;
+    private float minX = -20f;
+    private float maxX = 20f;
+    private float minY = -16.1f;
+    private float maxY = 16.1f;
+
+    private float zoomSpeed = 3.0f;
+    private float minZoom = 2.0f;
+    private float maxZoom = 10.0f;
+
+    private float currentZoom = 5.0f;
 
     private Vector3 dragOrigin;
     private bool allowMovement = false;
+
+    private void Start()
+    {
+        UpdateMaxPos();
+    }
 
     void Update()
     {
         if (!ObjectManager.isHoldingObject) // Check if an object is not being moved
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                dragOrigin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                allowMovement = true;
-            }
-            
-            if (Input.GetMouseButton(0) && allowMovement)
-            {
-                Vector3 difference = dragOrigin - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Vector3 newPosition = transform.position + difference;
+            // Handle camera movement
+            HandleCameraMovement();
 
-                newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
-                newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
-
-                transform.position = newPosition;
-            }
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                allowMovement = false;
-            }
+            // Handle camera zoom
+            HandleCameraZoom();
         }
+    }
+
+    public void UpdateMaxPos()
+    {
+        // Get the state from PlayerPrefs (0=destroyed / 1=alive)
+        int BigTrash1Alive = PlayerPrefs.GetInt("BigTrash1", 1);
+        int BigTrash2Alive = PlayerPrefs.GetInt("BigTrash2", 1);
+
+        // Update the max pos depending if BigTrash is alive
+        if (BigTrash1Alive == 0)
+        {
+            minX = -28.6f;
+        }
+
+        if (BigTrash2Alive == 0)
+        {
+            maxX = 28.6f;
+        }
+    }
+
+    // Code for camera movement
+    private void HandleCameraMovement()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            dragOrigin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            allowMovement = true;
+        }
+
+        if (Input.GetMouseButton(0) && allowMovement)
+        {
+            // Calculate the difference and set the new positon
+            Vector3 difference = dragOrigin - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 newPosition = transform.position + difference;
+
+            // Get camera zoom details
+            float cameraHeight = Camera.main.orthographicSize;
+            float cameraWidth = cameraHeight * Camera.main.aspect;
+
+            // Clamp the position to the border + camera zoom
+            newPosition.x = Mathf.Clamp(newPosition.x, minX + cameraWidth, maxX - cameraWidth);
+            newPosition.y = Mathf.Clamp(newPosition.y, minY + cameraHeight, maxY - cameraHeight);
+
+            transform.position = newPosition;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            allowMovement = false;
+        }
+    }
+
+    // Code for zoom, probably not working on mobile yet.
+    private void HandleCameraZoom()
+    {
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+
+        currentZoom -= scroll * zoomSpeed;
+        currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom);
+
+        Camera.main.orthographicSize = currentZoom;
+
+        // Update the max pos depending on the zoom level
+        Vector3 newPosition = transform.position;
+        float cameraHeight = Camera.main.orthographicSize;
+        float cameraWidth = cameraHeight * Camera.main.aspect;
+
+        newPosition.x = Mathf.Clamp(newPosition.x, minX + cameraWidth, maxX - cameraWidth);
+        newPosition.y = Mathf.Clamp(newPosition.y, minY + cameraHeight, maxY - cameraHeight);
+
+        transform.position = newPosition;
     }
 }
