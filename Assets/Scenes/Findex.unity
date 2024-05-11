@@ -368,11 +368,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 25
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 65
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -436,6 +436,7 @@ GameObject:
   - component: {fileID: 306656360}
   - component: {fileID: 306656362}
   - component: {fileID: 306656361}
+  - component: {fileID: 306656363}
   m_Layer: 5
   m_Name: Fishimage
   m_TagString: Untagged
@@ -500,6 +501,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306656359}
   m_CullTransparentMesh: 1
+--- !u!114 &306656363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306656359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331f43fcf8f6ceb4f89b368a5e9b4935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &379250372
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,7 +790,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599773256}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -793,7 +806,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 15.265991, y: -4.8060303}
-  m_SizeDelta: {x: -300.741, y: -260.597}
+  m_SizeDelta: {x: -300.74097, y: -260.59705}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &599773258
 MonoBehaviour:
@@ -1148,6 +1161,52 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &714131005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 714131007}
+  - component: {fileID: 714131006}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &714131006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714131005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e7d23bb84733b41b23fd2bd0056ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishCardPrefab: {fileID: 1219463971}
+  cardsParent: {fileID: 287913650}
+--- !u!4 &714131007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714131005}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 526.9384, y: 199.48524, z: -0.3252562}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &770952308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,8 +1481,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -625.04, y: 220.1}
-  m_SizeDelta: {x: 500, y: 500}
+  m_AnchoredPosition: {x: -675.4966, y: 220.1}
+  m_SizeDelta: {x: 399.087, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1219463973
 MonoBehaviour:
@@ -1744,8 +1803,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -671.4, y: 225.01}
-  m_SizeDelta: {x: 522.6, y: 624.5}
+  m_AnchoredPosition: {x: -0.0054626, y: -0.0013275}
+  m_SizeDelta: {x: 129.86, y: 129.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1699498285
 MonoBehaviour:
@@ -1754,7 +1813,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699498283}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf6ae6bc45c8a9c44ac1cebec888f08c, type: 3}
   m_Name: 
@@ -1763,14 +1822,70 @@ MonoBehaviour:
   fishDataArray:
   - name: Zeepaardje
     image: {fileID: -662984834, guid: 48a0eb5cc43dac344bd71d5e8b1ec01c, type: 3}
-  - name: Fish3
+    likes: Kreefachtigen, larven van vissen
+    dislikes: Vervuilingen, krabben, dolfijnen, tonijn
+    funfact: Zeepaardjes zijn de enige dieren ter wereld waarbij de mannen zwanger
+      worden.
+  - name: Zalm
+    image: {fileID: 21300000, guid: 61137c04f79b5e946b8c452c2437f703, type: 3}
+    likes: 
+    dislikes: 
+    funfact: 
+  - name: Zeebaars
+    image: {fileID: 21300000, guid: bad67b0ef9489b0479da511e693d7cce, type: 3}
+    likes: 
+    dislikes: 
+    funfact: 
+  - name: Reuzenhaai
+    image: {fileID: -736724356, guid: b32899d86ffba354c9c10e1101e54ed2, type: 3}
+    likes: 
+    dislikes: 
+    funfact: 
+  - name: Zwarte Dwergmeerval
+    image: {fileID: 21300000, guid: 7f4570a705216de4998e999e54fa638e, type: 3}
+    likes: 
+    dislikes: 
+    funfact: 
+  - name: Karper
+    image: {fileID: 21300000, guid: 670bb9258f451e64fa35b05e150aad99, type: 3}
+    likes: 
+    dislikes: 
+    funfact: 
+  - name: Maanvis
     image: {fileID: 21300000, guid: b7694b868ac65d74fac5816d3748a035, type: 3}
-  - name: Fish2
+    likes: 
+    dislikes: 
+    funfact: 
+  - name: Steenbaars
+    image: {fileID: 21300000, guid: 8770b23e4501dac47b02c1688c0efd7a, type: 3}
+    likes: 
+    dislikes: 
+    funfact: 
+  - name: Sardientje
+    image: {fileID: -1838790957, guid: a297f68de4a86eb4b9f7ce78c6d391f9, type: 3}
+    likes: 
+    dislikes: 
+    funfact: 
+  - name: Sterrerog
+    image: {fileID: 21300000, guid: b6ddfeb8d10387a4aaddd40d9093cb1b, type: 3}
+    likes: 
+    dislikes: 
+    funfact: 
+  - name: Pijlstaartrog
     image: {fileID: -1483111531, guid: d3c272beba016a8498be7ec85af53103, type: 3}
-  - name: Fish2
+    likes: 
+    dislikes: 
+    funfact: 
+  - name: Steur
+    image: {fileID: 21300000, guid: 6a8f4c4a21f4db4449d4a708a401f304, type: 3}
+    likes: 
+    dislikes: 
+    funfact: 
+  - name: Voshaai
     image: {fileID: 21300000, guid: ec3c911bd17996847a6270a6142df79c, type: 3}
-  - name: Fish2
-    image: {fileID: -662984834, guid: 48a0eb5cc43dac344bd71d5e8b1ec01c, type: 3}
+    likes: 
+    dislikes: 
+    funfact: 
   cardsPerRow: 4
   cardWidth: 500
   cardHeight: 500
@@ -1944,3 +2059,4 @@ SceneRoots:
   - {fileID: 626471008}
   - {fileID: 164393423}
   - {fileID: 676847625}
+  - {fileID: 714131007}

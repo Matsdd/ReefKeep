@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Goldfish",
+    "sprite": "Resources/Fishies/BASKING"
+  },
+  {
+    "name": "Clownfish",
+    "sprite": "Resources/Fishies/CARP"
+  },
+  {
+    "name": "Angelfish",
+    "sprite": "Resources/Fishies/OPAH"
+  },
+  {
+    "name": "Goldfish",
+    "sprite": "Resources/Fishies/BASKING"
+  },
+  {
+    "name": "Clownfish",
+    "sprite": "Resources/Fishies/CARP"
+  },
+  {
+    "name": "Angelfish",
+    "sprite": "Resources/Fishies/OPAH"
+  },
+  {
+    "name": "Goldfish",
+    "sprite": "Resources/Fishies/BASKING"
+  },
+  {
+    "name": "Clownfish",
+    "sprite": "Resources/Fishies/CARP"
+  },
+  {
+    "name": "Angelfish",
+    "sprite": "Resources/Fishies/OPAH"
+  }
+]

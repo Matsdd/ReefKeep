@@ -65,7 +65,7 @@ public class Fishdex_card_script : MonoBehaviour
     {
         GameObject cardPrefab = Instantiate(cardPrefabTemplate, transform); // Line 45
         FishCardScript cardScript = cardPrefab.GetComponent<FishCardScript>();
-        cardScript.SetFishData(fishData);
+        //cardScript.SetFishData(FishData);
 
         int row = index / cardsPerRow;
         int col = index % cardsPerRow;

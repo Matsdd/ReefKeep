@@ -3,17 +3,23 @@ using UnityEngine.UI;
 
 public class FishCardScript : MonoBehaviour
 {
-    [SerializeField]
-    private Text nameText;
+    [SerializeField] private Text nameText;
+    [SerializeField] private Image fishImage;
 
-    [SerializeField]
-    private Image fishImage;
-
-    public void SetFishData(Fishdex_card_script.FishData fishData) // Corrected class name to match FishData
+    public void SetFishData(Fishinfo.FishData fishData)
     {
         // Set the properties of the card based on the fish data
         nameText.text = fishData.name;
-        // Add code to set other properties (likes, dislikes, etc.) if needed
-        fishImage.sprite = fishData.image;
+
+        // Load sprite based on the path
+        Sprite sprite = Resources.Load<Sprite>(fishData.spritePath);
+        if (sprite != null)
+        {
+            fishImage.sprite = sprite;
+        }
+        else
+        {
+            Debug.LogError("Failed to load sprite for fish: " + fishData.name);
+        }
     }
 }
