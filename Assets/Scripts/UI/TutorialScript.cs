@@ -61,6 +61,7 @@ public class TutorialScript : MonoBehaviour
             }
             changeTutorialAppearance("VISITORCENTER_1");
             tutSpriteRenderer.color = new Color(255,255,255,255);
+            changePoseidonAppearance("Poseidon1");
         }
         else if (state == 2)
         {
@@ -95,7 +96,8 @@ public class TutorialScript : MonoBehaviour
             {
                 txt.text = "When you click on this building you can see how much cash you earn per piece of trash.";
             }
-            
+            changePoseidonAppearance("Poseidon2");
+
         }
         else if (state == 5)
         {
@@ -121,6 +123,7 @@ public class TutorialScript : MonoBehaviour
                 txt.text = "Poseidon: At last we have Juan in his tuktuk, when you click on him you'll go to his shop, in the shop you can buy plants, rocks and fish to upgrade your ecosystem and attract new fish.";
             }
             changeTutorialAppearance("TUKTUK");
+            changePoseidonAppearance("Poseidon1");
         }
         else if (state == 7)
         {
@@ -133,6 +136,7 @@ public class TutorialScript : MonoBehaviour
                 txt.text = "Poseidon: Good luck and have fun!";
             }
             tutSpriteRenderer.color = new Color(0, 0, 0, 0);
+            changePoseidonAppearance("Poseidon2");
         }
         else
         {
