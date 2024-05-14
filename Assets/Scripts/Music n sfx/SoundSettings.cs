@@ -1,21 +1,31 @@
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class SoundSettings : MonoBehaviour
 {
-    //geen flauw idee wtf hier allemaal gebeurt
-    [SerializeField] Slider soundSlider;
-    [SerializeField] Slider soundSliderSfx;
-    [SerializeField] AudioMixer masterMixer;
-    [SerializeField] AudioMixer sfxMixer;
+    public Slider soundSlider;
+    public Slider soundSliderSfx;
+    public AudioMixer masterMixer;
+    public AudioMixer sfxMixer;
 
     private void Start()
     {
-        setVolume(PlayerPrefs.GetFloat("SavedMasterVolume", 100),0);
-        setVolume(PlayerPrefs.GetFloat("SavedSfxVolume", 100),1);
+        // Get values from PlayerPrefs
+        float masterVolume = PlayerPrefs.GetFloat("SavedMasterVolume", 100);
+        float sfxVolume = PlayerPrefs.GetFloat("SavedSfxVolume", 100);
+
+        // Set the volume
+        setVolume(masterVolume, 0);
+        setVolume(sfxVolume, 1);
+
+        // set the slider
+        soundSlider.value = masterVolume;
+        soundSliderSfx.value = sfxVolume;
     }
 
+    // Set the volume, sort 0: Master | sort 1: SFX
     public void setVolume(float _value, int sort)
     {
         if (_value < 1)
@@ -23,7 +33,6 @@ public class SoundSettings : MonoBehaviour
             _value = .001f;
         }
 
-        refreshSlider(_value,sort);
         if (sort == 0)
         {
 
@@ -37,7 +46,7 @@ public class SoundSettings : MonoBehaviour
         }
     }
 
-
+    // Runs when slider is changed
     public void setVolumeFromSlider(int sort)
     {
         if (sort == 0)
@@ -47,18 +56,6 @@ public class SoundSettings : MonoBehaviour
         else
         {
             setVolume(soundSliderSfx.value,sort);
-        }
-    }
-
-    public void refreshSlider(float _value, int sort)
-    {
-        if (sort == 0)
-        {
-            soundSlider.value = _value;
-        }
-        else
-        {
-            soundSliderSfx.value = _value;
         }
     }
 }
