@@ -1,38 +1,114 @@
 [
   {
-    "name": "Goldfish",
-    "sprite": "Resources/Fishies/BASKING"
+    "name": "Zeepaardje",
+    "spritePath": "Fishies/SEAHORSE",
+    "fact": "Zeepaardjes zijn de enige dieren ter wereld waarbij de mannen zwanger worden.",
+    "likes": "a",
+    "dislikes": "a"
   },
   {
-    "name": "Clownfish",
-    "sprite": "Resources/Fishies/CARP"
+    "name": "Zalm",
+    "spritePath": "Fishies/SALMON",
+    "fact": "Zalmen hebben een uitstekend reukvermogen, op deze manier kunnen ze hun weg terug vinden naar de rivier waar ze geboren zijn.",
+    "likes": "a",
+    "dislikes": "a"
   },
   {
-    "name": "Angelfish",
-    "sprite": "Resources/Fishies/OPAH"
+    "name": "Zeebaars",
+    "spritePath": "Fishies/SEABASS",
+    "fact": "Een zeebaars kan wel tot 1 meter lang worden.",
+    "likes": "a",
+    "dislikes": "a"
   },
   {
-    "name": "Goldfish",
-    "sprite": "Resources/Fishies/BASKING"
+    "name": "Steenbaars",
+    "spritePath": "Fishies/RockBass",
+    "fact": "Net zoals een kameleon kan een steenbaars zijn kleur razendsnel veranderen om met zijn omgeving mee te kleuren.",
+    "likes": "a",
+    "dislikes": "a"
   },
   {
-    "name": "Clownfish",
-    "sprite": "Resources/Fishies/CARP"
+    "name": "Karper",
+    "spritePath": "Fishies/CARP",
+    "fact": "Buiten baarddraden met smaakpapillen heeft een karper ook neusgaten. In de neusgaten zitten fijne receptoren om geur waar te nemen, hij vindt dan ook een groot deel van het voedsel door op zijn reuk af te gaan.",
+    "likes": "a",
+    "dislikes": "a"
   },
   {
-    "name": "Angelfish",
-    "sprite": "Resources/Fishies/OPAH"
+    "name": "Sterrerog",
+    "spritePath": "Fishies/STARRYRAY",
+    "fact": "Als roggen jong zijn, zijn ze nog helemaal doorzichtig. Hierdoor zijn de kieuwen en ingewanden vanaf buiten zichtbaar.",
+    "likes": "a",
+    "dislikes": "a"
   },
   {
-    "name": "Goldfish",
-    "sprite": "Resources/Fishies/BASKING"
+    "name": "Steur",
+    "spritePath": "Fishies/STURGEON",
+    "fact": "Vroeger kwam de Europese steur veel voor, echter is deze zeer zeldzaam geworden door overbevissing.",
+    "likes": "a",
+    "dislikes": "a"
   },
   {
-    "name": "Clownfish",
-    "sprite": "Resources/Fishies/CARP"
+    "name": "Zwarte Dwergmeerval",
+    "spritePath": "Fishies/BULLHEADCATFISH",
+    "fact": "Een zeebaars kan wel tot 1 meter lang worden.",
+    "likes": "a",
+    "dislikes": "a"
   },
   {
-    "name": "Angelfish",
-    "sprite": "Resources/Fishies/OPAH"
+    "name": "Karper",
+    "spritePath": "Fishies/CARP",
+    "fact": "Buiten baarddraden met smaakpapillen heeft een karper ook neusgaten. In de neusgaten zitten fijne receptoren om geur waar te nemen, hij vindt dan ook een groot deel van het voedsel door op zijn reuk af te gaan.",
+    "likes": "a",
+    "dislikes": "a"
+  },
+  {
+    "name": "Sterrerog",
+    "spritePath": "Fishies/STARRYRAY",
+    "fact": "Als roggen jong zijn, zijn ze nog helemaal doorzichtig. Hierdoor zijn de kieuwen en ingewanden vanaf buiten zichtbaar.",
+    "likes": "a",
+    "dislikes": "a"
+  },
+  {
+    "name": "Steur",
+    "spritePath": "Fishies/STURGEON",
+    "fact": "Vroeger kwam de Europese steur veel voor, echter is deze zeer zeldzaam geworden door overbevissing.",
+    "likes": "a",
+    "dislikes": "a"
+  },
+  {
+    "name": "Zwarte Dwergmeerval",
+    "spritePath": "Fishies/BULLHEADCATFISH",
+    "fact": "Een zeebaars kan wel tot 1 meter lang worden.",
+    "likes": "a",
+    "dislikes": "a"
+  },
+  {
+    "name": "Karper",
+    "spritePath": "Fishies/CARP",
+    "fact": "Buiten baarddraden met smaakpapillen heeft een karper ook neusgaten. In de neusgaten zitten fijne receptoren om geur waar te nemen, hij vindt dan ook een groot deel van het voedsel door op zijn reuk af te gaan.",
+    "likes": "a",
+    "dislikes": "a"
+  },
+  {
+    "name": "Sterrerog",
+    "spritePath": "Fishies/STARRYRAY",
+    "fact": "Als roggen jong zijn, zijn ze nog helemaal doorzichtig. Hierdoor zijn de kieuwen en ingewanden vanaf buiten zichtbaar.",
+    "likes": "a",
+    "dislikes": "a"
+  },
+  {
+    "name": "Steur",
+    "spritePath": "Fishies/STURGEON",
+    "fact": "Vroeger kwam de Europese steur veel voor, echter is deze zeer zeldzaam geworden door overbevissing.",
+    "likes": "a",
+    "dislikes": "a"
+  },
+  {
+    "name": "Zwarte Dwergmeerval",
+    "spritePath": "Fishies/BULLHEADCATFISH",
+    "fact": "Een zeebaars kan wel tot 1 meter lang worden.",
+    "likes": "a",
+    "dislikes": "a"
   }
 ]

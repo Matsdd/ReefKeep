@@ -23,7 +23,7 @@ public class Fishinfo : MonoBehaviour
 
         int cardIndex = 0;
         float cardOffsetX = 410f; 
-        float cardOffsetY = 510f; 
+        float cardOffsetY = -510f; 
         int cardsPerRow = 4;
         float initialX = -cardOffsetX * (cardsPerRow - 1) / 2f;
          
