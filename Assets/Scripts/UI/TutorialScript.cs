@@ -10,6 +10,7 @@ public class TutorialScript : MonoBehaviour
     public TMP_Text txt;
     private int state = 0;
     public Image tutSpriteRenderer;
+    public Image posSpriteRenderer;
 
     private void Start()
     {
@@ -46,6 +47,7 @@ public class TutorialScript : MonoBehaviour
             {
                 txt.text = "Poseidon: Let's begin, I'll start by explaining about the different buildings and how you use them.";
             }
+            changePoseidonAppearance("Poseidon2");
         }
         else if (state == 1)
         {
@@ -146,6 +148,19 @@ public class TutorialScript : MonoBehaviour
         if (levelSprite != null)
         {
             tutSpriteRenderer.sprite = levelSprite;
+        }
+        else
+        {
+            Debug.LogError("Sprite not found with name: " + spriteName);
+        }
+    }
+
+    public void changePoseidonAppearance(string spriteName) 
+    {
+        Sprite levelSprite = Resources.Load<Sprite>("Sprites/UI/" + spriteName);
+        if (levelSprite != null)
+        {
+            posSpriteRenderer.sprite = levelSprite;
         }
         else
         {
