@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -8,9 +6,11 @@ public class TutorialScript : MonoBehaviour
 {
     public Canvas tutCanvas;
     public TMP_Text txt;
-    private int state = 0;
     public Image tutSpriteRenderer;
     public Image posSpriteRenderer;
+
+    // State of the tutorial
+    private int state = 0;
 
     private void Start()
     {
@@ -141,7 +141,7 @@ public class TutorialScript : MonoBehaviour
         else
         {
             tutCanvas.enabled = false;
-            PlayerPrefs.SetFloat("Tutorial",1);
+            PlayerPrefs.SetFloat("Tutorial", 1);
         }
         state++;
     }

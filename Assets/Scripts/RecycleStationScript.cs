@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class RecycleStationScript : MonoBehaviour
@@ -32,6 +33,7 @@ public class RecycleStationScript : MonoBehaviour
     // Open the menu when clicking on the building
     void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return; // Prevent from being clicked on through open UI
         buildingCanvas.SetActive(true);
         buildingMenu.SetActive(true);
         upgradeConfirmMenu.SetActive(false);
