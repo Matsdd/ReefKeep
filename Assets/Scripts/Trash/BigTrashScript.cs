@@ -39,6 +39,9 @@ public class BigTrashScript : MonoBehaviour
                 // Set the name of the object for later use
                 trashCluster = hit.collider.gameObject.name;
                 canvas.SetActive(true);
+
+                SfxManagerFinder script = GameObject.Find("sfxManager").GetComponent<SfxManagerFinder>();
+                script.playSound("sTrash");
             }
         }
     }
