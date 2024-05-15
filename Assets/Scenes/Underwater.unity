@@ -975,8 +975,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 657234425}
-        m_TargetAssemblyTypeName: SfxManagerFinder, Assembly-CSharp
+      - m_Target: {fileID: 657234427}
+        m_TargetAssemblyTypeName: SfxPlayScript, Assembly-CSharp
         m_MethodName: playSound
         m_Mode: 5
         m_Arguments:
@@ -1252,8 +1252,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 657234425}
-        m_TargetAssemblyTypeName: SfxManagerFinder, Assembly-CSharp
+      - m_Target: {fileID: 657234427}
+        m_TargetAssemblyTypeName: SfxPlayScript, Assembly-CSharp
         m_MethodName: playSound
         m_Mode: 5
         m_Arguments:
@@ -1351,7 +1351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 657234426}
-  - component: {fileID: 657234425}
+  - component: {fileID: 657234427}
   m_Layer: 0
   m_Name: sfxManager
   m_TagString: Untagged
@@ -1359,18 +1359,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &657234425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657234424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7dbddabca904cb4291fc36ca6523096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &657234426
 Transform:
   m_ObjectHideFlags: 0
@@ -1386,6 +1374,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &657234427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657234424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bce19be8f82129c44b3c140dd8ef2beb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &661659541
 GameObject:
   m_ObjectHideFlags: 0

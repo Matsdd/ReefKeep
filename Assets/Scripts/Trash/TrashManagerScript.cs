@@ -25,9 +25,8 @@ public class TrashManagerScript : MonoBehaviour
             {
                 Destroy(hit.transform.gameObject);
                 GameManager.instance.ChangeMoney(10 * trashCashMultiplier);
-                //first find the script to play
-                SfxManagerFinder script = GameObject.Find("sfxManager").GetComponent<SfxManagerFinder>();
-                script.playSound("sTrash");
+
+                SfxManager.instance.playSfx("sTrash");
             }
 
             // If clicked on oil, destory it and give no money to prevent infinite money with spread
