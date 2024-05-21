@@ -20,11 +20,13 @@ public class TrashManagerScript : MonoBehaviour
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
-            // If clicked on trash, destory is and give money
+            // If clicked on trash, destory is and give money and play sound
             if (hit.collider != null && hit.collider.gameObject.CompareTag("Trash"))
             {
                 Destroy(hit.transform.gameObject);
                 GameManager.instance.ChangeMoney(10 * trashCashMultiplier);
+
+                SfxManager.instance.playSfx("sTrash");
             }
 
             // If clicked on oil, destory it and give no money to prevent infinite money with spread
