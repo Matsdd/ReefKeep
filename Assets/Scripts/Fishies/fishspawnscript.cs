@@ -103,7 +103,7 @@ public class FishSpawnScript : MonoBehaviour
 
                         if (fishPrefab != null)
                         {
-                            Vector3 spawnPosition = new Vector3(fish.xposition, fish.yposition, 0);
+                            Vector3 spawnPosition = new Vector3(UnityEngine.Random.Range(leftBorder,rightBorder), fish.yposition, 0);
                             GameObject newFish = Instantiate(fishPrefab, spawnPosition, Quaternion.identity);
 
                             // Add the newly spawned fish to the list with a new instance ID
