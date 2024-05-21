@@ -12,6 +12,9 @@ public class Fishinfo : MonoBehaviour
     {
         public string name;
         public string spritePath;
+        public string fact;
+        public string likes;
+        public string dislikes;
     }
 
     void Start()
