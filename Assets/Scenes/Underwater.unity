@@ -1133,7 +1133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc75b5946bf3a6d4da78282ed6d683d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 0.01
+  spawnRate: 0.1
   leftBorder: -30
   rightBorder: 30
   maxSpawnHeight: 13
