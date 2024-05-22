@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using UnityEditor.Localization.Plugins.XLIFF.V12;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 
 [Serializable]
 public class EcosystemData
@@ -90,57 +92,20 @@ public class ObjectManager : MonoBehaviour
         }
     }
 
-    // Function to create rock (for testing, will be moved to shopmenu later)
-    public void CreateRock()
-    {
-        CreateNewObject("Rock", 0);
-    }
-
     // Function to create a new type of objet at a location
-    public void CreateNewObject(string objectName, float initialXCoordinate)
+    public void CreateNewObject(string objectName)
     {
         GameObject prefab = Array.Find(objectPrefabs, item => item.name == objectName);
         if (prefab != null)
         {
-            float xCoordinate = initialXCoordinate;
-            Vector2 spawnPosition = new Vector2(xCoordinate, objectY);
+            GameObject newItem = Instantiate(prefab);
+            newItem.transform.position = new Vector3(0f, objectY + newItem.GetComponent<SpriteRenderer>().bounds.extents.y, 0f);
 
-            // Get the width of the sprite
-            float spriteWidth = prefab.GetComponent<SpriteRenderer>().bounds.size.x;
+            // Add the placed object to the list
+            AddObjectToList(objectName, 69420f);
 
-            // Check for collisions with objects tagged as "BuildableObject"
-            Collider2D[] colliders;
-            do
-            {
-                // Use half the width of the sprite as the radius
-                colliders = Physics2D.OverlapCircleAll(spawnPosition, (spriteWidth / 2f) - 3);
-                if (colliders.Length > 0)
-                {
-                    // Filter colliders by tag
-                    colliders = colliders.Where(c => c.CompareTag("BuildableObject")).ToArray();
+            StartMovingNewObject(newItem);
 
-                    // If there are colliders with the tag, choose another location
-                    if (colliders.Length > 0)
-                    {
-                        xCoordinate += objectSnapDistance;
-                        spawnPosition = new Vector2(xCoordinate, objectY);
-                    }
-                }
-            } while (colliders.Length > 0 && xCoordinate <= maxX);
-
-            // Place the object at the chosen location if it's within the valid range
-            if (xCoordinate <= maxX)
-            {
-                GameObject newItem = Instantiate(prefab);
-                newItem.transform.position = new Vector3(xCoordinate, objectY + newItem.GetComponent<SpriteRenderer>().bounds.extents.y, 0f);
-
-                // Add the placed object to the list
-                AddObjectToList(objectName, xCoordinate);
-            }
-            else
-            {
-                Debug.LogWarning("Cannot place object. No available space.");
-            }
         }
         else
         {
@@ -158,10 +123,27 @@ public class ObjectManager : MonoBehaviour
         originalPosition = selectedObject.transform.position;
         selectedObjectRenderer = selectedObject.GetComponent<SpriteRenderer>();
         selectedObjectRenderer.color = Color.green;
+        selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, -1);
 
         // Show move buttons
         placeButton.SetActive(true);
         cancelButton.SetActive(true);
+        deleteButton.SetActive(true);
+    }
+
+    private void StartMovingNewObject(GameObject obj)
+    {
+        // Set selectedObject
+        selectedObject = obj;
+        isMovingObject = true;
+        originalPosition = new Vector3(69420f, -15.9f, 0f);
+        selectedObjectRenderer = selectedObject.GetComponent<SpriteRenderer>();
+        selectedObjectRenderer.color = Color.green;
+        selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, -1);
+
+        // Show move buttons
+        placeButton.SetActive(true);
+        cancelButton.SetActive(false);
         deleteButton.SetActive(true);
     }
 
@@ -177,6 +159,7 @@ public class ObjectManager : MonoBehaviour
         newPosition.x = Mathf.Round(newPosition.x / objectSnapDistance) * objectSnapDistance;
         newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
         newPosition.y = objectY + selectedObject.GetComponent<SpriteRenderer>().bounds.extents.y;
+        newPosition.z = -1;
 
         // Check for collisions with objects
         Collider2D[] colliders = Physics2D.OverlapCircleAll(newPosition, (selectedObjectRenderer.bounds.size.x / 2f) - 3);
@@ -220,14 +203,14 @@ public class ObjectManager : MonoBehaviour
             // Check if the object is red (because it's colliding)
             if (selectedObjectRenderer.color == Color.red)
             {
-                Debug.LogWarning("Cannot confirm movement. Object is colliding with another object.");
+                GameManager.instance.ShowMessage("Object is colliding!");
                 return;
             }
 
             // Edit the existing list
-            float xCoordinateNew = selectedObject.transform.position.x;
-            EditObjectInList(xCoordinateNew);
+            EditObjectInList(selectedObject.transform.position.x);
 
+            selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, 0);
             selectedObjectRenderer.color = Color.white;
             selectedObject = null;
             isMovingObject = false;
