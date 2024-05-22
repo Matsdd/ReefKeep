@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,9 +5,7 @@ public class FishImageScript : MonoBehaviour
 {
     public void SetFishSprite(Sprite fishSprite)
     {
-        Debug.Log("GameObject name: " + gameObject.name);
-
-        // Set the text of the Button dynamically
+        // Set the sprite of the Image component dynamically
         Image fishImage = GetComponent<Image>();
         if (fishImage != null)
         {

@@ -27,6 +27,10 @@ MonoBehaviour:
     m_Key: delete
     m_Metadata:
       m_Items: []
+  - m_Id: 11229618984558592
+    m_Key: trashCluster
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

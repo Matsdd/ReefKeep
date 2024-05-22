@@ -10,9 +10,9 @@ public class Fishdex_card_script : MonoBehaviour
     {
         public string name;
         public Sprite image;
-        //public string likes;
-        //public string dislikes;
-        //public string funfact;
+        public string likes;
+        public string dislikes;
+        public string funfact;
     }
 
     [SerializeField]
@@ -65,13 +65,13 @@ public class Fishdex_card_script : MonoBehaviour
     {
         GameObject cardPrefab = Instantiate(cardPrefabTemplate, transform); // Line 45
         FishCardScript cardScript = cardPrefab.GetComponent<FishCardScript>();
-        cardScript.SetFishData(fishData);
+        //cardScript.SetFishData(FishData);
 
         int row = index / cardsPerRow;
         int col = index % cardsPerRow;
 
-        float xOffset = col * (cardWidth + cardSpacing) -295;
-        float yOffset = -row * (cardHeight + cardSpacing) +90;
+        float xOffset = col * (cardWidth + cardSpacing) -20;
+        float yOffset = -row * (cardHeight + cardSpacing);
 
         cardPrefab.transform.localPosition = new Vector3(xOffset, yOffset, 0f);
         Debug.Log("Fish Name:" + fishData.name);
