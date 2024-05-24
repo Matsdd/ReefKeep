@@ -33,6 +33,7 @@ public class DetailPanelController : MonoBehaviour
 
     public void ShowDetails(Fishinfo.FishData data)
     {
+        Debug.Log("Showing details for: " + data.name);
         nameText.text = data.name;
         factText.text = data.fact;
         likesText.text = data.likes;
