@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class FactsScript : MonoBehaviour
 {
+    public TMP_Text txt;
     private float newScale = 1;
     private bool turning = false;
-    private string[] factsList = {
+    private readonly string[] factsEN = {
         "The Wadden Sea is a UNESCO World Heritage Site, recognized for its unique tidal flats and biodiversity.",
         "The Wadden Sea is the largest unbroken system of intertidal sand and mudflats in the world.",
         "The Wadden Sea experiences a significant tidal range, which creates vast areas of exposed seabed at low tide.",
@@ -36,7 +35,7 @@ public class FactsScript : MonoBehaviour
         "Bullhead catfish are primarily nocturnal, feeding at night on a diet of insects, crustaceans, and small fish.",
         "Bullhead catfish build nests and exhibit parental care, with males guarding the eggs and young.",
         "Opah are the only known fully warm-blooded fish, maintaining a higher body temperature than the surrounding water.",
-        "Opah inhabit deep ocean waters, often found at depths of 50-500 meters.",
+        "Opah inhabit deep ocean waters, often found at depths of 50 to 500 meters.",
         "Opah can grow quite large, with some individuals reaching over 2 meters in length and weighing over 100 kg.",
         "Thresher sharks are known for their extraordinarily long tail fin, which they use to stun prey.",
         "Thresher sharks are known to leap out of the water, a behavior known as breaching.",
@@ -45,7 +44,7 @@ public class FactsScript : MonoBehaviour
         "Basking sharks are filter feeders, consuming plankton by swimming with their mouths wide open.",
         "Basking sharks undertake long migratory journeys, often moving to different regions seasonally."
     };
-    private string[] factsList2 =
+    private readonly string[] factsNL =
     {
         "De Waddenzee is een UNESCO-werelderfgoed, erkend om zijn unieke getijdengebieden en biodiversiteit.",
         "De Waddenzee is het grootste ononderbroken systeem van intergetijdenzand en modderplaten ter wereld.",
@@ -75,7 +74,7 @@ public class FactsScript : MonoBehaviour
         "Meervallen zijn voornamelijk nachtactief en voeden zich 's nachts met een dieet van insecten, kreeftachtigen en kleine vissen.",
         "Meervallen bouwen nesten en vertonen ouderlijke zorg, waarbij de mannetjes de eieren en jongen bewaken.",
         "Opah zijn de enige bekende volledig warmbloedige vissen en behouden een hogere lichaamstemperatuur dan het omringende water.",
-        "Opah bewonen diepe oceaanwateren, vaak op diepten van 50-500 meter.",
+        "Opah bewonen diepe oceaanwateren, vaak op diepten van 50 tot 500 meter.",
         "Opah kan behoorlijk groot worden, met sommige individuen die meer dan 2 meter lang worden en meer dan 100 kg wegen.",
         "Voshaaien zijn bekend om hun buitengewoon lange staartvin, die ze gebruiken om prooien te verdoven.",
         "Voshaaien staan bekend om het uit het water springen, een gedrag dat breaching wordt genoemd.",
@@ -84,33 +83,33 @@ public class FactsScript : MonoBehaviour
         "Reuzenhaaien zijn filtervoeders en consumeren plankton door met hun mond wijd open te zwemmen.",
         "Reuzenhaaien ondernemen lange migratie-reizen en verplaatsen zich vaak seizoensgebonden naar verschillende regio's."
     };
-    public TMP_Text txt;
 
+    // Set the language
     private void Awake()
     {
-        int newFact = Random.Range(0, (factsList.Length-1));
+        int newFact = Random.Range(0, (factsEN.Length - 1));
         if (PlayerPrefs.GetInt("LocaleID") == 0)
         {
-            txt.text = factsList[newFact];
+            txt.text = "Fun Fact: \n" + factsEN[newFact];
         }
         else
         {
-            txt.text = factsList2[newFact];
+            txt.text = "Fun Fact: \n" + factsNL[newFact];
         }
     }
-    private void Start()
-    {
-    }
+
+    // Animate the text with scale
     private void FixedUpdate()
     {
-        newScale += turning ? -0.01f : 0.01f;
+        newScale += turning ? -0.002f : 0.002f;
         if (newScale > 1.22f)
         {
             turning = true;
-        }else  if (newScale < 0.9f)
+        }
+        else if (newScale < 1f)
         {
             turning = false;
         }
-        this.gameObject.transform.localScale = new Vector3(newScale,newScale,1);
+        this.gameObject.transform.localScale = new Vector3(newScale, newScale, 1);
     }
 }

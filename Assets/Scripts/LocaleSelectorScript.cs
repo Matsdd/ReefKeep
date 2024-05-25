@@ -10,7 +10,7 @@ public class LocaleSelectorScript : MonoBehaviour
 
     private bool active = false;
    
-    // Set the langauge when the game starts (also add this to GameManager later)
+    // Set the langauge when the game starts
     void Start()
     {
         int ID = PlayerPrefs.GetInt("LocaleID", 0);
