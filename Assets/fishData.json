@@ -1,114 +1,93 @@
 [
   {
     "name": "Zeepaardje",
-    "spritePath": "Fishies/SEAHORSE",
+    "spritePath": "SPRITES/Fishies/SEAHORSE",
     "fact": "Zeepaardjes zijn de enige dieren ter wereld waarbij de mannen zwanger worden.",
-    "likes": "a",
-    "dislikes": "a"
+    "likes": "Planten - Sardientje, Zalm",
+    "dislikes": "Mats"
+  },
+  {
+    "name": "Sardien",
+    "spritePath": "SPRITES/Fishies/SARDINE",
+    "fact": "",
+    "likes": "Planten - Zeepaardje",
+    "dislikes": "Rik"
+  },
+  {
+    "name": "Zwarte Dwergmeerval",
+    "spritePath": "SPRITES/Fishies/BULLHEADCATFISH",
+    "fact": "",
+    "likes": "Stenen - Voshaai",
+    "dislikes": "Mats"
   },
   {
     "name": "Zalm",
-    "spritePath": "Fishies/SALMON",
+    "spritePath": "SPRITES/Fishies/SALMON",
     "fact": "Zalmen hebben een uitstekend reukvermogen, op deze manier kunnen ze hun weg terug vinden naar de rivier waar ze geboren zijn.",
-    "likes": "a",
-    "dislikes": "a"
+    "likes": "Zeepaardje, Reuzenhaai",
+    "dislikes": "Rik"
   },
   {
     "name": "Zeebaars",
-    "spritePath": "Fishies/SEABASS",
+    "spritePath": "SPRITES/Fishies/SEABASS",
     "fact": "Een zeebaars kan wel tot 1 meter lang worden.",
-    "likes": "a",
-    "dislikes": "a"
+    "likes": "Stenen - Sardientje, Zwarte Dwergmeerval",
+    "dislikes": "Mats"
   },
   {
     "name": "Steenbaars",
-    "spritePath": "Fishies/RockBass",
+    "spritePath": "SPRITES/Fishies/RockBass",
     "fact": "Net zoals een kameleon kan een steenbaars zijn kleur razendsnel veranderen om met zijn omgeving mee te kleuren.",
-    "likes": "a",
-    "dislikes": "a"
+    "likes": "Stenen - Sardientje, Zwarte Dwergmeerval",
+    "dislikes": "Rik"
+  },
+  {
+    "name": "Sterrog",
+    "spritePath": "SPRITES/Fishies/STARRYRAY",
+    "fact": "Als roggen jong zijn, zijn ze nog helemaal doorzichtig. Hierdoor zijn de kieuwen en ingewanden vanaf buiten zichtbaar.",
+    "likes": "Planten - Zwarte Dwergmeerval",
+    "dislikes": "Mats"
+  },
+  {
+    "name": "Pijlstaartrog",
+    "spritePath": "SPRITES/Fishies/STINGRAY",
+    "fact": "",
+    "likes": "Stenen - Sterrog",
+    "dislikes": "Rik"
+  },
+  {
+    "name": "Koningsvis",
+    "spritePath": "SPRITES/Fishies/OPAH",
+    "fact": "",
+    "likes": "Planten",
+    "dislikes": "Mats"
   },
   {
     "name": "Karper",
-    "spritePath": "Fishies/CARP",
+    "spritePath": "SPRITES/Fishies/CARP",
     "fact": "Buiten baarddraden met smaakpapillen heeft een karper ook neusgaten. In de neusgaten zitten fijne receptoren om geur waar te nemen, hij vindt dan ook een groot deel van het voedsel door op zijn reuk af te gaan.",
-    "likes": "a",
-    "dislikes": "a"
-  },
-  {
-    "name": "Sterrerog",
-    "spritePath": "Fishies/STARRYRAY",
-    "fact": "Als roggen jong zijn, zijn ze nog helemaal doorzichtig. Hierdoor zijn de kieuwen en ingewanden vanaf buiten zichtbaar.",
-    "likes": "a",
-    "dislikes": "a"
+    "likes": "",
+    "dislikes": "Rik"
   },
   {
     "name": "Steur",
-    "spritePath": "Fishies/STURGEON",
+    "spritePath": "SPRITES/Fishies/STURGEON",
     "fact": "Vroeger kwam de Europese steur veel voor, echter is deze zeer zeldzaam geworden door overbevissing.",
-    "likes": "a",
-    "dislikes": "a"
+    "likes": "Planten - Reuzenhaai, Sardientje",
+    "dislikes": "Mats"
   },
   {
-    "name": "Zwarte Dwergmeerval",
-    "spritePath": "Fishies/BULLHEADCATFISH",
-    "fact": "Een zeebaars kan wel tot 1 meter lang worden.",
-    "likes": "a",
-    "dislikes": "a"
+    "name": "Voshaai",
+    "spritePath": "SPRITES/Fishies/TREHSER",
+    "fact": "",
+    "likes": "Stenen - Koningsvis, Zwarte Dwergmeerval",
+    "dislikes": "Rik"
   },
   {
-    "name": "Karper",
-    "spritePath": "Fishies/CARP",
-    "fact": "Buiten baarddraden met smaakpapillen heeft een karper ook neusgaten. In de neusgaten zitten fijne receptoren om geur waar te nemen, hij vindt dan ook een groot deel van het voedsel door op zijn reuk af te gaan.",
-    "likes": "a",
-    "dislikes": "a"
-  },
-  {
-    "name": "Sterrerog",
-    "spritePath": "Fishies/STARRYRAY",
-    "fact": "Als roggen jong zijn, zijn ze nog helemaal doorzichtig. Hierdoor zijn de kieuwen en ingewanden vanaf buiten zichtbaar.",
-    "likes": "a",
-    "dislikes": "a"
-  },
-  {
-    "name": "Steur",
-    "spritePath": "Fishies/STURGEON",
-    "fact": "Vroeger kwam de Europese steur veel voor, echter is deze zeer zeldzaam geworden door overbevissing.",
-    "likes": "a",
-    "dislikes": "a"
-  },
-  {
-    "name": "Zwarte Dwergmeerval",
-    "spritePath": "Fishies/BULLHEADCATFISH",
-    "fact": "Een zeebaars kan wel tot 1 meter lang worden.",
-    "likes": "a",
-    "dislikes": "a"
-  },
-  {
-    "name": "Karper",
-    "spritePath": "Fishies/CARP",
-    "fact": "Buiten baarddraden met smaakpapillen heeft een karper ook neusgaten. In de neusgaten zitten fijne receptoren om geur waar te nemen, hij vindt dan ook een groot deel van het voedsel door op zijn reuk af te gaan.",
-    "likes": "a",
-    "dislikes": "a"
-  },
-  {
-    "name": "Sterrerog",
-    "spritePath": "Fishies/STARRYRAY",
-    "fact": "Als roggen jong zijn, zijn ze nog helemaal doorzichtig. Hierdoor zijn de kieuwen en ingewanden vanaf buiten zichtbaar.",
-    "likes": "a",
-    "dislikes": "a"
-  },
-  {
-    "name": "Steur",
-    "spritePath": "Fishies/STURGEON",
-    "fact": "Vroeger kwam de Europese steur veel voor, echter is deze zeer zeldzaam geworden door overbevissing.",
-    "likes": "a",
-    "dislikes": "a"
-  },
-  {
-    "name": "Zwarte Dwergmeerval",
-    "spritePath": "Fishies/BULLHEADCATFISH",
-    "fact": "Een zeebaars kan wel tot 1 meter lang worden.",
-    "likes": "a",
-    "dislikes": "a"
+    "name": "Reuzenhaai",
+    "spritePath": "",
+    "fact": "",
+    "likes": "Stenen - Zalm, Steur",
+    "dislikes": "Mats"
   }
 ]
