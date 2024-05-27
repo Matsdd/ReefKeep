@@ -40,8 +40,6 @@ public class FishSpawnScript : MonoBehaviour
     private Dictionary<string, int> fishCounts = new(); // Dictionary to keep track of fish counts
     private Dictionary<string, int> underwaterObjectCounts = new(); // Dictionary to keep track of underwater object counts
 
-    private const int populationLimit = 10;
-
     private void Start()
     {
         fishFilePath = Application.persistentDataPath + "/fishInEcosystem.json";
@@ -53,11 +51,6 @@ public class FishSpawnScript : MonoBehaviour
 
     private void Update()
     {
-        if (fishList.Count >= populationLimit)
-        {
-            return; // Stop spawning if the population limit is reached
-        }
-
         if (timer < spawnRate)
         {
             timer += Time.deltaTime;
@@ -71,12 +64,6 @@ public class FishSpawnScript : MonoBehaviour
 
     private void SpawnFish()
     {
-        if (fishList.Count >= populationLimit)
-        {
-            Debug.Log("Population limit reached. No more fish will be spawned.");
-            return;
-        }
-
         GameObject chosenFish = ChooseRandomFish();
         if (chosenFish == null)
         {

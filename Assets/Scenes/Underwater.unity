@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc75b5946bf3a6d4da78282ed6d683d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 1
+  spawnRate: 0.3
   leftBorder: -30
   rightBorder: 30
   maxSpawnHeight: 13
@@ -462,10 +462,16 @@ MonoBehaviour:
   fishTypes:
   - prefab: {fileID: 6249490816781820823, guid: 5dfc3b51eddd4fa43a8d0b08e5805888, type: 3}
     spawnWeight: 1
-    maxCount: 1
+    maxCount: 40
+    spawnConditions:
+    - objectType: Rock
+      requiredCount: 1
   - prefab: {fileID: 6249490816781820823, guid: 19fa96de78654fe479ede502a8a38349, type: 3}
     spawnWeight: 1
-    maxCount: 10
+    maxCount: 40
+    spawnConditions:
+    - objectType: Fish:TestFish
+      requiredCount: 1
 --- !u!4 &71638648
 Transform:
   m_ObjectHideFlags: 0
