@@ -13,13 +13,17 @@ public class ShadowSpawner : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //als spawntimer onder nul is, spawn vis
         spawnTimer--;
 
         if (spawnTimer <= 0)
         {
+            //reset timer
             spawnTimer = Random.Range(100,120);
+            //zet fish positie
             fishPosY = Random.Range(-13,11);
 
+            //determine welke vis, grote vis, kleine kans, kleine vis, grote kans
             int rfish = Random.Range(0, 9);
             if (rfish < 6)
             {
