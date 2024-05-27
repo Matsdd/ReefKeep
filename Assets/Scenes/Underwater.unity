@@ -651,6 +651,8 @@ MonoBehaviour:
   fish1: {fileID: 5477938614993592489, guid: ea8cd9071f025224b8535a62d828d7ee, type: 3}
   fish2: {fileID: 8868497838179690301, guid: d34c836395331e84cad7db1df93d5cf1, type: 3}
   fish3: {fileID: 6002184672319837927, guid: 172af65d47971464291fedf13ac0a21b, type: 3}
+  fish4: {fileID: 6002184672319837927, guid: affe32b7e85ea0844905b88fe979153d, type: 3}
+  fish5: {fileID: 6002184672319837927, guid: 0a1826b95caf8b5489b21793edb378ad, type: 3}
 --- !u!4 &278905733
 Transform:
   m_ObjectHideFlags: 0
