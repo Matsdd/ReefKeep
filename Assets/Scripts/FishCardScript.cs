@@ -3,9 +3,11 @@ using UnityEngine.UI;
 
 public class FishCardScript : MonoBehaviour
 {
+    // State the name and image of the fish in the Unity Editor
     [SerializeField] private Text nameText;
     private Fishinfo.FishData fishData;
 
+    // Set the fish Data on the cards
     public void SetFishData(Fishinfo.FishData fishData)
     {
         this.fishData = fishData;
@@ -32,7 +34,7 @@ public class FishCardScript : MonoBehaviour
         Button button = GetComponentInChildren<Button>();
         if (button != null)
         {
-            button.onClick.RemoveAllListeners(); // Clear any previous listeners
+            button.onClick.RemoveAllListeners(); 
             button.onClick.AddListener(() => DetailPanelController.Instance.ShowDetails(fishData));
         }
         else

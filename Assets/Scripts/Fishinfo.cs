@@ -4,9 +4,12 @@ using System.IO;
 
 public class Fishinfo : MonoBehaviour
 {
+    // Setting the right component in the Unity Editor
     public GameObject fishCardPrefab;
     public Transform cardsParent;
 
+
+    // Making a class FishData with all the data stated in the json file
     [System.Serializable]
     public class FishData
     {
@@ -19,17 +22,20 @@ public class Fishinfo : MonoBehaviour
 
     void Start()
     {
+        // Getting the JSON File
         string jsonFilePath = Application.dataPath + "/fishData.json";
         string jsonData = File.ReadAllText(jsonFilePath);
         jsonData = "{\"fishes\":" + jsonData + "}";
         Fishes fishes = JsonUtility.FromJson<Fishes>(jsonData);
 
+        // Stating the cards variables
         int cardIndex = 0;
         float cardOffsetX = 410f; 
         float cardOffsetY = -510f; 
         int cardsPerRow = 4;
         float initialX = -cardOffsetX * (cardsPerRow - 1) / 2f;
          
+        // Creating a card for each item of the array in the JSON file
         foreach (FishData fish in fishes.fishes)
         {   
             int row = cardIndex / cardsPerRow;
