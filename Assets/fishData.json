@@ -3,91 +3,119 @@
     "name": "Zeepaardje",
     "spritePath": "SPRITES/Fishies/SEAHORSE",
     "fact": "Zeepaardjes zijn de enige dieren ter wereld waarbij de mannen de zwangerschap dragen en de jongen baren. Het vrouwtje legt haar eitjes in een broedbuidel op de buik van het mannetje, waar hij ze bevrucht en draagt tot ze uitkomen.",
-    "likes": "Planten - Sardientje, Zalm",
-    "dislikes": "Mats"
+    "likes": "Planten - Garnalen",
+    "dislikes": "Stenen - Zeeschildpad, Voshaai, Reuzenhaai"
   },
   {
     "name": "Sardien",
     "spritePath": "SPRITES/Fishies/SARDINE",
     "fact": "Sardientjes staan bekend om hun indrukwekkende schoolzwemgedrag. Ze zwemmen in grote, dicht op elkaar gepakte scholen die complexe en synchroon bewegende formaties vormen. Dit gedrag helpt hen te beschermen tegen roofdieren, omdat het moeilijker is voor een aanvaller om een enkel individu te isoleren. Deze scholen kunnen enorm groot zijn, soms met wel duizenden vissen.",
-    "likes": "Planten - Zeepaardje",
-    "dislikes": "Rik"
+    "likes": "Planten",
+    "dislikes": "Stenen - Zeebaars"
   },
   {
     "name": "Zwarte Dwergmeerval",
     "spritePath": "SPRITES/Fishies/BULLHEADCATFISH",
     "fact": "De Zwarte Dwergmeerval kan goed overleven in troebele en zuurstofarme wateren. Dit komt omdat hij gebruik kan maken van darmademhaling, waarbij hij lucht inslikt die door zijn darmwand wordt geabsorbeerd.",
-    "likes": "Stenen - Voshaai",
-    "dislikes": "Mats"
+    "likes": "Stenen - Garnalen",
+    "dislikes": "Zeebaars"
   },
   {
     "name": "Zalm",
     "spritePath": "SPRITES/Fishies/SALMON",
     "fact": "Zalmen hebben een uitstekend reukvermogen, op deze manier kunnen ze hun weg terug vinden naar de rivier waar ze geboren zijn. Een zalm legt vaak duizenden kilometers af om terug te keren naar de exacte plek waar ze geboren zijn om te paaien.",
-    "likes": "Zeepaardje, Reuzenhaai",
-    "dislikes": "Rik"
+    "likes": "Garnalen",
+    "dislikes": "Zeebaars"
   },
   {
     "name": "Zeebaars",
     "spritePath": "SPRITES/Fishies/SEABASS",
     "fact": "Een zeebaars is hermafrodiet, dat betekent dat ze gedurende hun leven van geslacht kunnen veranderen. Ze beginnen meestal als vrouwtjes en kunnen later in hun leven mannetjes worden. Dit stelt ze in staat om hun voortplantingskansen te maximaliseren.",
-    "likes": "Stenen - Sardientje, Zwarte Dwergmeerval",
-    "dislikes": "Mats"
+    "likes": "Stenen - Inktvissen",
+    "dislikes": "Pijlstaartrog, Voshaai, Reuzenhaai"
   },
   {
     "name": "Steenbaars",
     "spritePath": "SPRITES/Fishies/RockBass",
     "fact": "Net zoals een kameleon kan een steenbaars zijn kleur razendsnel veranderen om met zijn omgeving mee te kleuren. Dit maakt het gemakkelijker om te overleven en daarbij zijn ze ook effectievere jagers.",
-    "likes": "Stenen - Sardientje, Zwarte Dwergmeerval",
-    "dislikes": "Rik"
+    "likes": "Stenen - Garnalen",
+    "dislikes": "Zeebaars, Voshaai, Reuzenhaai"
   },
   {
     "name": "Sterrog",
     "spritePath": "SPRITES/Fishies/STARRYRAY",
-    "fact": "De sterrog is nog één van de oudste nog bestaande vissoorten. Ze hebben een geschiedenis die teruggaat tot meer dan 200 miljoen jaar. De sterrog wordt in zoetwater geboren, migreert naar de zee om te groeien en keert terug naar zoetwater om te paaien. Dit maakt hun kwetsbaar voor milieubedreigingen, waardoor ze tegenwoordig bedreigd zijn.",
-    "likes": "Planten - Zwarte Dwergmeerval",
-    "dislikes": "Mats"
+    "fact": "De sterrog is één van de oudste nog bestaande vissoorten. Ze hebben een geschiedenis die teruggaat tot meer dan 200 miljoen jaar. De sterrog wordt in zoetwater geboren, migreert naar de zee om te groeien en keert terug naar zoetwater om te paaien. Dit maakt hun kwetsbaar voor milieubedreigingen, waardoor ze tegenwoordig bedreigd zijn.",
+    "likes": "",
+    "dislikes": "Zeebaars, Voshaai, Reuzenhaai"
   },
   {
     "name": "Pijlstaartrog",
     "spritePath": "SPRITES/Fishies/STINGRAY",
     "fact": "De pijlstaartrog heeft een scherpe, gifachtige stekel aan de basis van zijn staart die hij gebruikt voor zelfverdediging. Deze stekel gebruikt hij alleen in noodsituaties want eigenlijk is het over het algemeen een schuwe vis die zich liever verstopt in modderige bodems.",
-    "likes": "Stenen - Sterrog",
-    "dislikes": "Rik"
+    "likes": "Inktvissen",
+    "dislikes": "Zeebaaars, Voshaai, Reuzenhaai"
   },
   {
     "name": "Koningsvis",
     "spritePath": "SPRITES/Fishies/OPAH",
     "fact": "De koningsvis staat bekend om zijn indrukwekkende snelheid en krachtige beet. De koningsvis kan een snelheid tot 65 kilometer per uur bereiken.",
-    "likes": "Planten",
-    "dislikes": "Mats"
+    "likes": "Inktvissen",
+    "dislikes": "Zeebaars"
   },
   {
     "name": "Karper",
     "spritePath": "SPRITES/Fishies/CARP",
-    "fact": "Buiten baarddraden met smaakpapillen heeft een karper ook neusgaten. In de neusgaten zitten fijne receptoren om geur waar te nemen, hij vindt dan ook een groot deel van het voedsel door op zijn reuk af te gaan.",
-    "likes": "",
-    "dislikes": "Rik"
+    "fact": "Karpers hebben een uitstekend geheugen. Ze zijn in staat om bepaalde locaties, voederplaatsen en zelfs specifieke vissers te herkennen. Dit vermogen stelt hun in staat om te leren en zich aan te passen aan hun omgeving.",
+    "likes": "Planten",
+    "dislikes": "Zwarte Dwergmeerval"
   },
   {
     "name": "Steur",
     "spritePath": "SPRITES/Fishies/STURGEON",
-    "fact": "Vroeger kwam de Europese steur veel voor, echter is deze zeer zeldzaam geworden door overbevissing.",
-    "likes": "Planten - Reuzenhaai, Sardientje",
-    "dislikes": "Mats"
+    "fact": "Een steur kan tot wel 6 meter lang worden en meer dan 100 jaar oud worden. Steuren staan bekend om hun kaviaar, die wordt gewonnen uit de eieren van de vrouwetjessteur. Dit heeft geleid tot overbevissing en bedreiging van de steurpopulaties.",
+    "likes": "Garnalen",
+    "dislikes": "Zeebaars"
   },
   {
     "name": "Voshaai",
     "spritePath": "SPRITES/Fishies/TREHSER",
-    "fact": "",
+    "fact": "De voshaai is één van de weinige haaien die eieren legt. De eikapsels worden afgezet op de zeebodem en bieden bescherming aan de ontwikkelende embryo's totdat ze klaar zijn om uit te komen.",
     "likes": "Stenen - Koningsvis, Zwarte Dwergmeerval",
-    "dislikes": "Rik"
+    "dislikes": ""
   },
   {
     "name": "Reuzenhaai",
     "spritePath": "",
+    "fact": "De reuzenhaai is de op één na grootste vis ter wereld. Ze kunnen tot wel 12 meter lang worden en wegen tot 21 ton. Ze voeden zich hoofdzakelijk met plankton en kleine visjes.",
+    "likes": "Inktvissen",
+    "dislikes": "Zeebaars, Pijlstaartrog, Koningsvis"
+  },
+  {
+    "name": "Garnaal",
+    "spritePath": "Planten",
     "fact": "",
-    "likes": "Stenen - Zalm, Steur",
-    "dislikes": "Mats"
+    "likes": "Planten",
+    "dislikes": "Pijlstaartrog, Sterrog"
+  },
+  {
+    "name": "Zeeschildpad",
+    "spritePath": "",
+    "fact": "",
+    "likes": "Planten - Kwallen",
+    "dislikes": "Voshaai, Reuzenhaai"
+  },
+  {
+    "name": "Kwal",
+    "spritePath": "",
+    "fact": "",
+    "likes": "Planten",
+    "dislikes": "Zeeschildpad"
+  },
+  {
+    "name": "Inktvis",
+    "spritePath": "",
+    "fact": "",
+    "likes": "Garnalen",
+    "dislikes": "Zeebaars, Zalm"
   }
 ]
