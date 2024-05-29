@@ -1,121 +1,189 @@
 [
   {
-    "name": "Zeepaardje",
+    "name_nl": "Zeepaardje",
+    "name_en": "Seahorse",
     "spritePath": "SPRITES/Fishies/SEAHORSE",
-    "fact": "Zeepaardjes zijn de enige dieren ter wereld waarbij de mannen de zwangerschap dragen en de jongen baren. Het vrouwtje legt haar eitjes in een broedbuidel op de buik van het mannetje, waar hij ze bevrucht en draagt tot ze uitkomen.",
-    "likes": "Planten - Garnalen",
-    "dislikes": "Stenen - Zeeschildpad, Voshaai, Reuzenhaai"
+    "fact_nl": "Zeepaardjes zijn de enige dieren ter wereld waarbij de mannen de zwangerschap dragen en de jongen baren. Het vrouwtje legt haar eitjes in een broedbuidel op de buik van het mannetje, waar hij ze bevrucht en draagt tot ze uitkomen.",
+    "fact_en": "Seahorses are the only animals in the world where males carry the pregnancy and give birth. The female deposits her eggs into a brood pouch on the male's belly, where he fertilizes and carries them until they hatch.",
+    "likes_nl": "Planten - Garnalen",
+    "likes_en": "Plants - Shrimps",
+    "dislikes_nl": "Stenen - Zeeschildpad, Voshaai, Reuzenhaai",
+    "dislikes_en": "Rocks - Sea Turtle, Thresher Shark, Basking Shark"
   },
   {
-    "name": "Sardien",
+    "name_nl": "Sardientje",
+    "name_en": "Sardine",
     "spritePath": "SPRITES/Fishies/SARDINE",
-    "fact": "Sardientjes staan bekend om hun indrukwekkende schoolzwemgedrag. Ze zwemmen in grote, dicht op elkaar gepakte scholen die complexe en synchroon bewegende formaties vormen. Dit gedrag helpt hen te beschermen tegen roofdieren, omdat het moeilijker is voor een aanvaller om een enkel individu te isoleren. Deze scholen kunnen enorm groot zijn, soms met wel duizenden vissen.",
-    "likes": "Planten",
-    "dislikes": "Stenen - Zeebaars"
+    "fact_nl": "Sardientjes staan bekend om hun indrukwekkende schoolzwemgedrag. Ze zwemmen in grote, dicht op elkaar gepakte scholen die complexe en synchroon bewegende formaties vormen. Dit gedrag helpt hen te beschermen tegen roofdieren, omdat het moeilijker is voor een aanvaller om een enkel individu te isoleren. Deze scholen kunnen enorm groot zijn, soms met wel duizenden vissen.",
+    "fact_en": "Sardines are known for their impressive schooling behavior. They swim in large, tightly packed schools that form complex and synchronized movements. This behavior helps protect them from predators, as it becomes harder for an attacker to isolate a single individual. These schools can be enormous, sometimes containing thousands of fish.",
+    "likes_nl": "Planten",
+    "likes_en": "Plants",
+    "dislikes_nl": "Stenen - Zeebaars",
+    "dislikes_en": "Rocks - Sea Bass"
   },
   {
-    "name": "Zwarte Dwergmeerval",
+    "name_nl": "Zwarte Dwergmeerval",
+    "name_en": "Bullhead Catfish",
     "spritePath": "SPRITES/Fishies/BULLHEADCATFISH",
-    "fact": "De Zwarte Dwergmeerval kan goed overleven in troebele en zuurstofarme wateren. Dit komt omdat hij gebruik kan maken van darmademhaling, waarbij hij lucht inslikt die door zijn darmwand wordt geabsorbeerd.",
-    "likes": "Stenen - Garnalen",
-    "dislikes": "Zeebaars"
+    "fact_nl": "De Zwarte Dwergmeerval kan goed overleven in troebele en zuurstofarme wateren. Dit komt omdat hij gebruik kan maken van darmademhaling, waarbij hij lucht inslikt die door zijn darmwand wordt geabsorbeerd.",
+    "fact_en": "The Bullhead Catfish can survive well in muddy and oxygen-poor waters. This is because it can use intestinal respiration, where it swallows air that is absorbed through its intestinal wall.",
+    "likes_nl": "Stenen - Garnalen",
+    "likes_en": "Rocks - Shrimps",
+    "dislikes_nl": "Zeebaars",
+    "dislikes_en": "Sea Bass"
   },
   {
-    "name": "Zalm",
+    "name_nl": "Zalm",
+    "name_en": "Salmon",
     "spritePath": "SPRITES/Fishies/SALMON",
-    "fact": "Zalmen hebben een uitstekend reukvermogen, op deze manier kunnen ze hun weg terug vinden naar de rivier waar ze geboren zijn. Een zalm legt vaak duizenden kilometers af om terug te keren naar de exacte plek waar ze geboren zijn om te paaien.",
-    "likes": "Garnalen",
-    "dislikes": "Zeebaars"
+    "fact_nl": "Zalmen hebben een uitstekend reukvermogen, op deze manier kunnen ze hun weg terug vinden naar de rivier waar ze geboren zijn. Een zalm legt vaak duizenden kilometers af om terug te keren naar de exacte plek waar ze geboren zijn om te paaien.",
+    "fact_en": "Salmon have an excellent sense of smell, which allows them to find their way back to the river where they were born. A salmon often travels thousands of kilometers to return to the exact place where it was born to spawn.",
+    "likes_nl": "Garnalen",
+    "likes_en": "Shrimps",
+    "dislikes_nl": "Zeebaars",
+    "dislikes_en": "Sea Bass"
   },
   {
-    "name": "Zeebaars",
+    "name_nl": "Zeebaars",
+    "name_en": "Sea Bass",
     "spritePath": "SPRITES/Fishies/SEABASS",
-    "fact": "Een zeebaars is hermafrodiet, dat betekent dat ze gedurende hun leven van geslacht kunnen veranderen. Ze beginnen meestal als vrouwtjes en kunnen later in hun leven mannetjes worden. Dit stelt ze in staat om hun voortplantingskansen te maximaliseren.",
-    "likes": "Stenen - Inktvissen",
-    "dislikes": "Pijlstaartrog, Voshaai, Reuzenhaai"
+    "fact_nl": "Een zeebaars is hermafrodiet, dat betekent dat ze gedurende hun leven van geslacht kunnen veranderen. Ze beginnen meestal als vrouwtjes en kunnen later in hun leven mannetjes worden. Dit stelt ze in staat om hun voortplantingskansen te maximaliseren.",
+    "fact_en": "A sea bass is a hermaphrodite, meaning they can change sex during their lifetime. They usually start as females and can later become males. This allows them to maximize their reproductive opportunities.",
+    "likes_nl": "Stenen - Inktvissen",
+    "likes_en": "Rocks - Squids",
+    "dislikes_nl": "Pijlstaartrog, Voshaai, Reuzenhaai",
+    "dislikes_en": "Stingray, Thresher Shark, Basking Shark"
   },
   {
-    "name": "Steenbaars",
+    "name_nl": "Steenbaars",
+    "name_en": "Rock Bass",
     "spritePath": "SPRITES/Fishies/RockBass",
-    "fact": "Net zoals een kameleon kan een steenbaars zijn kleur razendsnel veranderen om met zijn omgeving mee te kleuren. Dit maakt het gemakkelijker om te overleven en daarbij zijn ze ook effectievere jagers.",
-    "likes": "Stenen - Garnalen",
-    "dislikes": "Zeebaars, Voshaai, Reuzenhaai"
+    "fact_nl": "Net zoals een kameleon kan een steenbaars zijn kleur razendsnel veranderen om met zijn omgeving mee te kleuren. Dit maakt het gemakkelijker om te overleven en daarbij zijn ze ook effectievere jagers.",
+    "fact_en": "Just like a chameleon, a rock bass can change its color very quickly to blend in with its environment. This makes it easier to survive and also makes them more effective hunters.",
+    "likes_nl": "Stenen - Garnalen",
+    "likes_en": "Rocks - Shrimps",
+    "dislikes_nl": "Zeebaars, Voshaai, Reuzenhaai",
+    "dislikes_en": "Sea Bass, Thresher Shark, Basking Shark"
   },
   {
-    "name": "Sterrog",
+    "name_nl": "Sterrog",
+    "name_en": "Starry Ray",
     "spritePath": "SPRITES/Fishies/STARRYRAY",
-    "fact": "De sterrog is één van de oudste nog bestaande vissoorten. Ze hebben een geschiedenis die teruggaat tot meer dan 200 miljoen jaar. De sterrog wordt in zoetwater geboren, migreert naar de zee om te groeien en keert terug naar zoetwater om te paaien. Dit maakt hun kwetsbaar voor milieubedreigingen, waardoor ze tegenwoordig bedreigd zijn.",
-    "likes": "",
-    "dislikes": "Zeebaars, Voshaai, Reuzenhaai"
+    "fact_nl": "De sterrog is één van de oudste nog bestaande vissoorten. Ze hebben een geschiedenis die teruggaat tot meer dan 200 miljoen jaar. De sterrog wordt in zoetwater geboren, migreert naar de zee om te groeien en keert terug naar zoetwater om te paaien. Dit maakt hun kwetsbaar voor milieubedreigingen, waardoor ze tegenwoordig bedreigd zijn.",
+    "fact_en": "The starry ray is one of the oldest existing fish species. They have a history that goes back more than 200 million years. The starry ray is born in freshwater, migrates to the sea to grow, and returns to freshwater to spawn. This makes them vulnerable to environmental threats, making them endangered today.",
+    "likes_nl": "",
+    "likes_en": "",
+    "dislikes_nl": "Zeebaars, Voshaai, Reuzenhaai",
+    "dislikes_en": "Sea Bass, Thresher Shark, Basking Shark"
   },
   {
-    "name": "Pijlstaartrog",
+    "name_nl": "Pijlstaartrog",
+    "name_en": "Stingray",
     "spritePath": "SPRITES/Fishies/STINGRAY",
-    "fact": "De pijlstaartrog heeft een scherpe, gifachtige stekel aan de basis van zijn staart die hij gebruikt voor zelfverdediging. Deze stekel gebruikt hij alleen in noodsituaties want eigenlijk is het over het algemeen een schuwe vis die zich liever verstopt in modderige bodems.",
-    "likes": "Inktvissen",
-    "dislikes": "Zeebaaars, Voshaai, Reuzenhaai"
+    "fact_nl": "De pijlstaartrog heeft een scherpe, gifachtige stekel aan de basis van zijn staart die hij gebruikt voor zelfverdediging. Deze stekel gebruikt hij alleen in noodsituaties want eigenlijk is het over het algemeen een schuwe vis die zich liever verstopt in modderige bodems.",
+    "fact_en": "The stingray has a sharp, venomous spine at the base of its tail that it uses for self-defense. It only uses this spine in emergencies, as it is generally a shy fish that prefers to hide in muddy bottoms.",
+    "likes_nl": "Inktvissen",
+    "likes_en": "Squids",
+    "dislikes_nl": "Zeebaars, Voshaai, Reuzenhaai",
+    "dislikes_en": "Sea Bass, Thresher Shark, Basking Shark"
   },
   {
-    "name": "Koningsvis",
+    "name_nl": "Koningsvis",
+    "name_en": "Opah",
     "spritePath": "SPRITES/Fishies/OPAH",
-    "fact": "De koningsvis staat bekend om zijn indrukwekkende snelheid en krachtige beet. De koningsvis kan een snelheid tot 65 kilometer per uur bereiken.",
-    "likes": "Inktvissen",
-    "dislikes": "Zeebaars"
+    "fact_nl": "De koningsvis staat bekend om zijn indrukwekkende snelheid en krachtige beet. De koningsvis kan een snelheid tot 65 kilometer per uur bereiken.",
+    "fact_en": "The opah is known for its impressive speed and powerful bite. The opah can reach speeds of up to 65 kilometers per hour.",
+    "likes_nl": "Inktvissen",
+    "likes_en": "Squids",
+    "dislikes_nl": "Zeebaars",
+    "dislikes_en": "Sea Bass"
   },
   {
-    "name": "Karper",
+    "name_nl": "Karper",
+    "name_en": "Carp",
     "spritePath": "SPRITES/Fishies/CARP",
-    "fact": "Karpers hebben een uitstekend geheugen. Ze zijn in staat om bepaalde locaties, voederplaatsen en zelfs specifieke vissers te herkennen. Dit vermogen stelt hun in staat om te leren en zich aan te passen aan hun omgeving.",
-    "likes": "Planten",
-    "dislikes": "Zwarte Dwergmeerval"
+    "fact_nl": "Karpers hebben een uitstekend geheugen. Ze zijn in staat om bepaalde locaties, voederplaatsen en zelfs specifieke vissers te herkennen. Dit vermogen stelt hun in staat om te leren en zich aan te passen aan hun omgeving.",
+    "fact_en": "Carp have an excellent memory. They can recognize certain locations, feeding spots, and even specific fishermen. This ability allows them to learn and adapt to their environment.",
+    "likes_nl": "Planten",
+    "likes_en": "Plants",
+    "dislikes_nl": "Zwarte Dwergmeerval",
+    "dislikes_en": "Bullhead Catfish"
   },
   {
-    "name": "Steur",
+    "name_nl": "Steur",
+    "name_en": "Sturgeon",
     "spritePath": "SPRITES/Fishies/STURGEON",
-    "fact": "Een steur kan tot wel 6 meter lang worden en meer dan 100 jaar oud worden. Steuren staan bekend om hun kaviaar, die wordt gewonnen uit de eieren van de vrouwetjessteur. Dit heeft geleid tot overbevissing en bedreiging van de steurpopulaties.",
-    "likes": "Garnalen",
-    "dislikes": "Zeebaars"
+    "fact_nl": "Een steur kan tot wel 6 meter lang worden en meer dan 100 jaar oud worden. Steuren staan bekend om hun kaviaar, die wordt gewonnen uit de eieren van de vrouwetjessteur. Dit heeft geleid tot overbevissing en bedreiging van de steurpopulaties.",
+    "fact_en": "A sturgeon can grow up to 6 meters long and live more than 100 years. Sturgeons are known for their caviar, which is harvested from the eggs of the female sturgeon. This has led to overfishing and the endangerment of sturgeon populations.",
+    "likes_nl": "Garnalen",
+    "likes_en": "Shrimps",
+    "dislikes_nl": "Zeebaars",
+    "dislikes_en": "Sea Bass"
   },
   {
-    "name": "Voshaai",
+    "name_nl": "Voshaai",
+    "name_en": "Thresher Shark",
     "spritePath": "SPRITES/Fishies/TREHSER",
-    "fact": "De voshaai is één van de weinige haaien die eieren legt. De eikapsels worden afgezet op de zeebodem en bieden bescherming aan de ontwikkelende embryo's totdat ze klaar zijn om uit te komen.",
-    "likes": "Stenen - Koningsvis, Zwarte Dwergmeerval",
-    "dislikes": ""
+    "fact_nl": "De voshaai is één van de weinige haaien die eieren legt. De eikapsels worden afgezet op de zeebodem en bieden bescherming aan de ontwikkelende embryo's totdat ze klaar zijn om uit te komen.",
+    "fact_en": "The thresher shark is one of the few sharks that lay eggs. The egg cases are deposited on the seabed and provide protection for the developing embryos until they are ready to hatch.",
+    "likes_nl": "Stenen - Koningsvis, Zwarte Dwergmeerval",
+    "likes_en": "Rocks - Opah, Bullhead Catfish",
+    "dislikes_nl": "",
+    "dislikes_en": ""
   },
   {
-    "name": "Reuzenhaai",
+    "name_nl": "Reuzenhaai",
+    "name_en": "Basking Shark",
     "spritePath": "",
-    "fact": "De reuzenhaai is de op één na grootste vis ter wereld. Ze kunnen tot wel 12 meter lang worden en wegen tot 21 ton. Ze voeden zich hoofdzakelijk met plankton en kleine visjes.",
-    "likes": "Inktvissen",
-    "dislikes": "Zeebaars, Pijlstaartrog, Koningsvis"
+    "fact_nl": "De reuzenhaai is de op één na grootste vis ter wereld. Ze kunnen tot wel 12 meter lang worden en wegen tot 21 ton. Ze voeden zich hoofdzakelijk met plankton en kleine visjes.",
+    "fact_en": "The basking shark is the second largest fish in the world. They can grow up to 12 meters long and weigh up to 21 tons. They primarily feed on plankton and small fish.",
+    "likes_nl": "Inktvissen",
+    "likes_en": "Squids",
+    "dislikes_nl": "Zeebaars, Pijlstaartrog, Koningsvis",
+    "dislikes_en": "Sea Bass, Stingray, Opah"
   },
   {
-    "name": "Garnaal",
-    "spritePath": "Planten",
-    "fact": "",
-    "likes": "Planten",
-    "dislikes": "Pijlstaartrog, Sterrog"
+    "name_nl": "Garnaal",
+    "name_en": "Shrimp",
+    "spritePath": "SPRITES/Fishies/SHRIMP",
+    "fact_nl": "",
+    "fact_en": "",
+    "likes_nl": "Planten",
+    "likes_en": "Plants",
+    "dislikes_nl": "Pijlstaartrog, Sterrog",
+    "dislikes_en": "Stingray, Starry Ray"
   },
   {
-    "name": "Zeeschildpad",
-    "spritePath": "",
-    "fact": "",
-    "likes": "Planten - Kwallen",
-    "dislikes": "Voshaai, Reuzenhaai"
+    "name_nl": "Zeeschildpad",
+    "name_en": "Sea Turtle",
+    "spritePath": "SPRITES/Fishies/SEATURTLE",
+    "fact_nl": "",
+    "fact_en": "",
+    "likes_nl": "Planten - Kwallen",
+    "likes_en": "Plants - Jellyfish",
+    "dislikes_nl": "Voshaai, Reuzenhaai",
+    "dislikes_en": "Thresher Shark, Basking Shark"
   },
   {
-    "name": "Kwal",
-    "spritePath": "",
-    "fact": "",
-    "likes": "Planten",
-    "dislikes": "Zeeschildpad"
+    "name_nl": "Kwal",
+    "name_en": "Jellyfish",
+    "spritePath": "SPRITES/Fishies/JELLYFISH",
+    "fact_nl": "",
+    "fact_en": "",
+    "likes_nl": "Planten",
+    "likes_en": "Plants",
+    "dislikes_nl": "Zeeschildpad",
+    "dislikes_en": "Sea Turtle"
   },
   {
-    "name": "Inktvis",
-    "spritePath": "",
-    "fact": "",
-    "likes": "Garnalen",
-    "dislikes": "Zeebaars, Zalm"
+    "name_nl": "Inktvis",
+    "name_en": "Squid",
+    "spritePath": "SPRITES/Fishies/SQUID",
+    "fact_nl": "",
+    "fact_en": "",
+    "likes_nl": "Garnalen",
+    "likes_en": "Shrimps",
+    "dislikes_nl": "Zeebaars, Zalm",
+    "dislikes_en": "Sea Bass, Salmon"
   }
 ]

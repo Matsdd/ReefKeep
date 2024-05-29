@@ -33,11 +33,11 @@ public class DetailPanelController : MonoBehaviour
 
     public void ShowDetails(Fishinfo.FishData data)
     {
-        Debug.Log("Showing details for: " + data.name);
-        nameText.text = data.name;
-        factText.text = data.fact;
-        likesText.text = data.likes;
-        dislikesText.text = data.dislikes;
+        Debug.Log("Showing details for: " + data.name_nl);
+        nameText.text = data.name_nl;
+        factText.text = data.fact_nl;
+        likesText.text = data.likes_nl;
+        dislikesText.text = data.dislikes_nl;
 
         // Load and set the fish sprite
         Sprite sprite = Resources.Load<Sprite>(data.spritePath);
@@ -47,7 +47,7 @@ public class DetailPanelController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Failed to load sprite for fish: " + data.name);
+            Debug.LogError("Failed to load sprite for fish: " + data.name_nl);
         }
 
         // Show the detail panel
