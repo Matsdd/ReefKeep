@@ -8,10 +8,6 @@ public class fishswimscript : MonoBehaviour
     public float swimspeed = 5;
     private Boolean startlocation = false;
 
-    public string like1 = string.Empty;
-    public string like2 = string.Empty;
-    public string like3 = string.Empty;
-
     // Start is called before the first frame update
     void Start()
     {
