@@ -11,7 +11,7 @@ public class FishCardScript : MonoBehaviour
     public void SetFishData(Fishinfo.FishData fishData)
     {
         this.fishData = fishData;
-        nameText.text = fishData.name;
+        nameText.text = fishData.name_nl;
 
         FishImageScript imageScript = GetComponentInChildren<FishImageScript>();
         if (imageScript != null)
@@ -23,7 +23,7 @@ public class FishCardScript : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Failed to load sprite for fish: " + fishData.name);
+                Debug.LogError("Failed to load sprite for fish: " + fishData.name_nl);
             }
         }
         else

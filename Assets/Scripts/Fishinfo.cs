@@ -13,11 +13,11 @@ public class Fishinfo : MonoBehaviour
     [System.Serializable]
     public class FishData
     {
-        public string name;
+        public string name_nl;
         public string spritePath;
-        public string fact;
-        public string likes;
-        public string dislikes;
+        public string fact_nl;
+        public string likes_nl;
+        public string dislikes_nl;
     }
 
     void Start()
