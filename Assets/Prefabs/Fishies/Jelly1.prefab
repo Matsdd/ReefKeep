@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9007415891114529438}
   - component: {fileID: 8932285384344223810}
   - component: {fileID: 3248115059712261038}
+  - component: {fileID: -4250501090333078825}
   m_Layer: 0
   m_Name: Jelly1
   m_TagString: Untagged
@@ -131,3 +132,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.68, y: 0.48}
   m_EdgeRadius: 0
+--- !u!114 &-4250501090333078825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6604182722383728026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b67c4700bca4e044aca39ec2f967dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSpeed: 1
+  hoverAmplitude: 0.5
