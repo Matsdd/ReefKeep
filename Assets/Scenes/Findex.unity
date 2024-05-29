@@ -655,7 +655,6 @@ GameObject:
   - component: {fileID: 457129579}
   - component: {fileID: 457129578}
   - component: {fileID: 457129577}
-  - component: {fileID: 457129581}
   - component: {fileID: 457129580}
   m_Layer: 5
   m_Name: Button (Legacy) (1)
@@ -790,18 +789,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 599773256}
---- !u!114 &457129581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457129575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a65f7399b6b6eb4ab3948e89497888d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &599773256
 GameObject:
   m_ObjectHideFlags: 0
