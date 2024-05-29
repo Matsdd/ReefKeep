@@ -3125,6 +3125,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1762733238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1762733240}
+  - component: {fileID: 1762733239}
+  m_Layer: 0
+  m_Name: JellyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1762733239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762733238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c5fbe7ded1fddc43aa3ffbabf18c13c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jelly1: {fileID: 6604182722383728026, guid: e15a6e67538a7d942accb4d05df1c001, type: 3}
+  jelly2: {fileID: 3711021202871405642, guid: 68063df3c60cb4647919d6d0f2df50c9, type: 3}
+--- !u!4 &1762733240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762733238}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 536.8004, y: 261.4573, z: -1.1324718}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1797620765
 GameObject:
   m_ObjectHideFlags: 0
@@ -4053,6 +4099,7 @@ SceneRoots:
   - {fileID: 1003150934}
   - {fileID: 1516685472}
   - {fileID: 278905733}
+  - {fileID: 1762733240}
   - {fileID: 398621624}
   - {fileID: 1965595839}
   - {fileID: 711174991}
