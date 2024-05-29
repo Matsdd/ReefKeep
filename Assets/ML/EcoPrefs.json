@@ -1,0 +1,89 @@
+{
+  "fishPreferences": [
+  {
+    "name": "Seahorse",
+    "likes": "SeaGrass, SeaWeed, Vine",
+    "dislikes": "Thresher, Basking, CaveRock"
+  },
+  {
+    "name": "Sardine",
+    "likes": "SeaGrass, SeaWeed, Vine",
+    "dislikes": "SeaBass, CaveRock"
+  },
+  {
+    "name": "Bullhead",
+    "likes": "SmallRock, SnailRock, CaveRock, Shrimp",
+    "dislikes": "SeaBass"
+  },
+  {
+    "name": "Salmon",
+    "likes": "Shrimp",
+    "dislikes": "SeaBass"
+  },
+  {
+    "name": "Seabass",
+    "likes": "SmallRock, SnailRock, CaveRock, Octopus",
+    "dislikes": "StingRay, Thresher, Basking"
+  },
+  {
+    "name": "RockBass",
+    "likes": "SmallRock, SnailRock, CaveRock, Shrimp",
+    "dislikes": "SeaBass, Thresher, Basking"
+  },
+  {
+    "name": "StarryRay",
+    "likes": "SeaGrass",
+    "dislikes": "SeaBass, Thresher, Basking"
+  },
+  {
+    "name": "StingRay",
+    "likes": "Octopus",
+    "dislikes": "SeaBass, Thresher, Basking"
+  },
+  {
+    "name": "Opah",
+    "likes": "Octopus",
+    "dislikes": "SeaBass"
+  },
+  {
+    "name": "Carp",
+    "likes": "SeaGrass, SeaWeed, Vine",
+    "dislikes": "Bullhead"
+  },
+  {
+    "name": "Sturgeon",
+    "likes": "Shrimp",
+    "dislikes": "SeaBass"
+  },
+  {
+    "name": "Thresher",
+    "likes": "SmallRock, SnailRock, CaveRock, Opah, Bullhead",
+    "dislikes": "Vine"
+  },
+  {
+    "name": "Basking",
+    "likes": "Octopus",
+    "dislikes": "SeaBass, StingRay, Opah"
+  },
+  {
+    "name": "Shrimp",
+    "likes": "SeaGrass, SeaWeed, Vine",
+    "dislikes": "StingRay, StarryRay"
+  },
+  {
+    "name": "SeaTurtle",
+    "likes": "SeaGrass, SeaWeed, Vine, Jellyfish",
+    "dislikes": "Thresher, Basking"
+  },
+  {
+    "name": "Jellyfish",
+    "likes": "SeaGrass, SeaWeed, Vine",
+    "dislikes": "SeaTurtle"
+  },
+  {
+    "name": "Octopus",
+    "likes": "Shrimp",
+    "dislikes": "SeaBass, Salmon"
+  }
+]
+}

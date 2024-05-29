@@ -9,7 +9,7 @@ public class FishButtonScript : MonoBehaviour
     {
         Debug.Log("Setting fish name: " + fishName);
 
-        // Set the text of the Button dynamically
+        // Give the button text
         Button fishButton = GetComponentInChildren<Button>();
         if (fishButton != null)
         {
