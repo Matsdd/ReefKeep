@@ -8,9 +8,9 @@ public class MoveFishAgent : Agent
     [SerializeField] private FishControl fishControl;
 
     // Rewards and Penalties
-    private readonly float borderPenalty = -0.1f;
-    private readonly float proximityReward = 0.1f;
-    private readonly float horizontalMultiplier = 0.1f;
+    private readonly float borderPenalty = -0.3f;
+    private readonly float proximityMultiplier = 0.1f;
+    private readonly float horizontalMultiplier = 0.5f;
 
     private float cumulativeReward = 0f;
     private Vector3 initialPositionFish;
@@ -26,8 +26,8 @@ public class MoveFishAgent : Agent
     public override void OnEpisodeBegin()
     {
         // Reset positions with random values
-        // transform.position = initialPositionFish + new Vector3(Random.Range(-20f, 20f), Random.Range(-10f, 10f), 0);
-        // transform.rotation = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
+        transform.position = initialPositionFish + new Vector3(Random.Range(-20f, 20f), Random.Range(-10f, 10f), 0);
+        transform.rotation = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
 
         // Show the total reward from the previous run
         Debug.Log("Episode ended. Total reward: " + cumulativeReward);
@@ -45,6 +45,11 @@ public class MoveFishAgent : Agent
 
         sensor.AddObservation(likedObjectPosition);
         sensor.AddObservation(dislikedObjectPosition);
+
+        // Show what the fish is capable off
+        sensor.AddObservation(fishControl.maxMoveSpeed);
+        sensor.AddObservation(fishControl.minMoveSpeed);
+        sensor.AddObservation(fishControl.turnSpeed);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -66,17 +71,17 @@ public class MoveFishAgent : Agent
     {
         // Calculate the distance to the like
         float distanceToLike = Vector3.Distance(fishControl.transform.position, likedObjectPosition);
-        // Add a small reward based on the distance to the like
-        Debug.Log("Distance Reward:" + proximityReward / distanceToLike);
-        AddReward(proximityReward / distanceToLike);
-        cumulativeReward += proximityReward / distanceToLike;
+        float likeReward = CalculateReward(distanceToLike, 20f);
+        Debug.Log(gameObject.name + "Distance Reward: " + likeReward);
+        AddReward(likeReward);
+        cumulativeReward += likeReward;
 
         // Calculate the distance to the dislike
-        float distanceToDislike = Vector3.Distance(fishControl.transform.position, likedObjectPosition);
-        // Add a small punishment based on the distance to the dislike
-        Debug.Log("Distance Punishment:" + proximityReward / -distanceToDislike);
-        AddReward(proximityReward / -distanceToDislike);
-        cumulativeReward += proximityReward / -distanceToDislike;
+        float distanceToDislike = Vector3.Distance(fishControl.transform.position, dislikedObjectPosition);
+        float dislikePunishment = -CalculateReward(distanceToDislike, 20f);
+        Debug.Log(gameObject.name + "Distance Punishment: " + dislikePunishment);
+        AddReward(dislikePunishment);
+        cumulativeReward += dislikePunishment;
 
         // Add reward for maintaining a horizontal orientation
         float rotation = Mathf.Abs(Mathf.Cos(fishControl.transform.eulerAngles.z * Mathf.Deg2Rad)); // 1:horizontal 0:vertical
@@ -85,7 +90,6 @@ public class MoveFishAgent : Agent
         AddReward(horizontalReward);
         cumulativeReward += horizontalReward;
 
-
         // Check if the fish is out of bounds and apply penalty
         if (fishControl.IsOutOfBounds())
         {
@@ -93,6 +97,11 @@ public class MoveFishAgent : Agent
             AddReward(borderPenalty);
             cumulativeReward += borderPenalty;
         }
+    }
+
+    float CalculateReward(float distance, float scaleFactor)
+    {
+        return Mathf.Exp(-distance / scaleFactor) * proximityMultiplier;
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)

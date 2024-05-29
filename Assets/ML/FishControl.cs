@@ -141,7 +141,7 @@ public class FishControl : MonoBehaviour
 
     public Vector3 GetLikedObjectPosition()
     {
-        Vector3 pos = Vector3.zero;
+        Vector3 pos = new(100, 100, 0);
 
         if (likedObjects.Count > 0)
         {
@@ -154,7 +154,7 @@ public class FishControl : MonoBehaviour
 
     public Vector3 GetDislikedObjectPosition()
     {
-        Vector3 pos = Vector3.zero;
+        Vector3 pos = new(100, 100, 0);
 
         if (dislikedObjects.Count > 0)
         {
