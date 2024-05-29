@@ -2,12 +2,12 @@
   {
     "name": "Seahorse",
     "likes": "SeaGrass, SeaWeed, Vine",
-    "dislikes": "CaveRock, Trehser, GiantShark"
+    "dislikes": "Thresher, GiantShark, CaveRock"
   },
   {
     "name": "Sardine",
     "likes": "SeaGrass, SeaWeed, Vine",
-    "dislikes": "CaveRock, SeaBass"
+    "dislikes": "SeaBass, CaveRock"
   },
   {
     "name": "Bullhead",
@@ -22,22 +22,22 @@
   {
     "name": "Seabass",
     "likes": "SmallRock, SnailRock, CaveRock, Octopus",
-    "dislikes": "StingRay, Trehser, GiantShark"
+    "dislikes": "StingRay, Thresher, GiantShark"
   },
   {
     "name": "RockBass",
     "likes": "SmallRock, SnailRock, CaveRock, Shrimp",
-    "dislikes": "SeaBass, Trehser, GiantShark"
+    "dislikes": "SeaBass, Thresher, GiantShark"
   },
   {
     "name": "StarryRay",
     "likes": "SeaGrass",
-    "dislikes": "SeaBass, Trehser, GiantShark"
+    "dislikes": "SeaBass, Thresher, GiantShark"
   },
   {
     "name": "StingRay",
     "likes": "Octopus",
-    "dislikes": "Zeebaaars, Trehser, GiantShark"
+    "dislikes": "Zeebaaars, Thresher, GiantShark"
   },
   {
     "name": "Opah",
@@ -55,9 +55,9 @@
     "dislikes": "SeaBass"
   },
   {
-    "name": "Trehser",
+    "name": "Thresher",
     "likes": "SmallRock, SnailRock, CaveRock, Opah, Bullhead",
-    "dislikes": ""
+    "dislikes": "Vine"
   },
   {
     "name": "GiantShark",
@@ -72,7 +72,7 @@
   {
     "name": "SeaTurtle",
     "likes": "SeaGrass, SeaWeed, Vine, Jellyfish",
-    "dislikes": "Trehser, GiantShark"
+    "dislikes": "Thresher, GiantShark"
   },
   {
     "name": "Jellyfish",
