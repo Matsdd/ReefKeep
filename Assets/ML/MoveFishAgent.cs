@@ -1,11 +1,10 @@
-using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
+using UnityEngine;
 
 public class MoveFishAgent : Agent
 {
-    [SerializeField] private Transform targetTransform;
     [SerializeField] private FishControl fishControl;
 
     // Rewards and Penalties
@@ -15,13 +14,13 @@ public class MoveFishAgent : Agent
 
     private float cumulativeReward = 0f;
     private Vector3 initialPositionFish;
-    private float initialTargetX;
+    private Vector3 likedObjectPosition;
+    private Vector3 dislikedObjectPosition;
 
     public override void Initialize()
     {
         Time.timeScale = 1;
         initialPositionFish = transform.position;
-        initialTargetX = targetTransform.position.x;
     }
 
     public override void OnEpisodeBegin()
@@ -29,8 +28,6 @@ public class MoveFishAgent : Agent
         // Reset positions with random values
         transform.position = initialPositionFish + new Vector3(Random.Range(-20f, 20f), Random.Range(-10f, 10f), 0);
         transform.rotation = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
-
-        targetTransform.position = new Vector3(Random.Range(-26, 26) + initialTargetX, -14, 0);
 
         // Show the total reward from the previous run
         Debug.Log("Episode ended. Total reward: " + cumulativeReward);
@@ -42,17 +39,21 @@ public class MoveFishAgent : Agent
     {
         sensor.AddObservation(transform.position);
         sensor.AddObservation(transform.rotation);
-        sensor.AddObservation(targetTransform.position);
-    }
 
+        likedObjectPosition = fishControl.GetLikedObjectPosition();
+        dislikedObjectPosition = fishControl.GetDislikedObjectPosition();
+
+        sensor.AddObservation(likedObjectPosition);
+        sensor.AddObservation(dislikedObjectPosition);
+    }
 
     public override void OnActionReceived(ActionBuffers actions)
     {
         // The inputs from the AI
         float rotationInput = actions.ContinuousActions[0];
         float speedInput = actions.ContinuousActions[1];
-        Debug.Log("AI Rotation:" + rotationInput);
-        Debug.Log("AI Speed:" + speedInput);
+        // Debug.Log("AI Rotation:" + rotationInput);
+        // Debug.Log("AI Speed:" + speedInput);
 
         // Move the fish using the FishControl script
         fishControl.Move(rotationInput, speedInput);
@@ -63,18 +64,23 @@ public class MoveFishAgent : Agent
     // Calculate all the rewards & penalties
     private void CalcReward()
     {
-        // Calculate the distance to the target
-        float distanceToTarget = Vector3.Distance(fishControl.transform.position, targetTransform.position);
+        // Calculate the distance to the like
+        float distanceToLike = Vector3.Distance(fishControl.transform.position, likedObjectPosition);
+        // Add a small reward based on the distance to the like
+        Debug.Log("Distance Reward:" + proximityReward / distanceToLike);
+        AddReward(proximityReward / distanceToLike);
+        cumulativeReward += proximityReward / distanceToLike;
 
-        // Add a small reward based on the distance to the target
-        Debug.Log("Distance Reward:" + proximityReward / distanceToTarget);
-        AddReward(proximityReward / distanceToTarget);
-        cumulativeReward += proximityReward / distanceToTarget;
+        // Calculate the distance to the dislike
+        float distanceToDislike = Vector3.Distance(fishControl.transform.position, likedObjectPosition);
+        // Add a small punishment based on the distance to the dislike
+        Debug.Log("Distance Punishment:" + proximityReward / -distanceToDislike);
+        AddReward(proximityReward / -distanceToDislike);
+        cumulativeReward += proximityReward / -distanceToDislike;
 
         // Add reward for maintaining a horizontal orientation
         float rotation = Mathf.Abs(Mathf.Cos(fishControl.transform.eulerAngles.z * Mathf.Deg2Rad)); // 1:horizontal 0:vertical
         float horizontalReward = (rotation - 0.5f) * horizontalMultiplier;
-
         Debug.Log("Rotation Reward: " + horizontalReward);
         AddReward(horizontalReward);
         cumulativeReward += horizontalReward;

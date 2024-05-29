@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 
 public class FishControl : MonoBehaviour
@@ -15,9 +19,59 @@ public class FishControl : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    // Fish preferences
+    private List<FishPreferences> preferencesList;
+    private List<GameObject> likedObjects = new();
+    private List<GameObject> dislikedObjects = new();
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        preferencesList = LoadPreferences();
+
+        FishPreferences fishPreferences = GetFishPreferences(gameObject.name);
+        if (fishPreferences != null)
+        {
+            likedObjects = FindObjectsByPartialName(fishPreferences.likes);
+            dislikedObjects = FindObjectsByPartialName(fishPreferences.dislikes);
+        }
+    }
+
+    private List<GameObject> FindObjectsByPartialName(string names)
+    {
+        List<GameObject> foundObjects = new();
+
+        foreach (var name in names.Split(','))
+        {
+            GameObject[] objects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
+            GameObject obj = objects.FirstOrDefault(go => go.name.Contains(name.Trim()));
+            if (obj != null)
+            {
+                foundObjects.Add(obj);
+            }
+        }
+
+        return foundObjects;
+    }
+
+    private List<FishPreferences> LoadPreferences()
+    {
+        string filePath = Path.Combine(Application.dataPath + "/ML/EcoPrefs.json");
+        if (File.Exists(filePath))
+        {
+            string json = File.ReadAllText(filePath);
+            return JsonUtility.FromJson<FishPreferencesList>(json).fishPreferences;
+        }
+        else
+        {
+            Debug.LogError("Fish preferences file not found");
+            return new List<FishPreferences>();
+        }
+    }
+
+    private FishPreferences GetFishPreferences(string fishName)
+    {
+        return preferencesList.FirstOrDefault(fp => fp.name.Equals(fishName, StringComparison.OrdinalIgnoreCase));
     }
 
     public void Move(float rotationInput, float speedInput)
@@ -75,4 +129,41 @@ public class FishControl : MonoBehaviour
         return transform.position.x >= maxBounds.x || transform.position.x <= minBounds.x ||
                transform.position.y >= maxBounds.y || transform.position.y <= minBounds.y;
     }
+
+    public Vector3 GetLikedObjectPosition()
+    {
+        Vector3 pos = Vector3.zero;
+
+        if (likedObjects.Count > 0)
+        {
+            pos = likedObjects[0].gameObject.transform.position;
+        }
+
+        return pos;
+    }
+
+    public Vector3 GetDislikedObjectPosition()
+    {
+        Vector3 pos = Vector3.zero;
+
+        if (dislikedObjects.Count > 0)
+        {
+            pos = dislikedObjects[0].gameObject.transform.position;
+        }
+        return pos;
+    }
+}
+
+[Serializable]
+public class FishPreferences
+{
+    public string name;
+    public string likes;
+    public string dislikes;
+}
+
+[Serializable]
+public class FishPreferencesList
+{
+    public List<FishPreferences> fishPreferences;
 }
