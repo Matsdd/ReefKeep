@@ -1,8 +1,8 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using System.IO;
 using System.Collections.Generic;
 using System;
+using UnityEngine.SceneManagement;
+using UnityEngine;
+using System.IO;
 
 public class FishSpawnScript : MonoBehaviour
 {
@@ -156,7 +156,7 @@ public class FishSpawnScript : MonoBehaviour
         return true;
     }
 
-    private void LoadEcosystemData()
+    public void LoadEcosystemData()
     {
         LoadFishData();
         LoadUnderwaterObjectData();
@@ -281,10 +281,34 @@ public class FishSpawnScript : MonoBehaviour
         }
     }
 
+    public void AddUnderwaterObject(string objectType, float xCoordinate)
+    {
+        UnderwaterObject newObj = new UnderwaterObject { objectType = objectType, xCoordinate = xCoordinate };
+        underwaterObjectList.Add(newObj);
+
+        // Update object count
+        if (underwaterObjectCounts.ContainsKey(objectType))
+        {
+            underwaterObjectCounts[objectType]++;
+        }
+        else
+        {
+            underwaterObjectCounts[objectType] = 1;
+        }
+
+        SaveUnderwaterObjectData();
+    }
+
     private void SaveFishData()
     {
         string jsonData = JsonUtility.ToJson(new FishInEcosystemData { fishObjects = fishList });
         File.WriteAllText(fishFilePath, jsonData);
+    }
+
+    private void SaveUnderwaterObjectData()
+    {
+        string jsonData = JsonUtility.ToJson(new UnderwaterObjectsData { ecosystemObjects = underwaterObjectList });
+        File.WriteAllText(underwaterObjectFilePath, jsonData);
     }
 
     private void RemoveFishFromList(GameObject fishToRemove)

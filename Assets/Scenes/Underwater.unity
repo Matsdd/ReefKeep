@@ -470,8 +470,8 @@ MonoBehaviour:
     spawnWeight: 1
     maxCount: 40
     spawnConditions:
-    - objectType: Fish:TestFish
-      requiredCount: 1
+    - objectType: Rock
+      requiredCount: 3
 --- !u!4 &71638648
 Transform:
   m_ObjectHideFlags: 0
@@ -663,6 +663,7 @@ MonoBehaviour:
   cancelButton: {fileID: 2132161486}
   deleteButton: {fileID: 1836717865}
   selectedObject: {fileID: 0}
+  fishSpawnScript: {fileID: 71638647}
 --- !u!4 &302685587
 Transform:
   m_ObjectHideFlags: 0

@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using UnityEditor.Localization.Plugins.XLIFF.V12;
-using UnityEditorInternal.Profiling.Memory.Experimental;
 
 [Serializable]
 public class EcosystemData
@@ -12,14 +10,12 @@ public class EcosystemData
     public List<EcosystemObject> ecosystemObjects;
 }
 
-
 [Serializable]
 public class EcosystemObject
 {
     public string objectType;
     public float xCoordinate;
 }
-
 
 public class ObjectManager : MonoBehaviour
 {
@@ -43,8 +39,13 @@ public class ObjectManager : MonoBehaviour
 
     private List<EcosystemObject> placedObjectsList = new(); // List to store placed objects
 
+    // Reference to FishSpawnScript
+    public FishSpawnScript fishSpawnScript;
+
     void Start()
     {
+        // Assuming FishSpawnScript is attached to the same GameObject
+        fishSpawnScript = GetComponent<FishSpawnScript>();
         LoadEcosystem();
     }
 
@@ -92,7 +93,7 @@ public class ObjectManager : MonoBehaviour
         }
     }
 
-    // Function to create a new type of objet at a location
+    // Function to create a new type of object at a location
     public void CreateNewObject(string objectName)
     {
         GameObject prefab = Array.Find(objectPrefabs, item => item.name == objectName);
@@ -105,14 +106,12 @@ public class ObjectManager : MonoBehaviour
             AddObjectToList(objectName, 69420f);
 
             StartMovingNewObject(newItem);
-
         }
         else
         {
             Debug.LogError("Item prefab not found for name: " + objectName);
         }
     }
-
 
     // Get everything ready for moving objects
     private void StartMovingObject(GameObject obj)
@@ -180,7 +179,7 @@ public class ObjectManager : MonoBehaviour
         selectedObject.transform.position = newPosition;
     }
 
-    // Cancel movement and place the object back in the origional position
+    // Cancel movement and place the object back in the original position
     public void CancelMovingObject()
     {
         selectedObject.transform.position = originalPosition;
@@ -212,6 +211,7 @@ public class ObjectManager : MonoBehaviour
 
             selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, 0);
             selectedObjectRenderer.color = Color.white;
+
             selectedObject = null;
             isMovingObject = false;
         }
@@ -224,9 +224,11 @@ public class ObjectManager : MonoBehaviour
     // Function to place a new object in the list
     private void AddObjectToList(string objectType, float xCoordinate)
     {
-        EcosystemObject newObject = new EcosystemObject();
-        newObject.objectType = objectType;
-        newObject.xCoordinate = xCoordinate;
+        EcosystemObject newObject = new EcosystemObject
+        {
+            objectType = objectType,
+            xCoordinate = xCoordinate
+        };
         placedObjectsList.Add(newObject);
         SaveEcosystem();
     }
@@ -244,7 +246,6 @@ public class ObjectManager : MonoBehaviour
             placedObjectsList[existingIndex].xCoordinate = xCoordinateNew;
             SaveEcosystem();
         }
-
         else
         {
             Debug.LogError("Error confirming object into list!" + existingIndex);
@@ -280,7 +281,6 @@ public class ObjectManager : MonoBehaviour
             placedObjectsList.RemoveAt(existingIndex);
             SaveEcosystem();
         }
-
         else
         {
             Debug.LogError("Error confirming object into list!" + existingIndex);
