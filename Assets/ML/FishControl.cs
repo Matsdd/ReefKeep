@@ -143,7 +143,7 @@ public class FishControl : MonoBehaviour
     {
         Vector3 pos = new(100, 100, 0);
 
-        if (likedObjects.Count > 0)
+        if (likedObjects.Count > 0 && likedObjects[0] != null)
         {
             pos = likedObjects[0].gameObject.transform.position;
         }
@@ -156,7 +156,7 @@ public class FishControl : MonoBehaviour
     {
         Vector3 pos = new(100, 100, 0);
 
-        if (dislikedObjects.Count > 0)
+        if (dislikedObjects.Count > 0 && dislikedObjects[0] != null)
         {
             pos = dislikedObjects[0].gameObject.transform.position;
         }
