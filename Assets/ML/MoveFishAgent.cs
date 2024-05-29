@@ -57,8 +57,8 @@ public class MoveFishAgent : Agent
         // The inputs from the AI
         float rotationInput = actions.ContinuousActions[0];
         float speedInput = actions.ContinuousActions[1];
-        // Debug.Log("AI Rotation:" + rotationInput);
-        // Debug.Log("AI Speed:" + speedInput);
+        Debug.Log("AI Rotation:" + rotationInput);
+        Debug.Log("AI Speed:" + speedInput);
 
         // Move the fish using the FishControl script
         fishControl.Move(rotationInput, speedInput);
