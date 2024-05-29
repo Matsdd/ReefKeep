@@ -51,7 +51,7 @@ public class TrashManagerScript : MonoBehaviour
     // Function to spawn trash
     private void SpawnTrash()
     {
-        float randomX = Random.Range(-10, 10);
+        float randomX = Random.Range(PlayerPrefs.GetInt("BigTrash1") == 1?-12:-20, PlayerPrefs.GetInt("BigTrash2") == 1 ? 12 : 20);
         float randomY = Random.Range(-12, 12);
 
         // Generate a random number to choose trash type

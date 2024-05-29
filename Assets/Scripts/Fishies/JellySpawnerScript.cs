@@ -12,13 +12,13 @@ public class JellySpawnerScript : MonoBehaviour
     private void FixedUpdate()
     {
         //spawnt jellyfish?
-        int rand = Random.Range(0, 100);
+        int rand = Random.Range(0, 10);
         if (rand == 1)
         {
             //spawn jellyfish 1 or 2
             rand = Random.Range(0, 2);
             //determine location it spawns
-            Vector3 newPos = new Vector3(Random.Range(-14,14),Random.Range(-12,12), 1);
+            Vector3 newPos = new Vector3(Random.Range(PlayerPrefs.GetInt("BigTrash1") == 1 ? -14 : -24, PlayerPrefs.GetInt("BigTrash2") == 1 ? 14 : 24),Random.Range(-12,12), 1);
             if (rand == 1)
             {
                 Instantiate(jelly2,newPos,new Quaternion(0,0,0,0));
