@@ -29,12 +29,21 @@ public class FishControl : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         preferencesList = LoadPreferences();
 
+        Debug.Log("Name: " + gameObject.name);
+
         FishPreferences fishPreferences = GetFishPreferences(gameObject.name);
         if (fishPreferences != null)
         {
             likedObjects = FindObjectsByPartialName(fishPreferences.likes);
             dislikedObjects = FindObjectsByPartialName(fishPreferences.dislikes);
         }
+
+        Vector2 fishSize = spriteRenderer.sprite.rect.size / spriteRenderer.sprite.pixelsPerUnit;
+        Vector3 fishScale = transform.localScale;
+
+        // Adjust the map bounds based on the size and scale of this fish sprite
+        minBounds = new Vector2(-28f + fishSize.x * fishScale.x / 2f, -15f + fishSize.x * fishScale.x / 2f);
+        maxBounds = new Vector2(28f - fishSize.x * fishScale.x / 2f, 15f - fishSize.x * fishScale.x / 2f);
     }
 
     private List<GameObject> FindObjectsByPartialName(string names)
@@ -138,6 +147,7 @@ public class FishControl : MonoBehaviour
         {
             pos = likedObjects[0].gameObject.transform.position;
         }
+        Debug.Log("Like Pos: " + pos);
 
         return pos;
     }
@@ -150,6 +160,8 @@ public class FishControl : MonoBehaviour
         {
             pos = dislikedObjects[0].gameObject.transform.position;
         }
+        Debug.Log("Dislike Pos: " + pos);
+
         return pos;
     }
 }

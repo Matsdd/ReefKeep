@@ -26,8 +26,8 @@ public class MoveFishAgent : Agent
     public override void OnEpisodeBegin()
     {
         // Reset positions with random values
-        transform.position = initialPositionFish + new Vector3(Random.Range(-20f, 20f), Random.Range(-10f, 10f), 0);
-        transform.rotation = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
+        // transform.position = initialPositionFish + new Vector3(Random.Range(-20f, 20f), Random.Range(-10f, 10f), 0);
+        // transform.rotation = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
 
         // Show the total reward from the previous run
         Debug.Log("Episode ended. Total reward: " + cumulativeReward);
