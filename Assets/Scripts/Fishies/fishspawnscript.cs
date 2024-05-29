@@ -98,6 +98,48 @@ public class FishSpawnScript : MonoBehaviour
         SaveFishData();
     }
 
+    public void SpawnFishByName(string fishName)
+    {
+
+        Debug.Log("SpawnFishByName is accessed");
+        // Load the fish prefab from Resources
+        GameObject fishPrefab = Resources.Load<GameObject>("Prefabs/Fishies/" + fishName);
+
+        if (fishPrefab == null)
+        {
+            Debug.LogError("Fish prefab not found: " + fishName);
+            return;
+        }
+
+        // Generate a random spawn position within the defined borders
+        float randomHeightPos = UnityEngine.Random.Range(minSpawnHeight, maxSpawnHeight);
+        Vector3 spawnPosition = new Vector3(0, 0, 0);
+        GameObject newFish = Instantiate(fishPrefab, spawnPosition, Quaternion.identity);
+
+        // Add the spawned fish to the list
+        fishList.Add(new FishObject
+        {
+            name = fishPrefab.name,
+            xposition = spawnPosition.x,
+            yposition = spawnPosition.y,
+            instanceID = newFish.GetInstanceID()
+        });
+
+        // Update fish count
+        if (fishCounts.ContainsKey(fishPrefab.name))
+        {
+            fishCounts[fishPrefab.name]++;
+        }
+        else
+        {
+            fishCounts[fishPrefab.name] = 1;
+        }
+
+        // Save the updated fish data
+        SaveFishData();
+    }
+
+
     private GameObject ChooseRandomFish()
     {
         int totalWeight = 0;
