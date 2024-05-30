@@ -28,7 +28,7 @@ public class BuyScript : MonoBehaviour
         {
             PlayerPrefs.SetString("BoughtFish", itemName);
             PlayerPrefs.Save();
-            SceneManager.LoadScene(3, LoadSceneMode.Single);
+            SceneManager.LoadScene("Underwater", LoadSceneMode.Single);
         }
         else
         {

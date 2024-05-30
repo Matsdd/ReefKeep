@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -820,7 +820,7 @@ GameObject:
   - component: {fileID: 178612821}
   - component: {fileID: 178612820}
   m_Layer: 5
-  m_Name: Plant2
+  m_Name: Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -860,7 +860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da10b911a905ea5488387eb1c4a29c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Rock
+  itemName: Basking
   cost: 100
 --- !u!114 &178612821
 MonoBehaviour:
@@ -908,7 +908,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 178612820}
         m_TargetAssemblyTypeName: BuyScript, Assembly-CSharp
-        m_MethodName: BuyObject
+        m_MethodName: BuyFish
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1397,7 +1397,7 @@ GameObject:
   - component: {fileID: 265803954}
   - component: {fileID: 265803953}
   m_Layer: 5
-  m_Name: Rock2
+  m_Name: Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1437,7 +1437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da10b911a905ea5488387eb1c4a29c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Rock
+  itemName: Basking
   cost: 100
 --- !u!114 &265803954
 MonoBehaviour:
@@ -1485,7 +1485,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 265803953}
         m_TargetAssemblyTypeName: BuyScript, Assembly-CSharp
-        m_MethodName: BuyObject
+        m_MethodName: BuyFish
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1953,7 +1953,7 @@ GameObject:
   - component: {fileID: 388580312}
   - component: {fileID: 388580311}
   m_Layer: 5
-  m_Name: Rock
+  m_Name: Basking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1993,7 +1993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da10b911a905ea5488387eb1c4a29c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Rock
+  itemName: Basking
   cost: 100
 --- !u!114 &388580312
 MonoBehaviour:
@@ -2041,7 +2041,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 388580311}
         m_TargetAssemblyTypeName: BuyScript, Assembly-CSharp
-        m_MethodName: BuyObject
+        m_MethodName: BuyFish
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4021,7 +4021,7 @@ GameObject:
   - component: {fileID: 782111485}
   - component: {fileID: 782111484}
   m_Layer: 5
-  m_Name: Plant
+  m_Name: Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4061,7 +4061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da10b911a905ea5488387eb1c4a29c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Rock
+  itemName: Basking
   cost: 100
 --- !u!114 &782111485
 MonoBehaviour:
@@ -4109,7 +4109,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 782111484}
         m_TargetAssemblyTypeName: BuyScript, Assembly-CSharp
-        m_MethodName: BuyObject
+        m_MethodName: BuyFish
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5588,7 +5588,7 @@ GameObject:
   - component: {fileID: 1207405331}
   - component: {fileID: 1207405330}
   m_Layer: 5
-  m_Name: Plant3
+  m_Name: Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5628,7 +5628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da10b911a905ea5488387eb1c4a29c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Rock
+  itemName: Basking
   cost: 100
 --- !u!114 &1207405331
 MonoBehaviour:
@@ -5676,7 +5676,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1207405330}
         m_TargetAssemblyTypeName: BuyScript, Assembly-CSharp
-        m_MethodName: BuyObject
+        m_MethodName: BuyFish
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6400,7 +6400,7 @@ GameObject:
   - component: {fileID: 1418410175}
   - component: {fileID: 1418410174}
   m_Layer: 5
-  m_Name: Rock3
+  m_Name: Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6440,7 +6440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da10b911a905ea5488387eb1c4a29c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Rock
+  itemName: Basking
   cost: 100
 --- !u!114 &1418410175
 MonoBehaviour:
@@ -6488,7 +6488,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1418410174}
         m_TargetAssemblyTypeName: BuyScript, Assembly-CSharp
-        m_MethodName: BuyObject
+        m_MethodName: BuyFish
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

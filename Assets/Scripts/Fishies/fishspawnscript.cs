@@ -112,7 +112,6 @@ public class FishSpawnScript : MonoBehaviour
         }
 
         // Generate a random spawn position within the defined borders
-        float randomHeightPos = UnityEngine.Random.Range(minSpawnHeight, maxSpawnHeight);
         Vector3 spawnPosition = new Vector3(0, 0, 0);
         GameObject newFish = Instantiate(fishPrefab, spawnPosition, Quaternion.identity);
 
