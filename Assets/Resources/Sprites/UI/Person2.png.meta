@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4f70038089007b741829725bd8306798
+guid: 636ab4250495bee4a9aa8f81ebcdb961
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Person1_0
+      name: Person2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -121,14 +121,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c1934183f000f64b86fe769725f52e2
-      internalID: -2019286810
+      spriteID: 0a12a5bad806fd04ca2eef20131f8bae
+      internalID: 198178576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Person1_1
+      name: Person2_1
       rect:
         serializedVersion: 2
         x: 128
@@ -142,8 +142,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eff3ff79930568840ba300c0ccf81f5a
-      internalID: 289059659
+      spriteID: 2b13147e61f025c4199abfa21de737c4
+      internalID: 1587330696
       vertices: []
       indices: 
       edges: []
@@ -159,8 +159,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Person1_0: -2019286810
-      Person1_1: 289059659
+      Person2_0: 198178576
+      Person2_1: 1587330696
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

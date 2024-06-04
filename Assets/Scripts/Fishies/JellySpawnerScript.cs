@@ -13,7 +13,7 @@ public class JellySpawnerScript : MonoBehaviour
     {
         //spawnt jellyfish?
         int rand = Random.Range(0, 5000);
-        if (rand == 1)
+        if (rand == 1 && totalJellies <= 5)
         {
             //spawn jellyfish 1 or 2
             rand = Random.Range(0, 2);
