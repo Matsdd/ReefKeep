@@ -20,7 +20,7 @@ public class VisitorCenterUIScript : MonoBehaviour
     private void Start()
     {
         // Set the sprite after 1sec so the correct level can be loaded from PlayerPrefs
-        Invoke(nameof(UpdateSprite), 1f);
+        Invoke(nameof(UpdateSprite), 0.1f);
     }
 
     // Open the menu when clicking on the building
