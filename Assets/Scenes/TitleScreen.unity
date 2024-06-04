@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -132,7 +132,6 @@ GameObject:
   - component: {fileID: 265751484}
   - component: {fileID: 265751483}
   - component: {fileID: 265751486}
-  - component: {fileID: 265751485}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -198,19 +197,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265751479}
   m_CullTransparentMesh: 1
---- !u!114 &265751485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265751479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3c9d6de422274d49be6f547180cd1a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene: 1
 --- !u!114 &265751486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,18 +241,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 265751485}
-        m_TargetAssemblyTypeName: ChangeSceneButtonScript, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1386610368}
         m_TargetAssemblyTypeName: SfxPlayScript, Assembly-CSharp
         m_MethodName: playSound
@@ -277,6 +251,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: sButton
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 930948211}
+        m_TargetAssemblyTypeName: SceneHandler, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &411348018
@@ -913,6 +899,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1649045336}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &930948211 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 508287375893317710, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+  m_PrefabInstance: {fileID: 8874160643658728279}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d4b40efab2669c4aaf6b8bfb1773dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1004077424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,7 +1827,6 @@ GameObject:
   - component: {fileID: 1864687058}
   - component: {fileID: 1864687057}
   - component: {fileID: 1864687060}
-  - component: {fileID: 1864687059}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -1896,19 +1892,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864687055}
   m_CullTransparentMesh: 1
---- !u!114 &1864687059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864687055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3c9d6de422274d49be6f547180cd1a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene: 5
 --- !u!114 &1864687060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1953,14 +1936,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1864687059}
-        m_TargetAssemblyTypeName: ChangeSceneButtonScript, Assembly-CSharp
+      - m_Target: {fileID: 930948211}
+        m_TargetAssemblyTypeName: SceneHandler, Assembly-CSharp
         m_MethodName: ChangeScene
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2153,6 +2136,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8874160643658728279
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4520917
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.20904952
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.078411415
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880859389878471169, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_Name
+      value: SceneChanger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2167,3 +2207,4 @@ SceneRoots:
   - {fileID: 1004077426}
   - {fileID: 1386610369}
   - {fileID: 1471185630}
+  - {fileID: 8874160643658728279}
