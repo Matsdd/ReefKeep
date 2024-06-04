@@ -11,7 +11,6 @@ public class ShopUpgradeScript : MonoBehaviour
 
     public GameObject upgradeConfirmMenu;
     public TextMeshProUGUI levelText;
-    public TextMeshProUGUI moneyPerCleanText;
     public TextMeshProUGUI upgradeToLevelText;
     public TextMeshProUGUI upgradeCostText;
 
@@ -19,8 +18,8 @@ public class ShopUpgradeScript : MonoBehaviour
     void Start()
     {
         // Get values from PlayerPrefs or set a default
-        currentLevel = PlayerPrefs.GetInt("RecycleStationLevel", 1);
-
+        currentLevel = PlayerPrefs.GetInt("ShopLevel", 1);
+        UpdateUI();
     }
     public void ConfirmUpgrade()
     {
@@ -31,7 +30,7 @@ public class ShopUpgradeScript : MonoBehaviour
             if (GameManager.instance.ChangeMoney(-upgradeCost[currentLevel]))
             {
                 currentLevel++;
-                PlayerPrefs.SetInt("RecycleStationLevel", currentLevel);
+                PlayerPrefs.SetInt("ShopLevel", currentLevel);
                 PlayerPrefs.Save();
             }
             else
@@ -47,13 +46,14 @@ public class ShopUpgradeScript : MonoBehaviour
         upgradeConfirmMenu.SetActive(false);
     }
 
+
+
     // Updates all the text in the UI. Call this when an update happens
     public void UpdateUI()
     {
         levelText.text = "Level: " + currentLevel;
-        moneyPerCleanText.text = "Fishbucks per Trash: " + (currentLevel * 10);
         upgradeToLevelText.text = "Upgrade to level " + (currentLevel + 1) + "?";
-        upgradeCostText.text = upgradeCost[currentLevel].ToString();
+        upgradeCostText.text = "This will unlock a new page of the shop and cost " + upgradeCost[currentLevel].ToString() + " Fishbucks.";
 
         if (currentLevel >= 3)
         {
