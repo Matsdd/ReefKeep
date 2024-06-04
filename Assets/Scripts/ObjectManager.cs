@@ -137,7 +137,7 @@ public class ObjectManager : MonoBehaviour
         isMovingObject = true;
         originalPosition = new Vector3(69420f, -15.9f, 0f);
         selectedObjectRenderer = selectedObject.GetComponent<SpriteRenderer>();
-        selectedObjectRenderer.color = Color.green;
+        selectedObjectRenderer.color = Color.red;
         selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, -1);
 
         // Show move buttons
@@ -161,7 +161,7 @@ public class ObjectManager : MonoBehaviour
         newPosition.z = -1;
 
         // Check for collisions with objects
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(newPosition, (selectedObjectRenderer.bounds.size.x / 2f) - 3);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector3(newPosition.x, objectY, newPosition.z), 0.01f);
 
         // Filter colliders by tag
         colliders = colliders.Where(c => c.CompareTag("BuildableObject")).ToArray();
