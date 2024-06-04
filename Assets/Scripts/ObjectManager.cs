@@ -23,6 +23,8 @@ public class ObjectManager : MonoBehaviour
     public GameObject placeButton;
     public GameObject cancelButton;
     public GameObject deleteButton;
+    public GameObject beachButton;
+    public GameObject delConfirmMenu;
 
     private readonly float objectSnapDistance = 0.5f;
     private readonly float minX = -25f;
@@ -128,6 +130,7 @@ public class ObjectManager : MonoBehaviour
         placeButton.SetActive(true);
         cancelButton.SetActive(true);
         deleteButton.SetActive(true);
+        beachButton.SetActive(false);
     }
 
     private void StartMovingNewObject(GameObject obj)
@@ -144,6 +147,7 @@ public class ObjectManager : MonoBehaviour
         placeButton.SetActive(true);
         cancelButton.SetActive(false);
         deleteButton.SetActive(true);
+        beachButton.SetActive(false);
     }
 
     // Actually move the selected object
@@ -191,6 +195,7 @@ public class ObjectManager : MonoBehaviour
         placeButton.SetActive(false);
         cancelButton.SetActive(false);
         deleteButton.SetActive(false);
+        beachButton.SetActive(true);
     }
 
     // Confirm movement of the object into the new position
@@ -219,6 +224,7 @@ public class ObjectManager : MonoBehaviour
         placeButton.SetActive(false);
         cancelButton.SetActive(false);
         deleteButton.SetActive(false);
+        beachButton.SetActive(true);
     }
 
     // Function to place a new object in the list
@@ -271,6 +277,8 @@ public class ObjectManager : MonoBehaviour
                 placeButton.SetActive(false);
                 cancelButton.SetActive(false);
                 deleteButton.SetActive(false);
+                beachButton.SetActive(true);
+                delConfirmMenu.SetActive(false);
             }
             else
             {
@@ -285,6 +293,16 @@ public class ObjectManager : MonoBehaviour
         {
             Debug.LogError("Error confirming object into list!" + existingIndex);
         }
+    }
+
+    public void OpenDeleteConfirm()
+    {
+        delConfirmMenu.SetActive(true);
+    }
+
+    public void CloseDeleteConfirm()
+    {
+        delConfirmMenu.SetActive(false);
     }
 
     private void SaveEcosystem()

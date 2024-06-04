@@ -34,6 +34,10 @@ MonoBehaviour:
     m_Localized: Wil je deze afvalberg weghalen voor 1000 Fishbucks?
     m_Metadata:
       m_Items: []
+  - m_Id: 16251107991461888
+    m_Localized: Weet je zeker dat je dit object wil verwijderen?
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

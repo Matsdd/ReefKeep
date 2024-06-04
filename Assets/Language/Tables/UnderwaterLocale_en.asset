@@ -34,6 +34,10 @@ MonoBehaviour:
     m_Localized: Would you like to destroy this cluster for 1000 Fishbucks?
     m_Metadata:
       m_Items: []
+  - m_Id: 16251107991461888
+    m_Localized: Are you sure you want to delete this object?
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
