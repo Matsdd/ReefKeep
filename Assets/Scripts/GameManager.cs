@@ -66,14 +66,14 @@ public class GameManager : MonoBehaviour
 
     private void LoadPlayerMoney()
     {
-        money = PlayerPrefs.GetInt("PlayerMoney", 0);
+        money = PlayerPrefs.GetInt("PlayerMoney", 69);
     }
 
     private void UpdateMoneyUI()
     {
         if (moneyText != null)
         {
-            moneyText.text = "Money: " + money.ToString();
+            moneyText.text = money.ToString();
         }
     }
 
