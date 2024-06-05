@@ -51,17 +51,16 @@ public class ShopUpgradeScript : MonoBehaviour
     // Updates all the text in the UI. Call this when an update happens
     public void UpdateUI()
     {
-        levelText.text = "Level: " + currentLevel;
-        upgradeToLevelText.text = "Upgrade to level " + (currentLevel + 1) + "?";
-        upgradeCostText.text = "This will unlock a new page of the shop and cost " + upgradeCost[currentLevel].ToString() + " Fishbucks.";
-
-        if (currentLevel >= 3)
+        if (currentLevel < 3)
         {
+            levelText.text = "Level: " + currentLevel;
+            upgradeToLevelText.text = "Upgrade to level " + (currentLevel + 1) + "?";
+            upgradeCostText.text = "This will unlock a new page of the shop and cost " + upgradeCost[currentLevel].ToString() + " Fishbucks.";
+        } else {
+            levelText.text = "Level: " + currentLevel;
+            upgradeToLevelText.text = "Can't level up!";
+            upgradeCostText.text = "This building is at the maximum level.";
             upgradeButton.gameObject.SetActive(false);
-        }
-        else
-        {
-            upgradeButton.gameObject.SetActive(true);
         }
     }
 
