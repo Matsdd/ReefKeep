@@ -30,6 +30,7 @@ public class ObjectManager : MonoBehaviour
     public GameObject delConfirmMenu;
     public GameObject zButton;
     public TextMeshProUGUI zText;
+    public GameObject flipButton;
 
     private readonly float objectSnapDistance = 0.5f;
     private readonly float minX = -25f;
@@ -136,6 +137,7 @@ public class ObjectManager : MonoBehaviour
         cancelButton.SetActive(true);
         deleteButton.SetActive(true);
         zButton.SetActive(true);
+        flipButton.SetActive(true);
         beachButton.SetActive(false);
     }
 
@@ -154,6 +156,7 @@ public class ObjectManager : MonoBehaviour
         cancelButton.SetActive(false);
         deleteButton.SetActive(true);
         zButton.SetActive(true);
+        flipButton.SetActive(true);
         beachButton.SetActive(false);
     }
 
@@ -203,6 +206,7 @@ public class ObjectManager : MonoBehaviour
         cancelButton.SetActive(false);
         deleteButton.SetActive(false);
         zButton.SetActive(false);
+        flipButton.SetActive(false);
         beachButton.SetActive(true);
     }
 
@@ -232,6 +236,7 @@ public class ObjectManager : MonoBehaviour
         cancelButton.SetActive(false);
         deleteButton.SetActive(false);
         zButton.SetActive(false);
+        flipButton.SetActive(false);
         beachButton.SetActive(true);
     }
 
@@ -261,7 +266,7 @@ public class ObjectManager : MonoBehaviour
             // Update the x coordinate of the existing object
             placedObjectsList[existingIndex].xCoordinate = xCoordinateNew;
             placedObjectsList[existingIndex].zCoordinate = selectedObject.transform.position.z;
-            placedObjectsList[existingIndex].flipped = false;
+            placedObjectsList[existingIndex].flipped = selectedObject.GetComponent<SpriteRenderer>().flipX; ;
             SaveEcosystem();
         }
         else
@@ -292,6 +297,7 @@ public class ObjectManager : MonoBehaviour
                 beachButton.SetActive(true);
                 delConfirmMenu.SetActive(false);
                 zButton.SetActive(false);
+                flipButton.SetActive(false);
             }
             else
             {
@@ -318,6 +324,7 @@ public class ObjectManager : MonoBehaviour
         delConfirmMenu.SetActive(false);
     }
 
+    // Change the layer of the current object
     public void ChangeObjectLayer()
     {
         if (selectedObject)
@@ -338,6 +345,20 @@ public class ObjectManager : MonoBehaviour
             zText.text = "Layer: " + selectedObject.transform.position.z.ToString();
         }
 
+    }
+
+    // Flip the sprite of the current object
+    public void FlipObjectSprite()
+    {
+        if (selectedObject)
+        {
+            SpriteRenderer spriteRenderer = selectedObject.GetComponent<SpriteRenderer>();
+
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.flipX = !spriteRenderer.flipX;
+            }
+        }
     }
 
     private void SaveEcosystem()
@@ -384,8 +405,11 @@ public class ObjectManager : MonoBehaviour
                 GameObject prefab = Array.Find(objectPrefabs, item => item.name == obj.objectType);
                 if (prefab != null)
                 {
+                    // Instantiate a prefab with the correct cords and sprite flip
                     GameObject newItem = Instantiate(prefab);
                     newItem.transform.position = new Vector3(obj.xCoordinate, objectY + newItem.GetComponent<SpriteRenderer>().bounds.extents.y, obj.zCoordinate);
+                    SpriteRenderer spriteRenderer = newItem.GetComponent<SpriteRenderer>();
+                    spriteRenderer.flipX = obj.flipped;
                 }
                 else
                 {
