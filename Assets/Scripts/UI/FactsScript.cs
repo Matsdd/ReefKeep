@@ -75,7 +75,7 @@ public class FactsScript : MonoBehaviour
         "Meervallen bouwen nesten en vertonen ouderlijke zorg, waarbij de mannetjes de eieren en jongen bewaken.",
         "Opah zijn de enige bekende volledig warmbloedige vissen en behouden een hogere lichaamstemperatuur dan het omringende water.",
         "Opah bewonen diepe oceaanwateren, vaak op diepten van 50 tot 500 meter.",
-        "Opah kan behoorlijk groot worden, met sommige individuen die meer dan 2 meter lang worden en meer dan 100 kg wegen.",
+        "Opah kan behoorlijk groot worden, met sommigen die meer dan 2 meter lang worden en meer dan 100 kg wegen.",
         "Voshaaien zijn bekend om hun buitengewoon lange staartvin, die ze gebruiken om prooien te verdoven.",
         "Voshaaien staan bekend om het uit het water springen, een gedrag dat breaching wordt genoemd.",
         "Voshaaien worden geclassificeerd als kwetsbaar door overbevissing en bijvangst.",
@@ -94,7 +94,7 @@ public class FactsScript : MonoBehaviour
         }
         else
         {
-            txt.text = "Fun Fact: \n" + factsNL[newFact];
+            txt.text = "Wist je dat: \n" + factsNL[newFact];
         }
     }
 
