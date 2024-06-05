@@ -27,11 +27,21 @@ public class BirdFlyScript : MonoBehaviour
         {
             vec.x += 0.1f;
             this.gameObject.transform.position = vec;
+            //destroy wanneer uit scherm
+            if (vec.x > 10)
+            {
+                Destroy(this.gameObject);
+            }
         }
         else
         {
             vec.x -= 0.1f;
             this.gameObject.transform.position = vec;
+            //destroy wanneer uit scherm
+            if (vec.x < -10)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }
