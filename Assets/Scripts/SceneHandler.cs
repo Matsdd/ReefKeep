@@ -6,6 +6,7 @@ public class SceneHandler : MonoBehaviour
     [SerializeField] RectTransform transObj;
     private int newScene = 0;
 
+    // Unloading animation on start
     private void Start()
     {
         transObj.gameObject.SetActive(true);
@@ -16,6 +17,7 @@ public class SceneHandler : MonoBehaviour
         });
     }
 
+    // Make the scene black before changing the scene
     public void ChangeScene(int scene)
     {
         transObj.gameObject.SetActive(true);
@@ -24,9 +26,6 @@ public class SceneHandler : MonoBehaviour
         LeanTween.scale(transObj, new Vector3(1, 1, 1), 0.5f).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() => {
             newScene = scene;
             LoadScene();
-
-            // Little pause before loading the next scene
-            // Invoke("LoadScene", 0.1f);
         });
     }
 
