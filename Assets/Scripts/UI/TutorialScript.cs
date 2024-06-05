@@ -146,7 +146,7 @@ public class TutorialScript : MonoBehaviour
                 PlayerPrefs.SetFloat("Tutorial", 1);
             }
             state++;
-            tutotimer += 60;
+            tutotimer = 60;
         }
     }
 
