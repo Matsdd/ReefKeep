@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // Prevent GameManager from being destroyed when loading new scenes
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -46,18 +46,6 @@ public class GameManager : MonoBehaviour
             return false; // Not enough money
         }
     }
-
-    // Shop code explaination:
-    //
-    // if (GameManager.instance.ChangeMoney(-itemPrice))
-    // {
-    // Player had enough money, perform purchase.
-    // }
-    // else
-    // {
-    // Player didn't have enough money, show message to player.
-    // }
-
 
     private void SavePlayerMoney()
     {
