@@ -48,7 +48,7 @@ public class VisitorManagerScript : MonoBehaviour
         }
 
         //spawn vogels 
-        int rando = Random.Range(0, 300);
+        int rando = Random.Range(0, 500);
         if (rando == 1)
         {
             Instantiate(birb);
