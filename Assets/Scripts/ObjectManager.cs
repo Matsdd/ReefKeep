@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using TMPro;
 
 [Serializable]
 public class EcosystemData
@@ -15,6 +16,8 @@ public class EcosystemObject
 {
     public string objectType;
     public float xCoordinate;
+    public float zCoordinate;
+    public bool flipped;
 }
 
 public class ObjectManager : MonoBehaviour
@@ -25,6 +28,9 @@ public class ObjectManager : MonoBehaviour
     public GameObject deleteButton;
     public GameObject beachButton;
     public GameObject delConfirmMenu;
+    public GameObject zButton;
+    public TextMeshProUGUI zText;
+    public GameObject flipButton;
 
     private readonly float objectSnapDistance = 0.5f;
     private readonly float minX = -25f;
@@ -95,14 +101,14 @@ public class ObjectManager : MonoBehaviour
         }
     }
 
-    // Function to create a new type of object at a location
+    // Function to create a new type of object
     public void CreateNewObject(string objectName)
     {
         GameObject prefab = Array.Find(objectPrefabs, item => item.name == objectName);
         if (prefab != null)
         {
             GameObject newItem = Instantiate(prefab);
-            newItem.transform.position = new Vector3(0f, objectY + newItem.GetComponent<SpriteRenderer>().bounds.extents.y, 0f);
+            newItem.transform.position = new Vector3(0, objectY + newItem.GetComponent<SpriteRenderer>().bounds.extents.y, 1);
 
             // Add the placed object to the list
             AddObjectToList(objectName, 69420f);
@@ -124,12 +130,14 @@ public class ObjectManager : MonoBehaviour
         originalPosition = selectedObject.transform.position;
         selectedObjectRenderer = selectedObject.GetComponent<SpriteRenderer>();
         selectedObjectRenderer.color = Color.green;
-        selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, -1);
+        zText.text = "Layer: " + selectedObject.transform.position.z.ToString();
 
         // Show move buttons
         placeButton.SetActive(true);
         cancelButton.SetActive(true);
         deleteButton.SetActive(true);
+        zButton.SetActive(true);
+        flipButton.SetActive(true);
         beachButton.SetActive(false);
     }
 
@@ -138,15 +146,17 @@ public class ObjectManager : MonoBehaviour
         // Set selectedObject
         selectedObject = obj;
         isMovingObject = true;
-        originalPosition = new Vector3(69420f, -15.9f, 0f);
+        originalPosition = new Vector3(69420f, objectY, 1);
         selectedObjectRenderer = selectedObject.GetComponent<SpriteRenderer>();
         selectedObjectRenderer.color = Color.red;
-        selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, -1);
+        zText.text = "Layer: " + selectedObject.transform.position.z.ToString();
 
         // Show move buttons
         placeButton.SetActive(true);
         cancelButton.SetActive(false);
         deleteButton.SetActive(true);
+        zButton.SetActive(true);
+        flipButton.SetActive(true);
         beachButton.SetActive(false);
     }
 
@@ -162,7 +172,7 @@ public class ObjectManager : MonoBehaviour
         newPosition.x = Mathf.Round(newPosition.x / objectSnapDistance) * objectSnapDistance;
         newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
         newPosition.y = objectY + selectedObject.GetComponent<SpriteRenderer>().bounds.extents.y;
-        newPosition.z = -1;
+        newPosition.z = selectedObject.transform.position.z;
 
         // Check for collisions with objects
         Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector3(newPosition.x, objectY, newPosition.z), 0.01f);
@@ -195,6 +205,8 @@ public class ObjectManager : MonoBehaviour
         placeButton.SetActive(false);
         cancelButton.SetActive(false);
         deleteButton.SetActive(false);
+        zButton.SetActive(false);
+        flipButton.SetActive(false);
         beachButton.SetActive(true);
     }
 
@@ -214,7 +226,6 @@ public class ObjectManager : MonoBehaviour
             // Edit the existing list
             EditObjectInList(selectedObject.transform.position.x);
 
-            selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, 0);
             selectedObjectRenderer.color = Color.white;
 
             selectedObject = null;
@@ -224,6 +235,8 @@ public class ObjectManager : MonoBehaviour
         placeButton.SetActive(false);
         cancelButton.SetActive(false);
         deleteButton.SetActive(false);
+        zButton.SetActive(false);
+        flipButton.SetActive(false);
         beachButton.SetActive(true);
     }
 
@@ -233,7 +246,9 @@ public class ObjectManager : MonoBehaviour
         EcosystemObject newObject = new EcosystemObject
         {
             objectType = objectType,
-            xCoordinate = xCoordinate
+            xCoordinate = xCoordinate,
+            zCoordinate = 1,
+            flipped = false
         };
         placedObjectsList.Add(newObject);
         SaveEcosystem();
@@ -250,6 +265,8 @@ public class ObjectManager : MonoBehaviour
         {
             // Update the x coordinate of the existing object
             placedObjectsList[existingIndex].xCoordinate = xCoordinateNew;
+            placedObjectsList[existingIndex].zCoordinate = selectedObject.transform.position.z;
+            placedObjectsList[existingIndex].flipped = selectedObject.GetComponent<SpriteRenderer>().flipX; ;
             SaveEcosystem();
         }
         else
@@ -279,6 +296,8 @@ public class ObjectManager : MonoBehaviour
                 deleteButton.SetActive(false);
                 beachButton.SetActive(true);
                 delConfirmMenu.SetActive(false);
+                zButton.SetActive(false);
+                flipButton.SetActive(false);
             }
             else
             {
@@ -303,6 +322,43 @@ public class ObjectManager : MonoBehaviour
     public void CloseDeleteConfirm()
     {
         delConfirmMenu.SetActive(false);
+    }
+
+    // Change the layer of the current object
+    public void ChangeObjectLayer()
+    {
+        if (selectedObject)
+        {
+            float currentZ = selectedObject.transform.position.z;
+            if (currentZ <= 1)
+            {
+                selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, 2);
+            }
+            else if (currentZ == 2)
+            {
+                selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, 3);
+            }
+            else
+            {
+                selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, 1);
+            }
+            zText.text = "Layer: " + selectedObject.transform.position.z.ToString();
+        }
+
+    }
+
+    // Flip the sprite of the current object
+    public void FlipObjectSprite()
+    {
+        if (selectedObject)
+        {
+            SpriteRenderer spriteRenderer = selectedObject.GetComponent<SpriteRenderer>();
+
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.flipX = !spriteRenderer.flipX;
+            }
+        }
     }
 
     private void SaveEcosystem()
@@ -349,8 +405,11 @@ public class ObjectManager : MonoBehaviour
                 GameObject prefab = Array.Find(objectPrefabs, item => item.name == obj.objectType);
                 if (prefab != null)
                 {
+                    // Instantiate a prefab with the correct cords and sprite flip
                     GameObject newItem = Instantiate(prefab);
-                    newItem.transform.position = new Vector3(obj.xCoordinate, objectY + newItem.GetComponent<SpriteRenderer>().bounds.extents.y, 0f);
+                    newItem.transform.position = new Vector3(obj.xCoordinate, objectY + newItem.GetComponent<SpriteRenderer>().bounds.extents.y, obj.zCoordinate);
+                    SpriteRenderer spriteRenderer = newItem.GetComponent<SpriteRenderer>();
+                    spriteRenderer.flipX = obj.flipped;
                 }
                 else
                 {
