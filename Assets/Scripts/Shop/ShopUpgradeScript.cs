@@ -11,7 +11,6 @@ public class ShopUpgradeScript : MonoBehaviour
 
     public GameObject upgradeConfirmMenu;
     public TextMeshProUGUI levelText;
-    public TextMeshProUGUI moneyPerCleanText;
     public TextMeshProUGUI upgradeToLevelText;
     public TextMeshProUGUI upgradeCostText;
 
@@ -19,8 +18,8 @@ public class ShopUpgradeScript : MonoBehaviour
     void Start()
     {
         // Get values from PlayerPrefs or set a default
-        currentLevel = PlayerPrefs.GetInt("RecycleStationLevel", 1);
-
+        currentLevel = PlayerPrefs.GetInt("ShopLevel", 1);
+        UpdateUI();
     }
     public void ConfirmUpgrade()
     {
@@ -31,7 +30,7 @@ public class ShopUpgradeScript : MonoBehaviour
             if (GameManager.instance.ChangeMoney(-upgradeCost[currentLevel]))
             {
                 currentLevel++;
-                PlayerPrefs.SetInt("RecycleStationLevel", currentLevel);
+                PlayerPrefs.SetInt("ShopLevel", currentLevel);
                 PlayerPrefs.Save();
             }
             else
@@ -47,21 +46,21 @@ public class ShopUpgradeScript : MonoBehaviour
         upgradeConfirmMenu.SetActive(false);
     }
 
+
+
     // Updates all the text in the UI. Call this when an update happens
     public void UpdateUI()
     {
-        levelText.text = "Level: " + currentLevel;
-        moneyPerCleanText.text = "Fishbucks per Trash: " + (currentLevel * 10);
-        upgradeToLevelText.text = "Upgrade to level " + (currentLevel + 1) + "?";
-        upgradeCostText.text = upgradeCost[currentLevel].ToString();
-
-        if (currentLevel >= 3)
+        if (currentLevel < 3)
         {
+            levelText.text = "Level: " + currentLevel;
+            upgradeToLevelText.text = "Upgrade to level " + (currentLevel + 1) + "?";
+            upgradeCostText.text = "This will unlock a new page of the shop and cost " + upgradeCost[currentLevel].ToString() + " Fishbucks.";
+        } else {
+            levelText.text = "Level: " + currentLevel;
+            upgradeToLevelText.text = "Can't level up!";
+            upgradeCostText.text = "This building is at the maximum level.";
             upgradeButton.gameObject.SetActive(false);
-        }
-        else
-        {
-            upgradeButton.gameObject.SetActive(true);
         }
     }
 
