@@ -6538,6 +6538,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430601368}
   m_CullTransparentMesh: 1
+--- !u!1001 &1449312316
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4520917
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.20904952
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.078411415
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576292269308148199, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880859389878471169, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+      propertyPath: m_Name
+      value: SceneHandler
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+--- !u!114 &1449312317 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 508287375893317710, guid: 5113c204504f2584cb2f82be635d181a, type: 3}
+  m_PrefabInstance: {fileID: 1449312316}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d4b40efab2669c4aaf6b8bfb1773dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1495374408
 GameObject:
   m_ObjectHideFlags: 0
@@ -8481,7 +8549,6 @@ GameObject:
   - component: {fileID: 1787118578}
   - component: {fileID: 1787118577}
   - component: {fileID: 1787118576}
-  - component: {fileID: 1787118575}
   m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
@@ -8508,19 +8575,6 @@ RectTransform:
   m_AnchoredPosition: {x: 290, y: -140}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1787118575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1787118573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3c9d6de422274d49be6f547180cd1a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene: 1
 --- !u!114 &1787118576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8565,14 +8619,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1787118575}
-        m_TargetAssemblyTypeName: ChangeSceneButtonScript, Assembly-CSharp
+      - m_Target: {fileID: 1449312317}
+        m_TargetAssemblyTypeName: SceneHandler, Assembly-CSharp
         m_MethodName: ChangeScene
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -10480,3 +10534,4 @@ SceneRoots:
   - {fileID: 884516821}
   - {fileID: 1417394121}
   - {fileID: 293402791}
+  - {fileID: 1449312316}
