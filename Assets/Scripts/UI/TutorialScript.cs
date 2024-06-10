@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class TutorialScript : MonoBehaviour
 {
     public Canvas tutCanvas;
+    public Canvas blockCanvas;
     public TMP_Text txt;
     public Image tutSpriteRenderer;
     public Image posSpriteRenderer;
@@ -209,6 +210,7 @@ public class TutorialScript : MonoBehaviour
                     PlayerPrefs.SetFloat("Tutorial", 1);
                     tutSpriteRenderer.color = new Color(0, 0, 0, 0);
                     spr.sortingOrder = 10;
+                    blockCanvas.enabled = true;
                 }
             }else if(place == 1)
             {
