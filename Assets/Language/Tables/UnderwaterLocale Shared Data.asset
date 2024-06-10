@@ -35,6 +35,10 @@ MonoBehaviour:
     m_Key: DeleteConfirm
     m_Metadata:
       m_Items: []
+  - m_Id: 18490265405333504
+    m_Key: Flip
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

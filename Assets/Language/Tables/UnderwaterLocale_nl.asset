@@ -38,6 +38,10 @@ MonoBehaviour:
     m_Localized: Weet je zeker dat je dit object wil verwijderen?
     m_Metadata:
       m_Items: []
+  - m_Id: 18490265405333504
+    m_Localized: Draai
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

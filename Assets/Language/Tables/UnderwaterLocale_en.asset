@@ -38,6 +38,10 @@ MonoBehaviour:
     m_Localized: Are you sure you want to delete this object?
     m_Metadata:
       m_Items: []
+  - m_Id: 18490265405333504
+    m_Localized: Flip
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
