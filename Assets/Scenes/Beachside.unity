@@ -2042,6 +2042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pers1: {fileID: 7413240613285430806, guid: 798087f39cf73e2428731895293ab003, type: 3}
   pers2: {fileID: 7096831777551465697, guid: 3ede0bbad1fe1594c8e807f00a8a27cf, type: 3}
+  birb: {fileID: 5334165579854256013, guid: af7a330c8aad82848b1b6f8c44e3ed8d, type: 3}
 --- !u!4 &287988396
 Transform:
   m_ObjectHideFlags: 0

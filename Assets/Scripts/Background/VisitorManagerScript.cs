@@ -6,6 +6,7 @@ public class VisitorManagerScript : MonoBehaviour
 {
     public GameObject pers1;
     public GameObject pers2;
+    public GameObject birb;
     private void FixedUpdate()
     {
         //spawn visitors depending on level
@@ -44,6 +45,13 @@ public class VisitorManagerScript : MonoBehaviour
             {
                 Instantiate(pers2);
             }
+        }
+
+        //spawn vogels 
+        int rando = Random.Range(0, 500);
+        if (rando == 1)
+        {
+            Instantiate(birb);
         }
     }
 }
