@@ -606,8 +606,8 @@ MonoBehaviour:
 
     You''re adopted'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 182da53f52f84c54886ec8be3ec315d9, type: 2}
-  m_sharedMaterial: {fileID: 8215344558394955394, guid: 182da53f52f84c54886ec8be3ec315d9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 37c0e678574daec4e883964f32314449, type: 2}
+  m_sharedMaterial: {fileID: -3744152042652875543, guid: 37c0e678574daec4e883964f32314449, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -740,8 +740,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 182da53f52f84c54886ec8be3ec315d9, type: 2}
-  m_sharedMaterial: {fileID: 8215344558394955394, guid: 182da53f52f84c54886ec8be3ec315d9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 37c0e678574daec4e883964f32314449, type: 2}
+  m_sharedMaterial: {fileID: -3744152042652875543, guid: 37c0e678574daec4e883964f32314449, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -765,7 +765,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 91.65
+  m_fontSize: 100
   m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1633,8 +1633,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Options
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 182da53f52f84c54886ec8be3ec315d9, type: 2}
-  m_sharedMaterial: {fileID: 8215344558394955394, guid: 182da53f52f84c54886ec8be3ec315d9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 37c0e678574daec4e883964f32314449, type: 2}
+  m_sharedMaterial: {fileID: -3744152042652875543, guid: 37c0e678574daec4e883964f32314449, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1658,7 +1658,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 91.65
+  m_fontSize: 90
   m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1694,7 +1694,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 5, y: 5, z: 5, w: 5}
+  m_margin: {x: 20, y: 10, z: 20, w: 10}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
