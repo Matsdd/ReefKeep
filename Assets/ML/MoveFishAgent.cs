@@ -10,7 +10,7 @@ public class MoveFishAgent : Agent
     // Rewards and Penalties
     private readonly float borderPenalty = -0.3f;
     private readonly float proximityMultiplier = 0.1f;
-    private readonly float horizontalMultiplier = 0.5f;
+    private readonly float horizontalMultiplier = 1f;
 
     private float cumulativeReward = 0f;
     private Vector3 initialPositionFish;
@@ -71,14 +71,14 @@ public class MoveFishAgent : Agent
     {
         // Calculate the distance to the like
         float distanceToLike = Vector3.Distance(fishControl.transform.position, likedObjectPosition);
-        float likeReward = CalculateReward(distanceToLike, 20f);
+        float likeReward = DistanceReward(distanceToLike, 20f);
         Debug.Log(gameObject.name + "Distance Reward: " + likeReward);
         AddReward(likeReward);
         cumulativeReward += likeReward;
 
         // Calculate the distance to the dislike
         float distanceToDislike = Vector3.Distance(fishControl.transform.position, dislikedObjectPosition);
-        float dislikePunishment = -CalculateReward(distanceToDislike, 20f);
+        float dislikePunishment = -DistanceReward(distanceToDislike, 20f);
         Debug.Log(gameObject.name + "Distance Punishment: " + dislikePunishment);
         AddReward(dislikePunishment);
         cumulativeReward += dislikePunishment;
@@ -99,7 +99,7 @@ public class MoveFishAgent : Agent
         }
     }
 
-    float CalculateReward(float distance, float scaleFactor)
+    float DistanceReward(float distance, float scaleFactor)
     {
         return Mathf.Exp(-distance / scaleFactor) * proximityMultiplier;
     }
