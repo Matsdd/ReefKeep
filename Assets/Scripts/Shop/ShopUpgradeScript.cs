@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ShopUpgradeScript : MonoBehaviour
@@ -35,18 +34,13 @@ public class ShopUpgradeScript : MonoBehaviour
             }
             else
             {
-                GameManager.instance.ShowMessage("Not enough money!");
+                GameManager.instance.ShowMessage("Not enough money!", "Niet genoeg geld!");
             }
         }
 
-        // Update UI
         UpdateUI();
-
-        // Close upgrade confirm menu
         upgradeConfirmMenu.SetActive(false);
     }
-
-
 
     // Updates all the text in the UI. Call this when an update happens
     public void UpdateUI()
@@ -55,19 +49,12 @@ public class ShopUpgradeScript : MonoBehaviour
         {
             levelText.text = "Level: " + currentLevel;
             upgradeToLevelText.text = "Upgrade to level " + (currentLevel + 1) + "?";
-            upgradeCostText.text = "This will unlock a new page of the shop and cost " + upgradeCost[currentLevel].ToString() + " Fishbucks.";
+            upgradeCostText.text = upgradeCost[currentLevel].ToString();
         } else {
             levelText.text = "Level: " + currentLevel;
-            upgradeToLevelText.text = "Can't level up!";
-            upgradeCostText.text = "This building is at the maximum level.";
+            upgradeToLevelText.text = "Max level";
+            upgradeCostText.text = "Max level";
             upgradeButton.gameObject.SetActive(false);
         }
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

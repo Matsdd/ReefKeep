@@ -6,6 +6,13 @@ public class BuyScript : MonoBehaviour
     public string itemName;
     public int cost;
 
+    private SceneHandler sceneHandler;
+
+    private void Start()
+    {
+        sceneHandler = FindFirstObjectByType<SceneHandler>();
+    }
+
     public void BuyObject()
     {
         // Try to buy the object, cancel if not enough money
@@ -13,11 +20,19 @@ public class BuyScript : MonoBehaviour
         {
             PlayerPrefs.SetString("BoughtObject", itemName);
             PlayerPrefs.Save();
-            SceneManager.LoadScene("Underwater", LoadSceneMode.Single);
+
+            if (sceneHandler != null)
+            {
+                sceneHandler.ChangeScene(2);
+            }
+            else
+            {
+                Debug.LogError("SceneHandler not found in the scene!");
+            }
         }
         else
         {
-            GameManager.instance.ShowMessage("Not enough money!");
+            GameManager.instance.ShowMessage("Not enough money!", "Niet genoeg geld!");
         }
     }
 
@@ -28,11 +43,19 @@ public class BuyScript : MonoBehaviour
         {
             PlayerPrefs.SetString("BoughtFish", itemName);
             PlayerPrefs.Save();
-            SceneManager.LoadScene("Underwater", LoadSceneMode.Single);
+
+            if (sceneHandler != null)
+            {
+                sceneHandler.ChangeScene(2);
+            }
+            else
+            {
+                Debug.LogError("SceneHandler not found in the scene!");
+            }
         }
         else
         {
-            GameManager.instance.ShowMessage("Not enough money!");
+            GameManager.instance.ShowMessage("Not enough money!", "Niet genoeg geld!");
         }
     }
 }

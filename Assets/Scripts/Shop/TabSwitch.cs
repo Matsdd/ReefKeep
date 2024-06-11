@@ -43,7 +43,7 @@ public class TabSwitch : MonoBehaviour
             return;
         } else {
             Debug.Log("Level too low!");
-            GameManager.instance.ShowMessage("Upgrade the shop to level 2 to access this tab!");
+            GameManager.instance.ShowMessage("Shop level 2 needed!", "Shop level 2 nodig!");
             return;
         }
     }
@@ -61,7 +61,7 @@ public class TabSwitch : MonoBehaviour
             return;
         } else {
             Debug.Log("Level too low!");
-            GameManager.instance.ShowMessage("Upgrade the shop to level 3 to access this tab!");
+            GameManager.instance.ShowMessage("Shop level 3 needed!", "Shop level 3 nodig!");
             return;
         }
     }

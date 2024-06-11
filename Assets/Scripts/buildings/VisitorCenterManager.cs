@@ -55,7 +55,7 @@ public class VisitorCenterManager : MonoBehaviour
             }
             else
             {
-                GameManager.instance.ShowMessage("Not enough money!");
+                GameManager.instance.ShowMessage("Not enough money!", "Niet genoeg geld!");
             }
         }
     }
