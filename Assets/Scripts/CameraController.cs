@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private float minX = -20f;
-    private float maxX = 20f;
+    private float minX = -28.6f;
+    private float maxX = 28.6f;
     private float minY = -16.1f;
     private float maxY = 16.1f;
 
@@ -16,11 +16,6 @@ public class CameraController : MonoBehaviour
     private Vector3 dragOrigin;
     private bool allowMovement = false;
 
-    private void Start()
-    {
-        UpdateMaxPos();
-    }
-
     void Update()
     {
         if (!ObjectManager.isHoldingObject) // Check if an object is not being moved
@@ -30,24 +25,6 @@ public class CameraController : MonoBehaviour
 
             // Handle camera zoom
             HandleCameraZoom();
-        }
-    }
-
-    public void UpdateMaxPos()
-    {
-        // Get the state from PlayerPrefs (0=destroyed / 1=alive)
-        int BigTrash1Alive = PlayerPrefs.GetInt("BigTrash1", 1);
-        int BigTrash2Alive = PlayerPrefs.GetInt("BigTrash2", 1);
-
-        // Update the max pos depending if BigTrash is alive
-        if (BigTrash1Alive == 0)
-        {
-            minX = -28.6f;
-        }
-
-        if (BigTrash2Alive == 0)
-        {
-            maxX = 28.6f;
         }
     }
 

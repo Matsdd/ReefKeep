@@ -8,9 +8,9 @@ public class MoveFishAgent : Agent
     [SerializeField] private FishControl fishControl;
 
     // Rewards and Penalties
-    private readonly float borderPenalty = -0.3f;
+    private readonly float borderPenalty = -0.4f;
     private readonly float proximityMultiplier = 0.1f;
-    private readonly float horizontalMultiplier = 1f;
+    private readonly float horizontalMultiplier = 0.8f;
 
     private float cumulativeReward = 0f;
     private Vector3 initialPositionFish;
