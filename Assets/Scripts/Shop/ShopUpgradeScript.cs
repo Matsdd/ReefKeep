@@ -49,7 +49,7 @@ public class ShopUpgradeScript : MonoBehaviour
         {
             levelText.text = "Level: " + currentLevel;
             upgradeToLevelText.text = "Upgrade to level " + (currentLevel + 1) + "?";
-            upgradeCostText.text = "This will unlock a new page of the shop and cost " + upgradeCost[currentLevel].ToString() + " Fishbucks.";
+            upgradeCostText.text = upgradeCost[currentLevel].ToString();
         } else {
             levelText.text = "Level: " + currentLevel;
             upgradeToLevelText.text = "Max level";

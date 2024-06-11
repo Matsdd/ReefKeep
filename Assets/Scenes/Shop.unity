@@ -2912,7 +2912,7 @@ GameObject:
   - component: {fileID: 563739314}
   - component: {fileID: 563739313}
   m_Layer: 5
-  m_Name: Nature
+  m_Name: NatureButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3573,7 +3573,7 @@ GameObject:
   - component: {fileID: 651678339}
   - component: {fileID: 651678338}
   m_Layer: 5
-  m_Name: Decor
+  m_Name: DecorButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5838,7 +5838,7 @@ GameObject:
   - component: {fileID: 1211151310}
   - component: {fileID: 1211151309}
   m_Layer: 0
-  m_Name: UpgradeCostText
+  m_Name: UpgradeLevelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6106,7 +6106,7 @@ GameObject:
   - component: {fileID: 1236122468}
   - component: {fileID: 1236122467}
   m_Layer: 0
-  m_Name: UpgradeToText
+  m_Name: UpgradeCost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6662,11 +6662,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevel: 1
-  upgradeButton: {fileID: 0}
-  upgradeConfirmMenu: {fileID: 0}
-  levelText: {fileID: 0}
-  upgradeToLevelText: {fileID: 0}
-  upgradeCostText: {fileID: 0}
+  upgradeButton: {fileID: 1627441387}
+  upgradeConfirmMenu: {fileID: 1507225227}
+  levelText: {fileID: 1792963675}
+  upgradeToLevelText: {fileID: 1211151309}
+  upgradeCostText: {fileID: 1236122467}
 --- !u!4 &1417394121
 Transform:
   m_ObjectHideFlags: 0
@@ -7364,9 +7364,9 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1050378690}
-  - {fileID: 1627441386}
-  - {fileID: 1211151308}
   - {fileID: 1792963674}
+  - {fileID: 1211151308}
+  - {fileID: 1627441386}
   m_Father: {fileID: 1257221942}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -9070,7 +9070,7 @@ GameObject:
   - component: {fileID: 1748469942}
   - component: {fileID: 1748469941}
   m_Layer: 5
-  m_Name: Fish
+  m_Name: FishButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10140,7 +10140,7 @@ GameObject:
   - component: {fileID: 1931788513}
   - component: {fileID: 1931788512}
   m_Layer: 5
-  m_Name: Upgrade
+  m_Name: UpgradeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
