@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
         {
             money += amount;
 
+            // Add money SFX
+
             // Set the text to show the amount with + or - sign
             incomeText.text = (amount > 0 ? "+" : "") + amount.ToString();
 
