@@ -57,7 +57,7 @@ public class TutorialScript : MonoBehaviour
             }
             else
             {
-                txt.text = "Poseidon: [Explanation underwater]";
+                txt.text = "Poseidon: Welcome to your own ecosystem! I shall explain some things to get you started.";
             }
         }
         else if(place == 2)
@@ -326,7 +326,7 @@ public class TutorialScript : MonoBehaviour
                 }
             }
             state++;
-            tutotimer = 60;
+            tutotimer = 1;
         }
     }
 
