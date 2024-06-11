@@ -219,7 +219,7 @@ public class ObjectManager : MonoBehaviour
             // Check if the object is red (because it's colliding)
             if (selectedObjectRenderer.color == Color.red)
             {
-                GameManager.instance.ShowMessage("Object is colliding!");
+                GameManager.instance.ShowMessage("Object is colliding!", "Object past niet");
                 return;
             }
 

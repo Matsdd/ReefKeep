@@ -74,7 +74,7 @@ public class RecycleStationScript : MonoBehaviour
             }
             else
             {
-                GameManager.instance.ShowMessage("Not enough money!");
+                GameManager.instance.ShowMessage("Not enough money!", "Niet genoeg geld!");
             }
         }
 

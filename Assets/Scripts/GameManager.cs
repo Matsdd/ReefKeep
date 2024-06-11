@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private int money = 0;
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI messageText;
+    private Coroutine hideMessageCoroutine;
 
     private void Awake()
     {
@@ -66,19 +67,33 @@ public class GameManager : MonoBehaviour
     }
 
     // Function to show the player a message
-    public void ShowMessage(string message)
+    public void ShowMessage(string en, string nl)
     {
         // Set and show the message text
-        messageText.text = message;
+        if (PlayerPrefs.GetInt("LocaleID") == 0)
+        {
+            messageText.text = en;
+        }
+        else
+        {
+            messageText.text = nl;
+        }
 
-        // Make sure the alpla is 1
+        // Make sure the alpha is 1
         Color textColor = messageText.color;
         textColor.a = 1f;
         messageText.color = textColor;
 
         messageText.enabled = true;
 
-        StartCoroutine(HideMessage());
+        // Stop any ongoing HideMessage coroutine
+        if (hideMessageCoroutine != null)
+        {
+            StopCoroutine(hideMessageCoroutine);
+        }
+
+        // Start a new HideMessage coroutine
+        hideMessageCoroutine = StartCoroutine(HideMessage());
     }
 
     // Function to hide the message
@@ -103,5 +118,6 @@ public class GameManager : MonoBehaviour
 
         // Disable the text
         messageText.enabled = false;
+        hideMessageCoroutine = null;
     }
 }
