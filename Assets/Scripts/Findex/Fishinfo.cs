@@ -42,7 +42,7 @@ public class Fishinfo : MonoBehaviour
             int column = cardIndex % cardsPerRow;
 
             float xPos = initialX + cardOffsetX * column;
-            float yPos = cardOffsetY * row;
+            float yPos = cardOffsetY * row -300;
 
             GameObject card = Instantiate(fishCardPrefab, cardsParent);
             card.transform.localPosition = new Vector3(xPos, yPos, 0f);
