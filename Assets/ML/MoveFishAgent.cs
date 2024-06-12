@@ -46,7 +46,7 @@ public class MoveFishAgent : Agent
         sensor.AddObservation(likedObjectPosition);
         sensor.AddObservation(dislikedObjectPosition);
 
-        // Show what the fish is capable off
+        // Show what the fish is capable of
         sensor.AddObservation(fishControl.maxMoveSpeed);
         sensor.AddObservation(fishControl.minMoveSpeed);
         sensor.AddObservation(fishControl.turnSpeed);
