@@ -128,13 +128,13 @@
     "fact_en": "The thresher shark is one of the few sharks that lay eggs. The egg cases are deposited on the seabed and provide protection for the developing embryos until they are ready to hatch.",
     "likes_nl": "Stenen - Koningsvis, Zwarte Dwergmeerval",
     "likes_en": "Rocks - Opah, Bullhead Catfish",
-    "dislikes_nl": "",
-    "dislikes_en": ""
+    "dislikes_nl": "Planten",
+    "dislikes_en": "Plants"
   },
   {
     "name_nl": "Reuzenhaai",
     "name_en": "Basking Shark",
-    "spritePath": "",
+    "spritePath": "SPRITES/Fishies/BASKING",
     "fact_nl": "De reuzenhaai is de op één na grootste vis ter wereld. Ze kunnen tot wel 12 meter lang worden en wegen tot 21 ton. Ze voeden zich hoofdzakelijk met plankton en kleine visjes.",
     "fact_en": "The basking shark is the second largest fish in the world. They can grow up to 12 meters long and weigh up to 21 tons. They primarily feed on plankton and small fish.",
     "likes_nl": "Inktvissen",
@@ -145,7 +145,7 @@
   {
     "name_nl": "Garnaal",
     "name_en": "Shrimp",
-    "spritePath": "SPRITES/Fishies/SHRIMP",
+    "spritePath": "SPRITES/Fishies/GARNAL",
     "fact_nl": "Garnalen hebben een bijzonder vermogen om zichzelf te beschermen tegen roofdieren. Ze kunnen snel achteruit zwemmen door krachtige slagen met hun staart, waardoor ze met hoge snelheid kunnen ontsnappen aan bedreigingen. Dit verdedigingsmechanisme wordt 'caridoid escape reaction' genoemd en helpt hen om te overleven in gevaarlijke situaties",
     "fact_en": "Shrimp have a remarkable ability to protect themselves from predators. They can rapidly swim backward by powerful flicks of their tails, allowing them to escape threats at high speed. This defense mechanism is called the 'caridoid escape reaction' and helps them survive in dangerous situations.",
     "likes_nl": "Planten",
@@ -156,7 +156,7 @@
   {
     "name_nl": "Zeeschildpad",
     "name_en": "Sea Turtle",
-    "spritePath": "SPRITES/Fishies/SEATURTLE",
+    "spritePath": "SPRITES/Fishies/TURTLE",
     "fact_nl": "Zeeschildpadden kunnen ongelooflijk lange afstanden afleggen tijdens hun migraties. Sommige soorten, zoals de lederschildpad, kunnen meer dan 16.000 kilometer per jaar zwemmen om van hun voedergebieden naar hun broedstranden te reizen. Deze opmerkelijke navigatievaardigheid helpt hen terug te keren naar dezelfde stranden waar ze zelf zijn uitgekomen.",
     "fact_en": "Sea turtles can travel incredibly long distances during their migrations. Some species, like the leatherback turtle, can swim more than 10,000 miles a year to travel from their feeding grounds to their nesting beaches. This remarkable navigation ability helps them return to the same beaches where they hatched.",
     "likes_nl": "Planten - Kwallen",
@@ -167,7 +167,7 @@
   {
     "name_nl": "Kwal",
     "name_en": "Jellyfish",
-    "spritePath": "SPRITES/Fishies/JELLYFISH",
+    "spritePath": "SPRITES/Fishies/JELLYFISH2",
     "fact_nl": "Kwallen bestaan al meer dan 500 miljoen jaar en zijn daarmee ouder dan dinosaurussen. Ze hebben geen hersenen, hart of botten, maar gebruiken een eenvoudig zenuwstelsel om te reageren op hun omgeving en voedsel te vinden.",
     "fact_en": "Jellyfish have existed for over 500 million years, making them older than dinosaurs. They lack brains, hearts, and bones, but use a simple nerve net to respond to their environment and find food.",
     "likes_nl": "Planten",
