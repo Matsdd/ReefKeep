@@ -10,6 +10,8 @@ TagManager:
   - Oil
   - BigTrash
   - Fish
+  - Bird
+  - People
   layers:
   - Default
   - TransparentFX

@@ -506,7 +506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: CaveRock
-  cost: 100
+  cost: 250
 --- !u!114 &107085592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -898,8 +898,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da10b911a905ea5488387eb1c4a29c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Basking
-  cost: 100
+  itemName: Salmon
+  cost: 2500
 --- !u!114 &178612821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1129,13 +1129,13 @@ MonoBehaviour:
   m_text: 250
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37c0e678574daec4e883964f32314449, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -3744152042652875543, guid: 37c0e678574daec4e883964f32314449, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1347,13 +1347,13 @@ MonoBehaviour:
   m_text: 1000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37c0e678574daec4e883964f32314449, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -3744152042652875543, guid: 37c0e678574daec4e883964f32314449, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1475,8 +1475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da10b911a905ea5488387eb1c4a29c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Basking
-  cost: 100
+  itemName: Carp
+  cost: 2500
 --- !u!114 &265803954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1755,13 +1755,13 @@ MonoBehaviour:
   m_text: 500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37c0e678574daec4e883964f32314449, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -3744152042652875543, guid: 37c0e678574daec4e883964f32314449, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1884,7 +1884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Sign
-  cost: 100
+  cost: 400
 --- !u!114 &384304124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2034,7 +2034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Basking
-  cost: 100
+  cost: 2500
 --- !u!114 &388580312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2323,13 +2323,13 @@ MonoBehaviour:
   m_text: 2500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37c0e678574daec4e883964f32314449, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -3744152042652875543, guid: 37c0e678574daec4e883964f32314449, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2825,13 +2825,13 @@ MonoBehaviour:
   m_text: 1000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37c0e678574daec4e883964f32314449, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -3744152042652875543, guid: 37c0e678574daec4e883964f32314449, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -3465,7 +3465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: SeaWeed
-  cost: 100
+  cost: 150
 --- !u!114 &649503760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4040,8 +4040,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da10b911a905ea5488387eb1c4a29c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Basking
-  cost: 100
+  itemName: Stingray
+  cost: 2500
 --- !u!114 &782111485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4409,7 +4409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Bojan
-  cost: 100
+  cost: 1000
 --- !u!114 &892192292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5167,7 +5167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Castle
-  cost: 100
+  cost: 500
 --- !u!114 &1130234420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5730,8 +5730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da10b911a905ea5488387eb1c4a29c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Basking
-  cost: 100
+  itemName: Rockbass
+  cost: 2500
 --- !u!114 &1207405331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6020,13 +6020,13 @@ MonoBehaviour:
   m_text: 2500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37c0e678574daec4e883964f32314449, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -3744152042652875543, guid: 37c0e678574daec4e883964f32314449, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -6811,8 +6811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da10b911a905ea5488387eb1c4a29c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Basking
-  cost: 100
+  itemName: Opah
+  cost: 2500
 --- !u!114 &1418410175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6962,7 +6962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Vine
-  cost: 100
+  cost: 250
 --- !u!114 &1428774498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7117,13 +7117,13 @@ MonoBehaviour:
   m_text: 2500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37c0e678574daec4e883964f32314449, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -3744152042652875543, guid: 37c0e678574daec4e883964f32314449, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -7442,13 +7442,13 @@ MonoBehaviour:
   m_text: 2500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37c0e678574daec4e883964f32314449, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -3744152042652875543, guid: 37c0e678574daec4e883964f32314449, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -7780,7 +7780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Reginald
-  cost: 100
+  cost: 1000
 --- !u!114 &1540402788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8062,7 +8062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: ShipBottle
-  cost: 100
+  cost: 250
 --- !u!114 &1550215799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8217,13 +8217,13 @@ MonoBehaviour:
   m_text: 400
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37c0e678574daec4e883964f32314449, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -3744152042652875543, guid: 37c0e678574daec4e883964f32314449, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -8388,13 +8388,13 @@ MonoBehaviour:
   m_text: 1000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37c0e678574daec4e883964f32314449, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -3744152042652875543, guid: 37c0e678574daec4e883964f32314449, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -8812,7 +8812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Frederik
-  cost: 100
+  cost: 1000
 --- !u!114 &1651575510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8962,7 +8962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: SmallRock
-  cost: 100
+  cost: 150
 --- !u!114 &1711088699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9892,7 +9892,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8770b23e4501dac47b02c1688c0efd7a, type: 3}
+  m_Sprite: {fileID: -1483111531, guid: d3c272beba016a8498be7ec85af53103, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9970,13 +9970,13 @@ MonoBehaviour:
   m_text: 2500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37c0e678574daec4e883964f32314449, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -3744152042652875543, guid: 37c0e678574daec4e883964f32314449, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -10592,13 +10592,13 @@ MonoBehaviour:
   m_text: 2500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37c0e678574daec4e883964f32314449, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -3744152042652875543, guid: 37c0e678574daec4e883964f32314449, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
