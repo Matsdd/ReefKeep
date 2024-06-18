@@ -3,7 +3,7 @@ using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
-public class MoveFishAgent : Agent
+public class NewMoveFishAgent : Agent
 {
     [SerializeField] private FishControl fishControl;
 
@@ -34,7 +34,6 @@ public class MoveFishAgent : Agent
         cumulativeReward = 0f;
     }
 
-    // Give the AI info about the environment
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(transform.position);
@@ -46,7 +45,7 @@ public class MoveFishAgent : Agent
         sensor.AddObservation(likedObjectPosition);
         sensor.AddObservation(dislikedObjectPosition);
 
-        // Show what the fish is capable of
+        // Show what the fish is capable off
         sensor.AddObservation(fishControl.maxMoveSpeed);
         sensor.AddObservation(fishControl.minMoveSpeed);
         sensor.AddObservation(fishControl.turnSpeed);
@@ -54,11 +53,29 @@ public class MoveFishAgent : Agent
 
     public override void OnActionReceived(ActionBuffers actions)
     {
-        // The inputs from the AI
-        float rotationInput = actions.DiscreteActions[0];
-        float speedInput = actions.ContinuousActions[0];
-        Debug.Log("AI Rotation:" + rotationInput);
-        Debug.Log("AI Speed:" + speedInput);
+        // The inputs from the AI are now discrete actions
+        int rotationAction = actions.DiscreteActions[0];
+        int speedAction = actions.DiscreteActions[1];
+
+        float rotationInput = 0f;
+        float speedInput = 0f;
+
+        // Define your actions based on discrete values
+        switch (rotationAction)
+        {
+            case 0: rotationInput = -1f; break; // Turn left
+            case 1: rotationInput = 0f; break;  // No turn
+            case 2: rotationInput = 1f; break;  // Turn right
+        }
+
+        switch (speedAction)
+        {
+            case 0: speedInput = -1f; break; // Slow down
+            case 1: speedInput = 0f; break;  // No change
+            case 2: speedInput = 1f; break;  // Speed up
+        }
+
+        Debug.Log("Rotate: " + rotationInput + ", Speed: " + speedInput);
 
         // Move the fish using the FishControl script
         fishControl.Move(rotationInput, speedInput);
@@ -72,14 +89,14 @@ public class MoveFishAgent : Agent
         // Calculate the distance to the like
         float distanceToLike = Vector3.Distance(fishControl.transform.position, likedObjectPosition);
         float likeReward = DistanceReward(distanceToLike, 20f);
-        Debug.Log(gameObject.name + "Distance Reward: " + likeReward);
+        Debug.Log(gameObject.name + " Distance Reward: " + likeReward);
         AddReward(likeReward);
         cumulativeReward += likeReward;
 
         // Calculate the distance to the dislike
         float distanceToDislike = Vector3.Distance(fishControl.transform.position, dislikedObjectPosition);
         float dislikePunishment = -DistanceReward(distanceToDislike, 20f);
-        Debug.Log(gameObject.name + "Distance Punishment: " + dislikePunishment);
+        Debug.Log(gameObject.name + " Distance Punishment: " + dislikePunishment);
         AddReward(dislikePunishment);
         cumulativeReward += dislikePunishment;
 
@@ -106,18 +123,14 @@ public class MoveFishAgent : Agent
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-        ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
+        var discreteActionsOut = actionsOut.DiscreteActions;
 
         // Get input from the player
         float rotationInput = Input.GetAxisRaw("Horizontal");
         float speedInput = Input.GetAxisRaw("Vertical");
 
-        // Clamp the input values
-        float clampedRotation = Mathf.Clamp(-rotationInput, -1f, 1f);
-        float clampedSpeed = Mathf.Clamp(speedInput, -1f, 1f);
-
-        // Assign the actions
-        continuousActions[0] = clampedRotation; // Rotation control
-        continuousActions[1] = clampedSpeed; // Speed control
+        // Convert continuous input to discrete actions
+        discreteActionsOut[0] = rotationInput < 0 ? 0 : (rotationInput > 0 ? 2 : 1); // Left, None, Right
+        discreteActionsOut[1] = speedInput < 0 ? 0 : (speedInput > 0 ? 2 : 1); // Slow, None, Fast
     }
 }

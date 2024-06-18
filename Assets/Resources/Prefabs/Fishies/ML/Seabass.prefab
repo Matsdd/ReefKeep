@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3435532005832663070}
   - component: {fileID: 3174441072890966065}
   - component: {fileID: 8848269169380603514}
-  - component: {fileID: 3331816836345598668}
+  - component: {fileID: 4535711476511626140}
   - component: {fileID: 3138888496575199768}
   - component: {fileID: 5401932831427261226}
   - component: {fileID: 3854038141593727624}
@@ -105,21 +105,21 @@ MonoBehaviour:
     VectorObservationSize: 16
     NumStackedVectorObservations: 2
     m_ActionSpec:
-      m_NumContinuousActions: 2
-      BranchSizes: 
-    VectorActionSize: 02000000
+      m_NumContinuousActions: 0
+      BranchSizes: 0300000003000000
+    VectorActionSize: 0300000003000000
     VectorActionDescriptions: []
-    VectorActionSpaceType: 1
+    VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: MoveFish
+  m_BehaviorName: NewMoveFish
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_ObservableAttributeHandling: 0
---- !u!114 &3331816836345598668
+--- !u!114 &4535711476511626140
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4545456904545728750}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf891a39d1d5a5148a7f2cbdfcd6d139, type: 3}
+  m_Script: {fileID: 11500000, guid: a52c6f91165a471408949c5d34e187a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agentParameters:
