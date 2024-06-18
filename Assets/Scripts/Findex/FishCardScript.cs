@@ -11,7 +11,16 @@ public class FishCardScript : MonoBehaviour
     public void SetFishData(Fishinfo.FishData fishData)
     {
         this.fishData = fishData;
-        nameText.text = fishData.name_nl;
+
+        int localeID = PlayerPrefs.GetInt("LocaleID", 0);
+        if (localeID == 0) // English
+        {
+            nameText.text = fishData.name_en;
+        }
+        else // Dutch
+        {
+            nameText.text = fishData.name_nl;
+        }
 
         FishImageScript imageScript = GetComponentInChildren<FishImageScript>();
         if (imageScript != null)
@@ -34,7 +43,7 @@ public class FishCardScript : MonoBehaviour
         Button button = GetComponentInChildren<Button>();
         if (button != null)
         {
-            button.onClick.RemoveAllListeners(); 
+            button.onClick.RemoveAllListeners();
             button.onClick.AddListener(() => DetailPanelController.Instance.ShowDetails(fishData));
         }
         else
