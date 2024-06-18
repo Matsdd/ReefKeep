@@ -1,5 +1,5 @@
 behaviors:
-  MoveFish:
+  NewMoveFish:
     trainer_type: ppo
     hyperparameters:
       batch_size: 10
@@ -20,7 +20,7 @@ behaviors:
         strength: 1.0
       gail:
         strength: 0.7
-        demo_path: Demos/SwimDemo.demo
+        demo_path: Demos/NewSwimDemo.demo
     max_steps: 500000
     time_horizon: 64
     summary_freq: 10000
