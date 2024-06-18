@@ -56,6 +56,7 @@ public class NewMoveFishAgent : Agent
         // The inputs from the AI are now discrete actions
         int rotationAction = actions.DiscreteActions[0];
         int speedAction = actions.DiscreteActions[1];
+        Debug.Log("rtyuiop: " + rotationAction);
 
         float rotationInput = 0f;
         float speedInput = 0f;
