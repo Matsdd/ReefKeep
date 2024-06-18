@@ -178,7 +178,7 @@ public class ObjectManager : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector3(newPosition.x, objectY, newPosition.z), 0.01f);
 
         // Filter colliders by tag
-        colliders = colliders.Where(c => c.CompareTag("BuildableObject")).ToArray();
+        colliders = colliders.Where(c => c.CompareTag("BuildableObject") || c.CompareTag("BigTrash")).ToArray();
 
         // Check if there are more than one colliders
         if (colliders.Length > 1)

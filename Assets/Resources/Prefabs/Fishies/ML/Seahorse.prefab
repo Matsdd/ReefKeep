@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9098851794136729662
+--- !u!1 &5064508121875287516
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5772108465902854121}
-  - component: {fileID: 672971032432739706}
-  - component: {fileID: 2442945289497711438}
-  - component: {fileID: 1561715465094162410}
-  - component: {fileID: 7528828312915712212}
-  - component: {fileID: 8753442076433110338}
-  - component: {fileID: 7214615903904395855}
+  - component: {fileID: 4697321454328225386}
+  - component: {fileID: 3044273718332399015}
+  - component: {fileID: 888817859565786508}
+  - component: {fileID: 5705653571916472908}
+  - component: {fileID: 9066865954580024783}
+  - component: {fileID: 7598479499890562438}
+  - component: {fileID: -4541967146468717133}
   m_Layer: 0
-  m_Name: Opah
+  m_Name: Seahorse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5772108465902854121
+--- !u!4 &4697321454328225386
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9098851794136729662}
+  m_GameObject: {fileID: 5064508121875287516}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.47499, y: -3.7987647, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &672971032432739706
+--- !u!212 &3044273718332399015
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9098851794136729662}
+  m_GameObject: {fileID: 5064508121875287516}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -1706221978, guid: b7694b868ac65d74fac5816d3748a035, type: 3}
+  m_Sprite: {fileID: -662984834, guid: 48a0eb5cc43dac344bd71d5e8b1ec01c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -89,13 +89,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2442945289497711438
+--- !u!114 &888817859565786508
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9098851794136729662}
+  m_GameObject: {fileID: 5064508121875287516}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
@@ -105,59 +105,59 @@ MonoBehaviour:
     VectorObservationSize: 16
     NumStackedVectorObservations: 2
     m_ActionSpec:
-      m_NumContinuousActions: 2
-      BranchSizes: 
-    VectorActionSize: 02000000
+      m_NumContinuousActions: 0
+      BranchSizes: 0300000003000000
+    VectorActionSize: 0300000003000000
     VectorActionDescriptions: []
-    VectorActionSpaceType: 1
+    VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: cd53c2af116360f44a363ac3c0c475bd, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
-  m_BehaviorType: 2
-  m_BehaviorName: MoveFish
+  m_BehaviorType: 0
+  m_BehaviorName: NewMoveFish
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_ObservableAttributeHandling: 0
---- !u!114 &1561715465094162410
+--- !u!114 &5705653571916472908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9098851794136729662}
+  m_GameObject: {fileID: 5064508121875287516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf891a39d1d5a5148a7f2cbdfcd6d139, type: 3}
+  m_Script: {fileID: 11500000, guid: a52c6f91165a471408949c5d34e187a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 3000
-  fishControl: {fileID: 7528828312915712212}
---- !u!114 &7528828312915712212
+  fishControl: {fileID: 9066865954580024783}
+--- !u!114 &9066865954580024783
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9098851794136729662}
+  m_GameObject: {fileID: 5064508121875287516}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34a4768229ea8e54c95e7b923d533b9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minMoveSpeed: 1
-  maxMoveSpeed: 3
-  turnSpeed: 70
---- !u!114 &8753442076433110338
+  maxMoveSpeed: 2
+  turnSpeed: 100
+--- !u!114 &7598479499890562438
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9098851794136729662}
+  m_GameObject: {fileID: 5064508121875287516}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
@@ -165,17 +165,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DecisionPeriod: 5
   TakeActionsBetweenDecisions: 1
---- !u!95 &7214615903904395855
+--- !u!95 &-4541967146468717133
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9098851794136729662}
+  m_GameObject: {fileID: 5064508121875287516}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6e836078af86e1848b6598eb8bc16aa1, type: 2}
+  m_Controller: {fileID: 9100000, guid: b0b2c9bc737829e4c81feca6384a8dab, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

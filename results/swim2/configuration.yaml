@@ -1,6 +1,6 @@
 default_settings: null
 behaviors:
-  NewMoveFish:
+  MoveFish:
     trainer_type: ppo
     hyperparameters:
       batch_size: 1024
@@ -62,10 +62,10 @@ engine_settings:
   no_graphics: false
 environment_parameters: null
 checkpoint_settings:
-  run_id: newFish1
+  run_id: swim2
   initialize_from: null
   load_model: false
-  resume: true
+  resume: false
   force: false
   train_model: false
   inference: false
