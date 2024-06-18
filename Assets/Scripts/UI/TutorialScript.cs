@@ -83,6 +83,10 @@ public class TutorialScript : MonoBehaviour
             }
             changePoseidonAppearance("Poseidon2");
         }
+        if ((PlayerPrefs.GetInt("Tutorial") == 1 && place == 1) || (PlayerPrefs.GetInt("TutorialU") == 1 && place == 2) || (PlayerPrefs.GetInt("TutorialS") == 1 && place == 3))
+        {
+            SfxManager.instance.playSfx("sPoseidon");
+        }
     }
 
     public void onClickTut()
@@ -326,7 +330,8 @@ public class TutorialScript : MonoBehaviour
                 }
             }
             state++;
-            tutotimer = 1;
+            tutotimer = 30;
+            SfxManager.instance.playSfx("sPoseidon");
         }
     }
 

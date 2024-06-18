@@ -7,6 +7,7 @@ public class PeopleScript : MonoBehaviour
     private int state = 1;
     private int side;
     public float moveSpeed;
+    private float timer = 0;
 
     private void Start()
     {
@@ -93,6 +94,24 @@ public class PeopleScript : MonoBehaviour
                 if (vec.x < -9.5f)
                 {
                     Destroy(this.gameObject);
+                }
+            }
+        }
+        timer--;
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            if (timer <= 0)
+            {
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+                if (hit.collider != null && hit.collider.gameObject.CompareTag("People"))
+                {
+                    timer = 60;
+                    SfxManager.instance.playSfx("sVisitor");
                 }
             }
         }
