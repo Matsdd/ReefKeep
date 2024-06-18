@@ -2,22 +2,22 @@
     "NewMoveFish": {
         "checkpoints": [
             {
-                "steps": 1200,
-                "file_path": "results\\newFish1\\NewMoveFish\\NewMoveFish-1200.onnx",
-                "reward": -416.3887119293213,
-                "creation_time": 1718704118.4435391,
+                "steps": 9840,
+                "file_path": "results\\newFish1\\NewMoveFish\\NewMoveFish-9840.onnx",
+                "reward": 244.54918723106385,
+                "creation_time": 1718706519.4502113,
                 "auxillary_file_paths": [
-                    "results\\newFish1\\NewMoveFish\\NewMoveFish-1200.pt"
+                    "results\\newFish1\\NewMoveFish\\NewMoveFish-9840.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 1200,
+            "steps": 9840,
             "file_path": "results\\newFish1\\NewMoveFish.onnx",
-            "reward": -416.3887119293213,
-            "creation_time": 1718704118.4435391,
+            "reward": 244.54918723106385,
+            "creation_time": 1718706519.4502113,
             "auxillary_file_paths": [
-                "results\\newFish1\\NewMoveFish\\NewMoveFish-1200.pt"
+                "results\\newFish1\\NewMoveFish\\NewMoveFish-9840.pt"
             ]
         }
     },
