@@ -1967,6 +1967,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 192096651}
+  likesText: {fileID: 1966515077}
+  dislikesText: {fileID: 1846920745}
 --- !u!114 &1219463974
 MonoBehaviour:
   m_ObjectHideFlags: 0

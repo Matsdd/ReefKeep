@@ -3,24 +3,18 @@ using UnityEngine.UI;
 
 public class FishCardScript : MonoBehaviour
 {
-    // State the name and image of the fish in the Unity Editor
     [SerializeField] private Text nameText;
+    [SerializeField] private Text likesText;
+    [SerializeField] private Text dislikesText;
+
     private Fishinfo.FishData fishData;
 
-    // Set the fish Data on the cards
     public void SetFishData(Fishinfo.FishData fishData)
     {
         this.fishData = fishData;
-
-        int localeID = PlayerPrefs.GetInt("LocaleID", 0);
-        if (localeID == 0) // English
-        {
-            nameText.text = fishData.name_en;
-        }
-        else // Dutch
-        {
-            nameText.text = fishData.name_nl;
-        }
+        nameText.text = (PlayerPrefs.GetInt("LocaleID") == 0) ? fishData.name_en : fishData.name_nl;
+        likesText.text = (PlayerPrefs.GetInt("LocaleID") == 0) ? "Likes:" : "Houdt van:";
+        dislikesText.text = (PlayerPrefs.GetInt("LocaleID") == 0) ? "Dislikes:" : "Haat:";
 
         FishImageScript imageScript = GetComponentInChildren<FishImageScript>();
         if (imageScript != null)
