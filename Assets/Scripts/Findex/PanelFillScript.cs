@@ -24,7 +24,7 @@ public class DetailPanelController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        // Hide the detail panel initially
+        // Hide the detail panel at first (so it can open when pressed)
         detailPanel.SetActive(false);
 
         // Add listener to the close button
@@ -64,6 +64,7 @@ public class DetailPanelController : MonoBehaviour
         detailPanel.SetActive(true);
     }
 
+    //Hide the detail panel
     public void HideDetails()
     {
         detailPanel.SetActive(false);
