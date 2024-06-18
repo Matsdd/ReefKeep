@@ -3,16 +3,21 @@ using UnityEngine.UI;
 
 public class FishCardScript : MonoBehaviour
 {
-    // State the name and image of the fish in the Unity Editor
     [SerializeField] private Text nameText;
+    [SerializeField] private Text likesText;
+    [SerializeField] private Text dislikesText;
+
     private Fishinfo.FishData fishData;
 
-    // Set the fish Data on the cards
     public void SetFishData(Fishinfo.FishData fishData)
     {
         this.fishData = fishData;
-        nameText.text = fishData.name_nl;
+        //Set data on card in English or Dutch
+        nameText.text = (PlayerPrefs.GetInt("LocaleID") == 0) ? fishData.name_en : fishData.name_nl;
+        likesText.text = (PlayerPrefs.GetInt("LocaleID") == 0) ? "Likes:" : "Houdt van:";
+        dislikesText.text = (PlayerPrefs.GetInt("LocaleID") == 0) ? "Dislikes:" : "Haat:";
 
+        //Set the image on the card
         FishImageScript imageScript = GetComponentInChildren<FishImageScript>();
         if (imageScript != null)
         {
@@ -31,10 +36,11 @@ public class FishCardScript : MonoBehaviour
             Debug.LogError("FishImageScript component not found on card prefab.");
         }
 
+        //Open the detail panel when pressing somewhere on the card
         Button button = GetComponentInChildren<Button>();
         if (button != null)
         {
-            button.onClick.RemoveAllListeners(); 
+            button.onClick.RemoveAllListeners();
             button.onClick.AddListener(() => DetailPanelController.Instance.ShowDetails(fishData));
         }
         else

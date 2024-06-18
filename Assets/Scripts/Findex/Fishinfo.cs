@@ -8,16 +8,18 @@ public class Fishinfo : MonoBehaviour
     public GameObject fishCardPrefab;
     public Transform cardsParent;
 
-
-    // Making a class FishData with all the data stated in the json file
     [System.Serializable]
     public class FishData
     {
         public string name_nl;
+        public string name_en;
         public string spritePath;
         public string fact_nl;
+        public string fact_en;
         public string likes_nl;
+        public string likes_en;
         public string dislikes_nl;
+        public string dislikes_en;
     }
 
     void Start()
@@ -30,19 +32,19 @@ public class Fishinfo : MonoBehaviour
 
         // Stating the cards variables
         int cardIndex = 0;
-        float cardOffsetX = 410f; 
-        float cardOffsetY = -510f; 
+        float cardOffsetX = 410f;
+        float cardOffsetY = -510f;
         int cardsPerRow = 4;
         float initialX = -cardOffsetX * (cardsPerRow - 1) / 2f;
-         
+
         // Creating a card for each item of the array in the JSON file
         foreach (FishData fish in fishes.fishes)
-        {   
+        {
             int row = cardIndex / cardsPerRow;
             int column = cardIndex % cardsPerRow;
 
             float xPos = initialX + cardOffsetX * column;
-            float yPos = cardOffsetY * row;
+            float yPos = cardOffsetY * row - 300;
 
             GameObject card = Instantiate(fishCardPrefab, cardsParent);
             card.transform.localPosition = new Vector3(xPos, yPos, 0f);

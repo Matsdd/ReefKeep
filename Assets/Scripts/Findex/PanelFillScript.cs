@@ -24,7 +24,7 @@ public class DetailPanelController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        // Hide the detail panel initially
+        // Hide the detail panel at first (so it can open when pressed)
         detailPanel.SetActive(false);
 
         // Add listener to the close button
@@ -33,11 +33,21 @@ public class DetailPanelController : MonoBehaviour
 
     public void ShowDetails(Fishinfo.FishData data)
     {
-        Debug.Log("Showing details for: " + data.name_nl);
-        nameText.text = data.name_nl;
-        factText.text = data.fact_nl;
-        likesText.text = data.likes_nl;
-        dislikesText.text = data.dislikes_nl;
+        int localeID = PlayerPrefs.GetInt("LocaleID", 0);
+        if (localeID == 0) // English
+        {
+            nameText.text = data.name_en;
+            factText.text = data.fact_en;
+            likesText.text = data.likes_en;
+            dislikesText.text = data.dislikes_en;
+        }
+        else // Dutch
+        {
+            nameText.text = data.name_nl;
+            factText.text = data.fact_nl;
+            likesText.text = data.likes_nl;
+            dislikesText.text = data.dislikes_nl;
+        }
 
         // Load and set the fish sprite
         Sprite sprite = Resources.Load<Sprite>(data.spritePath);
@@ -54,6 +64,7 @@ public class DetailPanelController : MonoBehaviour
         detailPanel.SetActive(true);
     }
 
+    //Hide the detail panel
     public void HideDetails()
     {
         detailPanel.SetActive(false);
