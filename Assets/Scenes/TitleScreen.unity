@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 411348020}
   - component: {fileID: 411348019}
   - component: {fileID: 411348022}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SALMON
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d6dc69c7f8e9848ba1072cb02d5c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 1.2
   swimAreaSize: {x: 16, y: 10}
   minWaitTime: 0
   maxWaitTime: 0
@@ -341,7 +341,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -518011612, guid: 61137c04f79b5e946b8c452c2437f703, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -362,7 +362,7 @@ Transform:
   m_GameObject: {fileID: 411348018}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 3, z: 0}
+  m_LocalPosition: {x: -2, y: 3, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 685998997}
   - component: {fileID: 685998996}
   - component: {fileID: 685998995}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: FunFacts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,7 +558,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 685998993}
   m_LocalRotation: {x: 0, y: 0, z: 0.13052616, w: 0.9914449}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -918,7 +918,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 0c918337802a5cf4fa9760c3c26b8eb8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1012,7 +1012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1194090360}
   - component: {fileID: 1194090361}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Onderwater1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1028,7 +1028,7 @@ Transform:
   m_GameObject: {fileID: 1194090359}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.08, y: -0.05, z: 5926}
+  m_LocalPosition: {x: -0.08, y: -0.05, z: 100}
   m_LocalScale: {x: 400, y: 400, z: 400}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1072,8 +1072,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1832975487
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a16c0dc7b3000ca40a3d0af48e5293e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1166,7 +1166,7 @@ GameObject:
   - component: {fileID: 1376221391}
   - component: {fileID: 1376221390}
   - component: {fileID: 1376221393}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SEAPAARD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1185,11 +1185,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d6dc69c7f8e9848ba1072cb02d5c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1
   swimAreaSize: {x: 16, y: 10}
   minWaitTime: 0
   maxWaitTime: 0
-  rotationSpeed: 5
+  rotationSpeed: 4
 --- !u!212 &1376221391
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1230,7 +1230,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 999101632, guid: 48a0eb5cc43dac344bd71d5e8b1ec01c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1251,7 +1251,7 @@ Transform:
   m_GameObject: {fileID: 1376221389}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: -3, y: -3, z: 0}
+  m_LocalPosition: {x: -3.04, y: -2.95, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1335,7 +1335,7 @@ GameObject:
   - component: {fileID: 1437818004}
   - component: {fileID: 1437818003}
   - component: {fileID: 1437818006}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: STURGEON
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1354,11 +1354,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d6dc69c7f8e9848ba1072cb02d5c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
-  swimAreaSize: {x: 16, y: 10}
+  speed: 1.5
+  swimAreaSize: {x: 15, y: 9}
   minWaitTime: 0
   maxWaitTime: 0
-  rotationSpeed: 5
+  rotationSpeed: 4
 --- !u!212 &1437818004
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1399,7 +1399,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 407880389, guid: 6a8f4c4a21f4db4449d4a708a401f304, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1420,7 +1420,7 @@ Transform:
   m_GameObject: {fileID: 1437818002}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 0}
+  m_LocalPosition: {x: 4, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1851,9 +1851,9 @@ RectTransform:
   - {fileID: 861445185}
   - {fileID: 265751480}
   - {fileID: 1864687056}
+  - {fileID: 685998994}
   - {fileID: 1892491924}
   - {fileID: 1194090360}
-  - {fileID: 685998994}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2016,7 +2016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1892491924}
   - component: {fileID: 1892491925}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bubblesFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2032,7 +2032,7 @@ Transform:
   m_GameObject: {fileID: 1892491923}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -408}
+  m_LocalPosition: {x: 0, y: 0, z: 80}
   m_LocalScale: {x: 400, y: 400, z: 400}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2076,8 +2076,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1832975487
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a44aad8764de9a142a8dade248112b53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
