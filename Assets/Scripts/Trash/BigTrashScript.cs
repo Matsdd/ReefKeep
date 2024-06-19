@@ -1,12 +1,12 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BigTrashScript : MonoBehaviour
 {
     public GameObject canvas;
-    public CameraController CameraController;
     public GameObject BigTrash1;
     public GameObject BigTrash2;
-
+    private bool isMouseDown = false;
     private string trashCluster;
 
     private void Start()
@@ -27,11 +27,24 @@ public class BigTrashScript : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
-        // Check for clicks on the big trash and enable the canvas
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
+            isMouseDown = true;
+        }
+
+        if (isMouseDown && Input.GetMouseButtonUp(0))
+        {
+            isMouseDown = false;
+
+            // Check if the pointer is over a UI element
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
+
+            // Perform raycast to detect click on the game object
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
             if (hit.collider != null && hit.collider.gameObject.CompareTag("BigTrash"))
@@ -74,7 +87,6 @@ public class BigTrashScript : MonoBehaviour
                     PlayerPrefs.SetInt("BigTrash2", 0);
                     PlayerPrefs.Save();
                 }
-                CameraController.UpdateMaxPos();
             }
             else
             {

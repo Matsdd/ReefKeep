@@ -84,6 +84,7 @@ public class FactsScript : MonoBehaviour
 };
 
 
+
     // Set the language
     private void Awake()
     {
