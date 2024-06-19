@@ -1,0 +1,29 @@
+{
+    "NewMoveFish": {
+        "checkpoints": [
+            {
+                "steps": 245780,
+                "file_path": "results\\swim2\\NewMoveFish\\NewMoveFish-245780.onnx",
+                "reward": 285.21079188346863,
+                "creation_time": 1718788650.0339782,
+                "auxillary_file_paths": [
+                    "results\\swim2\\NewMoveFish\\NewMoveFish-245780.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 245780,
+            "file_path": "results\\swim2\\NewMoveFish.onnx",
+            "reward": 285.21079188346863,
+            "creation_time": 1718788650.0339782,
+            "auxillary_file_paths": [
+                "results\\swim2\\NewMoveFish\\NewMoveFish-245780.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.7.0+cu110"
+    }
+}
