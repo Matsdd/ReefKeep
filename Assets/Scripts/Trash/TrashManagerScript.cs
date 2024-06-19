@@ -7,11 +7,18 @@ public class TrashManagerScript : MonoBehaviour
     public GameObject oil;
 
     public static int trashCashMultiplier = 1;
+    public static int totalTrash = 0;
 
     private void Start()
     {
         AddOfflineTrash();
         trashCashMultiplier = PlayerPrefs.GetInt("RecycleStationLevel", 1);
+
+        for (int i = 1; i < totalTrash; i++)
+        {
+            SpawnTrash();
+            Debug.Log("TrashSpawnt");
+        }
     }
 
     void Update()
@@ -27,6 +34,7 @@ public class TrashManagerScript : MonoBehaviour
                 GameManager.instance.ChangeMoney(10 * trashCashMultiplier);
 
                 SfxManager.instance.playSfx("sTrash");
+                totalTrash--;
             }
 
             // If clicked on oil, destory it and give no money to prevent infinite money with spread
@@ -45,6 +53,7 @@ public class TrashManagerScript : MonoBehaviour
         if (randomNum == 1)
         {
             SpawnTrash();
+            totalTrash++;
         }
     }
 

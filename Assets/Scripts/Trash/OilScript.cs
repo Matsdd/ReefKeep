@@ -30,6 +30,7 @@ public class OilScript : MonoBehaviour
         {
             Destroy(oilParent);
             GameManager.instance.ChangeMoney(10 * TrashManagerScript.trashCashMultiplier);
+            TrashManagerScript.totalTrash--;
         }
     }
 
