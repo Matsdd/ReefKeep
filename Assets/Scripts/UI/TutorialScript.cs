@@ -85,7 +85,7 @@ public class TutorialScript : MonoBehaviour
         }
         if ((PlayerPrefs.GetInt("Tutorial") == 1 && place == 1) || (PlayerPrefs.GetInt("TutorialU") == 1 && place == 2) || (PlayerPrefs.GetInt("TutorialS") == 1 && place == 3))
         {
-            SfxManager.instance.playSfx("sPoseidon");
+            playSound();
         }
     }
 
@@ -331,7 +331,7 @@ public class TutorialScript : MonoBehaviour
             }
             state++;
             tutotimer = 30;
-            SfxManager.instance.playSfx("sPoseidon");
+            playSound();
         }
     }
 
@@ -363,6 +363,19 @@ public class TutorialScript : MonoBehaviour
         else
         {
             Debug.LogError("Sprite not found with name: " + spriteName);
+        }
+    }
+
+    public void playSound()
+    {
+        int random = Random.Range(0, 2);
+        if (random == 1)
+        {
+            SfxManager.instance.playSfx("sPoseidon");
+        }
+        else
+        {
+            SfxManager.instance.playSfx("sPoseidon2");
         }
     }
 }
