@@ -39,11 +39,12 @@ public class NewMoveFishAgent : Agent
         sensor.AddObservation(transform.position);
         sensor.AddObservation(transform.rotation);
 
-        likedObjectPosition = fishControl.GetLikedObjectPosition();
-        dislikedObjectPosition = fishControl.GetDislikedObjectPosition();
+        // Position of (dis)liked objects and fish
+        //likedObjectPosition = fishControl.GetLikedObjectPosition();
+        //dislikedObjectPosition = fishControl.GetDislikedObjectPosition();
 
-        sensor.AddObservation(likedObjectPosition);
-        sensor.AddObservation(dislikedObjectPosition);
+        //sensor.AddObservation(likedObjectPosition);
+        //sensor.AddObservation(dislikedObjectPosition);
 
         // Show what the fish is capable off
         sensor.AddObservation(fishControl.maxMoveSpeed);
@@ -86,19 +87,19 @@ public class NewMoveFishAgent : Agent
     // Calculate all the rewards & penalties
     private void CalcReward()
     {
-        // Calculate the distance to the like
-        float distanceToLike = Vector3.Distance(fishControl.transform.position, likedObjectPosition);
-        float likeReward = DistanceReward(distanceToLike, 20f);
-        Debug.Log(gameObject.name + " Distance Reward: " + likeReward);
-        AddReward(likeReward);
-        cumulativeReward += likeReward;
+        //// Calculate the distance to the like
+        //float distanceToLike = Vector3.Distance(fishControl.transform.position, likedObjectPosition);
+        //float likeReward = DistanceReward(distanceToLike, 20f);
+        //Debug.Log(gameObject.name + " Distance Reward: " + likeReward);
+        //AddReward(likeReward);
+        //cumulativeReward += likeReward;
 
-        // Calculate the distance to the dislike
-        float distanceToDislike = Vector3.Distance(fishControl.transform.position, dislikedObjectPosition);
-        float dislikePunishment = -DistanceReward(distanceToDislike, 20f);
-        Debug.Log(gameObject.name + " Distance Punishment: " + dislikePunishment);
-        AddReward(dislikePunishment);
-        cumulativeReward += dislikePunishment;
+        //// Calculate the distance to the dislike
+        //float distanceToDislike = Vector3.Distance(fishControl.transform.position, dislikedObjectPosition);
+        //float dislikePunishment = -DistanceReward(distanceToDislike, 20f);
+        //Debug.Log(gameObject.name + " Distance Punishment: " + dislikePunishment);
+        //AddReward(dislikePunishment);
+        //cumulativeReward += dislikePunishment;
 
         // Add reward for maintaining a horizontal orientation
         float rotation = Mathf.Abs(Mathf.Cos(fishControl.transform.eulerAngles.z * Mathf.Deg2Rad)); // 1:horizontal 0:vertical
