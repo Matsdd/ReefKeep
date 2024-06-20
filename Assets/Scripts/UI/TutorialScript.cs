@@ -33,11 +33,11 @@ public class TutorialScript : MonoBehaviour
 
             if (PlayerPrefs.GetInt("LocaleID") == 1)
             {
-                txt.text = "Poseidon: Hallo vreemdeling, ik ben Poseidon en ga je begeleiden met je avontuur in Reefkeep.";
+                txt.text = "Poseidon: Hallo vreemdeling, ik ben Poseidon en ga je helpen je avontuur in ReefKeep te starten.";
             }
             else
             {
-                txt.text = "Poseidon: Hello stranger, I'm Poseidon and I'll accompany you through your adventure in Reefkeep.";
+                txt.text = "Poseidon: Hello stranger, I'm Poseidon and I'll help you start your adventure in ReefKeep.";
             }
         }else if (place == 1)
         {
@@ -53,11 +53,11 @@ public class TutorialScript : MonoBehaviour
 
             if (PlayerPrefs.GetInt("LocaleID") == 1)
             {
-                txt.text = "Poseidon: Welkom in jouw eigen ecosysteem, ik zal nog wat extra uitleg geven voor je om je ecosysteem op te bouwen.";
+                txt.text = "Poseidon: Welkom in jouw eigen ecosysteem!";
             }
             else
             {
-                txt.text = "Poseidon: Welcome to your own ecosystem! I shall explain some things to get you started.";
+                txt.text = "Poseidon: Welcome to your own ecosystem!";
             }
         }
         else if(place == 2)
@@ -75,11 +75,11 @@ public class TutorialScript : MonoBehaviour
 
             if (PlayerPrefs.GetInt("LocaleID") == 1)
             {
-                txt.text = "Poseidon: Tot slot zal ik nog een beetje uitleggen over de shop, Marcel hier helpt je om je ecosysteem zo mooi mogelijk in the richten.";
+                txt.text = "Poseidon: Dit is de shop, Marcel hier helpt je om je ecosysteem zo mooi mogelijk in the richten.";
             }
             else
             {
-                txt.text = "Poseidon: Last but not least we have the shop, Juan will help you to organise your ecosystem as best as posible.";
+                txt.text = "Poseidon: This is the shop, Juan will help you to organise your ecosystem as best as posible.";
             }
             changePoseidonAppearance("Poseidon2");
         }
@@ -99,7 +99,7 @@ public class TutorialScript : MonoBehaviour
                 {
                     if (PlayerPrefs.GetInt("LocaleID") == 1)
                     {
-                        txt.text = "Poseidon: Laten we gelijk beginnen, hier staan verschillende gebouwen die je helpen.";
+                        txt.text = "Poseidon: Laten we gelijk beginnen, op het land staan verschillende gebouwen die je helpen.";
                     }
                     else
                     {
@@ -136,11 +136,11 @@ public class TutorialScript : MonoBehaviour
                 {
                     if (PlayerPrefs.GetInt("LocaleID") == 1)
                     {
-                        txt.text = "Poseidon: Het volgende gebouw is de recycling station, dankzij dit gebouw kunnen we afval recyclen en nog wat geld ervan verdienen.";
+                        txt.text = "Poseidon: Het volgende gebouw is de Recycling Station, dankzij dit gebouw kunnen we afval recyclen en nog wat geld ervan verdienen.";
                     }
                     else
                     {
-                        txt.text = "Poseidon: The next building is the recycling station, thanks to this building we can recycle pieces of trash and collect some money of them.";
+                        txt.text = "Poseidon: The next building is the Recycling Station, thanks to this building we can recycle pieces of trash and collect some money of them.";
                     }
                     changeTutorialAppearance("Buildings/RECYCLER_1");
                 }
@@ -161,11 +161,11 @@ public class TutorialScript : MonoBehaviour
                 {
                     if (PlayerPrefs.GetInt("LocaleID") == 1)
                     {
-                        txt.text = "Poseidon: Het volgende gebouw is de library, wanneer je hierop klikt kom je terecht bij de Findex, hierin zie je welke vissen je allemaal kan ontdekken";
+                        txt.text = "Poseidon: Het volgende gebouw is de Library, wanneer je hierop klikt kom je terecht bij de Findex, hierin zie je welke vissen je allemaal kan ontdekken";
                     }
                     else
                     {
-                        txt.text = "Poseidon: The next building is the library, when you click on the library the findex will open, in the findex you can see which fish you can come by in your ecosystem.";
+                        txt.text = "Poseidon: The next building is the Library, when you click on the library the Findex will open, in the findex you can see which fish you can come by in your ecosystem.";
                     }
 
                     changeTutorialAppearance("Buildings/LIBRARY");
@@ -174,11 +174,11 @@ public class TutorialScript : MonoBehaviour
                 {
                     if (PlayerPrefs.GetInt("LocaleID") == 1)
                     {
-                        txt.text = "Poseidon: Tot slot hebben we Marcel in zijn tuktuk, wanneer je op hem klikt kom je bij de shop, hier kan je stenen, planten en vissen kopen om nieuwe vissen aan te trekken.";
+                        txt.text = "Poseidon: Tot slot hebben we Marcel in zijn tuktuk, wanneer je op hem klikt kom je bij de shop, hier kan je objecten kopen om nieuwe vissen aan te trekken.";
                     }
                     else
                     {
-                        txt.text = "Poseidon: At last we have Juan in his tuktuk, when you click on him you'll go to his shop, in the shop you can buy plants, rocks and fish to attract new fish.";
+                        txt.text = "Poseidon: At last we have Juan in his tuktuk, when you click on him you'll go to his shop, in the shop you can buy objects to attract new fish.";
                     }
                     changeTutorialAppearance("Buildings/TUKTUK");
                     changePoseidonAppearance("Poseidon1");
@@ -222,11 +222,11 @@ public class TutorialScript : MonoBehaviour
                 {
                     if (PlayerPrefs.GetInt("LocaleID") == 1)
                     {
-                        txt.text = "Poseidon: Zoals je ziet is je ecosysteem op dit moment erg leeg, maar wanneer je je ecosysteem een beetje op fleurt zal er weer leven in komen.";
+                        txt.text = "Poseidon: Je ecosysteem is op dit moment erg leeg, maar wanneer je je ecosysteem een beetje op fleurt zal er weer leven in komen.";
                     }
                     else
                     {
-                        txt.text = "Poseidon: As you can see, your ecosystem is pretty empty at the moment, but if you brighten up your ecosystem a little, life will come back to it.";
+                        txt.text = "Poseidon: Your ecosystem is pretty empty at the moment, but if you brighten it up a little, life will come back to it.";
                     }
                     changePoseidonAppearance("Poseidon2");
                 }
@@ -246,11 +246,11 @@ public class TutorialScript : MonoBehaviour
                 {
                     if (PlayerPrefs.GetInt("LocaleID") == 1)
                     {
-                        txt.text = "Poseidon: Zoals je waarschijnlijk al hebt gezien zijn er ook grote clusters afval in je ecosysteem, deze kosten geld om te laten verwijderen.";
+                        txt.text = "Poseidon: Er zijn ook 2 grote clusters afval in je ecosysteem, deze kosten geld om te laten verwijderen.";
                     }
                     else
                     {
-                        txt.text = "Poseidon: As you probably already saw there are these big clusters of trash in your ecosystem, these cost cash to remove.";
+                        txt.text = "Poseidon: There are also 2 big clusters of trash in your ecosystem, these cost cash to remove.";
                     }
                 }
                 else if (state == 3)
@@ -278,11 +278,11 @@ public class TutorialScript : MonoBehaviour
                 {
                     if (PlayerPrefs.GetInt("LocaleID") == 1)
                     {
-                        txt.text = "Poseidon: Voor de shop heb je drie verschillende secties: Stenen/Planten, Decoraties en Vissen.";
+                        txt.text = "Poseidon: Voor de shop heb je 4 verschillende secties: Stenen, Planten, Decoraties en Vissen.";
                     }
                     else
                     {
-                        txt.text = "Poseidon: In the shop we have three different section: Rocks/Plants, Decorations and Fish.";
+                        txt.text = "Poseidon: In the shop we have 4 different section: Rocks, Plants, Decorations and Fish.";
                     }
                     changePoseidonAppearance("Poseidon1");
                 }
@@ -302,11 +302,11 @@ public class TutorialScript : MonoBehaviour
                 {
                     if (PlayerPrefs.GetInt("LocaleID") == 1)
                     {
-                        txt.text = "Poseidon: Oh, en als je wilt weten welke stenen welke vissen aantrekken moet je de findex even een bezoekje brengen. Veel plezier alvast!";
+                        txt.text = "Poseidon: Oh, en als je wilt weten welke stenen welke vissen aantrekken moet je in de Findex kijken. Veel plezier!";
                     }
                     else
                     {
-                        txt.text = "Poseidon: Oh, and if you want to know which rocks attract which fish you should pay a visit to the findex. Have a fun in advance!";
+                        txt.text = "Poseidon: Oh, and if you want to know which rocks attract which fish you should open the Findex. Have fun!";
                     }
                     changePoseidonAppearance("Poseidon1");
                     changeTutorialAppearance("Buildings/LIBRARY");

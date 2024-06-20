@@ -97,14 +97,14 @@ public class TrashManagerScript : MonoBehaviour
             // Convert ticks to seconds
             float timeDifferenceHours = (timeDifferenceTicks / (float)System.TimeSpan.TicksPerSecond) / 3600;
 
-            // Calculate the offline trash --------- MAYBE MAKE A BETTER FORMULA, BUT IM BAD AT MATH :(
+            // Calculate the offline trash amount --------- MAYBE MAKE A BETTER FORMULA, BUT IM BAD AT MATH :(
             int offlineTrash = Mathf.FloorToInt(timeDifferenceHours);
 
             // Cap the max to 10
             offlineTrash = Mathf.Min(offlineTrash, 10);
-            Debug.Log("" + offlineTrash);
+            Debug.Log("Offline Trash Amount: " + offlineTrash);
 
-            // Add the offline income to the player's money
+            // Spawn the trash
             for (int i = 0; i < offlineTrash; i++)
             {
                 SpawnTrash();

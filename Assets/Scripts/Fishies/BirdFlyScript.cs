@@ -11,12 +11,12 @@ public class BirdFlyScript : MonoBehaviour
         side = Random.Range(0, 2);
         if (side == 0)
         {
-            this.gameObject.transform.position = new Vector3(-10,Random.Range(-4,5),55);
+            this.gameObject.transform.position = new Vector3(-10, Random.Range(-4, 5), 10);
             this.gameObject.transform.rotation = Quaternion.Euler(0, 0, -90);
         }
         else
         {
-            this.gameObject.transform.position = new Vector3(10, Random.Range(-4, 5), 55);
+            this.gameObject.transform.position = new Vector3(10, Random.Range(-4, 5), 10);
             this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
         }
     }
