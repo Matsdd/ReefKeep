@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class VisitorCenterUIScript : MonoBehaviour
 {
+    private int locale = 0;
+
     public GameObject buildingCanvas;
     public GameObject buildingMenu;
     public GameObject upgradeConfirmMenu;
@@ -19,6 +21,8 @@ public class VisitorCenterUIScript : MonoBehaviour
 
     private void Start()
     {
+        locale = PlayerPrefs.GetInt("LocaleID", 0);
+
         // Set the sprite after 1sec so the correct level can be loaded from PlayerPrefs
         Invoke(nameof(UpdateSprite), 0.1f);
     }
@@ -72,8 +76,18 @@ public class VisitorCenterUIScript : MonoBehaviour
         moneyPerSecText.text = "Fishbucks /s: " + VisitorCenterManager.instance.CalcMoneyPerSec();
         storedMoneyText.text = VisitorCenterManager.instance.storedMoney.ToString();
         moneyCapText.text = VisitorCenterManager.instance.maxMoney[VisitorCenterManager.instance.currentLevel].ToString();
-        upgradeToLevelText.text = "Upgrade to level " + (VisitorCenterManager.instance.currentLevel + 1) + "?";
         upgradeCostText.text = VisitorCenterManager.instance.upgradeCost[VisitorCenterManager.instance.currentLevel].ToString();
+
+        if (locale == 0)
+        {
+            // English
+            upgradeToLevelText.text = "Upgrade to level " + (VisitorCenterManager.instance.currentLevel + 1) + "?";
+        }
+        else if (locale == 1)
+        {
+            // Dutch
+            upgradeToLevelText.text = "Upgrade naar level " + (VisitorCenterManager.instance.currentLevel + 1) + "?";
+        }
 
         if (VisitorCenterManager.instance.currentLevel >= 3)
         {

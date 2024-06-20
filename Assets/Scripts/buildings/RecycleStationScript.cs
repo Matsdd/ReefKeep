@@ -10,6 +10,7 @@ public class RecycleStationScript : MonoBehaviour
     // First array int is unused because level starts at 1
     public readonly int[] moneyPerTrash = { 0, 10, 20, 30 };
     public readonly int[] upgradeCost = { 0, 100, 200, 300 };
+    private int locale = 0;
 
     public GameObject buildingCanvas;
     public GameObject buildingMenu;
@@ -25,6 +26,8 @@ public class RecycleStationScript : MonoBehaviour
     {
         // Get values from PlayerPrefs or set a default
         currentLevel = PlayerPrefs.GetInt("RecycleStationLevel", 1);
+
+        locale = PlayerPrefs.GetInt("LocaleID", 0);
 
         // Set the sprite after 1sec so the correct level can be loaded from PlayerPrefs
         Invoke(nameof(UpdateSprite), 0.1f);
@@ -90,9 +93,20 @@ public class RecycleStationScript : MonoBehaviour
     public void UpdateUI()
     {
         levelText.text = "Level: " + currentLevel;
-        moneyPerCleanText.text = "Fishbucks per Trash: " + (currentLevel * 10);
-        upgradeToLevelText.text = "Upgrade to level " + (currentLevel + 1) + "?";
         upgradeCostText.text = upgradeCost[currentLevel].ToString();
+
+        if (locale == 0)
+        {
+            // English
+            moneyPerCleanText.text = "Fishbucks per Trash: " + (currentLevel * 10);
+            upgradeToLevelText.text = "Upgrade to level " + (currentLevel + 1) + "?";
+        }
+        else if (locale == 1)
+        {
+            // Dutch
+            moneyPerCleanText.text = "Fishbucks per Afval: " + (currentLevel * 10);
+            upgradeToLevelText.text = "Upgrade naar level " + (currentLevel + 1) + "?";
+        }
 
         if (currentLevel >= 3)
         {
