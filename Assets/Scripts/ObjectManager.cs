@@ -288,6 +288,7 @@ public class ObjectManager : MonoBehaviour
             if (selectedObject != null)
             {
                 Destroy(selectedObject);
+                GameManager.instance.ChangeMoney(69);
                 isMovingObject = false;
 
                 // Hide move buttons
