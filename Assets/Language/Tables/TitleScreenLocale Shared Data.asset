@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: TitleScreenLocale Shared Data
   m_EditorClassIdentifier: 
   m_TableCollectionName: TitleScreenLocale
-  m_TableCollectionNameGuidString: 00000000000000000000000000000000
-  m_Entries: []
+  m_TableCollectionNameGuidString: 537d6b8e97a7f4249a46c8f222066c04
+  m_Entries:
+  - m_Id: 18740781056
+    m_Key: settings
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
