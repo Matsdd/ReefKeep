@@ -5,14 +5,24 @@ public class SceneHandler : MonoBehaviour
 {
     [SerializeField] RectTransform transObj;
     private int newScene = 0;
+    public float delay = 0f;
 
     // Unloading animation on start
     private void Start()
     {
         transObj.gameObject.SetActive(true);
 
+        LeanTween.delayedCall(delay, () =>
+        {
+            UnloadObj();
+        });
+    }
+
+    private void UnloadObj()
+    {
         LeanTween.scale(transObj, new Vector3(1, 1, 1), 0);
-        LeanTween.scale(transObj, Vector3.zero, 0.5f).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() => {
+        LeanTween.scale(transObj, Vector3.zero, 0.5f).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>
+        {
             transObj.gameObject.SetActive(false);
         });
     }
@@ -23,7 +33,8 @@ public class SceneHandler : MonoBehaviour
         transObj.gameObject.SetActive(true);
 
         LeanTween.scale(transObj, Vector3.zero, 0f);
-        LeanTween.scale(transObj, new Vector3(1, 1, 1), 0.5f).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() => {
+        LeanTween.scale(transObj, new Vector3(1, 1, 1), 0.5f).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>
+        {
             newScene = scene;
             LoadScene();
         });
