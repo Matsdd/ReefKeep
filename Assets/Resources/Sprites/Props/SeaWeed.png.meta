@@ -110,12 +110,12 @@ TextureImporter:
       name: PLANT1_0
       rect:
         serializedVersion: 2
-        x: 7
+        x: 0
         y: 0
-        width: 113
-        height: 83
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -123,6 +123,27 @@ TextureImporter:
       bones: []
       spriteID: 1f08746a574561c4bb8b8b491f66224b
       internalID: 203318278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeaWeed_0
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06cc2f6add2baec4ab7ee36a4af85600
+      internalID: -119929117
       vertices: []
       indices: 
       edges: []
@@ -139,6 +160,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       PLANT1_0: 203318278
+      SeaWeed_0: -119929117
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
