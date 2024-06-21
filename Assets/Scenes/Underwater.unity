@@ -530,17 +530,23 @@ MonoBehaviour:
       requiredCount: 1
     - objectType: Fish:Bullhead
       requiredCount: 1
-  - prefab: {fileID: 1371206080342295322, guid: 4e1b728e4004b184d92c93e59f34c2f3, type: 3}
+  - prefab: {fileID: 1371206080342295322, guid: 3d82281574fe47b44aac42b8d080f07d, type: 3}
     spawnWeight: 1
-    maxCount: 1
+    maxCount: 5
     spawnConditions:
-    - objectType: Vine
+    - objectType: SeaGrass
       requiredCount: 1
   - prefab: {fileID: 1371206080342295322, guid: 4e1b728e4004b184d92c93e59f34c2f3, type: 3}
     spawnWeight: 1
     maxCount: 1
     spawnConditions:
     - objectType: Vine
+      requiredCount: 1
+  - prefab: {fileID: 1371206080342295322, guid: 79256fc30b407274bb55845638c55638, type: 3}
+    spawnWeight: 1
+    maxCount: 5
+    spawnConditions:
+    - objectType: SeaGrass
       requiredCount: 1
   - prefab: {fileID: 1371206080342295322, guid: 91210c16b5b6d15418bb7a7e453db336, type: 3}
     spawnWeight: 1
