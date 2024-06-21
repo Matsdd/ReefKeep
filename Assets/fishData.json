@@ -104,8 +104,8 @@
     "spritePath": "SPRITES/Fishies/CARP",
     "fact_nl": "Karpers hebben een uitstekend geheugen. Ze zijn in staat om bepaalde locaties, voederplaatsen en zelfs specifieke vissers te herkennen. Dit vermogen stelt hun in staat om te leren en zich aan te passen aan hun omgeving.",
     "fact_en": "Carp have an excellent memory. They can recognize certain locations, feeding spots, and even specific fishermen. This ability allows them to learn and adapt to their environment.",
-    "likes_nl": "Seaweed",
-    "likes_en": "Zeewier",
+    "likes_nl": "Zeewier",
+    "likes_en": "Seaweed",
     "dislikes_nl": "Zwarte Dwergmeerval",
     "dislikes_en": "Bullhead Catfish"
   },
