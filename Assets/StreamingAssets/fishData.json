@@ -71,7 +71,7 @@
     "spritePath": "SPRITES/Fishies/STARRYRAY",
     "fact_nl": "De sterrog is één van de oudste nog bestaande vissoorten. Ze hebben een geschiedenis die teruggaat tot meer dan 200 miljoen jaar. De sterrog wordt in zoetwater geboren, migreert naar de zee om te groeien en keert terug naar zoetwater om te paaien. Dit maakt hun kwetsbaar voor milieubedreigingen, waardoor ze tegenwoordig bedreigd zijn.",
     "fact_en": "The starry ray is one of the oldest existing fish species. They have a history that goes back more than 200 million years. The starry ray is born in freshwater, migrates to the sea to grow, and returns to freshwater to spawn. This makes them vulnerable to environmental threats, making them endangered today.",
-    "likes_nl": "KLeine steen",
+    "likes_nl": "Kleine steen",
     "likes_en": "Small rock",
     "dislikes_nl": "Zeebaars, Voshaai, Reuzenhaai",
     "dislikes_en": "Sea Bass, Thresher Shark, Basking Shark"
@@ -128,8 +128,8 @@
     "fact_en": "The thresher shark is one of the few sharks that lay eggs. The egg cases are deposited on the seabed and provide protection for the developing embryos until they are ready to hatch.",
     "likes_nl": "Slakkensteen, Koningsvis, Zwarte Dwergmeerval",
     "likes_en": "Snailstone, Opah, Bullhead Catfish",
-    "dislikes_nl": "Seagrass, Seaweed, Vine",
-    "dislikes_en": "Zeegras, Zeewier, Klimplant"
+    "dislikes_nl": "Zeegras, Zeewier, Klimplant",
+    "dislikes_en": "Seagrass, Seaweed, Vine"
   },
   {
     "name_nl": "Reuzenhaai",

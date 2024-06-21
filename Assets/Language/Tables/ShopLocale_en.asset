@@ -34,6 +34,30 @@ MonoBehaviour:
     m_Localized: Fish
     m_Metadata:
       m_Items: []
+  - m_Id: 9141058379776
+    m_Localized: Seagrass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9441936777216
+    m_Localized: Seaweed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9476485259264
+    m_Localized: Vine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10335709405184
+    m_Localized: Small Rock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10557445480448
+    m_Localized: Snail Rock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10611048685568
+    m_Localized: Cave Rock
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
