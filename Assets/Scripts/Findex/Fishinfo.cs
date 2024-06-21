@@ -25,7 +25,7 @@ public class Fishinfo : MonoBehaviour
     void Start()
     {
         // Getting the JSON File
-        string jsonFilePath = Application.dataPath + "/fishData.json";
+        string jsonFilePath = Path.Combine(Application.streamingAssetsPath, "fishData.json");
         string jsonData = File.ReadAllText(jsonFilePath);
         jsonData = "{\"fishes\":" + jsonData + "}";
         Fishes fishes = JsonUtility.FromJson<Fishes>(jsonData);

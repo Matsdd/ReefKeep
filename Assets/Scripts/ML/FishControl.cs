@@ -65,7 +65,7 @@ public class FishControl : MonoBehaviour
 
     private List<FishPreferences> LoadPreferences()
     {
-        string filePath = Path.Combine(Application.dataPath + "/ML/EcoPrefs.json");
+        string filePath = Path.Combine(Application.streamingAssetsPath, "EcoPrefs.json");
         if (File.Exists(filePath))
         {
             string json = File.ReadAllText(filePath);
