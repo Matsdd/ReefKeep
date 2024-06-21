@@ -464,37 +464,27 @@ MonoBehaviour:
     spawnWeight: 1
     maxCount: 1
     spawnConditions:
-    - objectType: SmallRock
+    - objectType: Fish:Squid
       requiredCount: 1
   - prefab: {fileID: 1664891452132962806, guid: 1370b5eb0d829874881005fce34dc161, type: 3}
     spawnWeight: 1
     maxCount: 1
     spawnConditions:
-    - objectType: SmallRock
+    - objectType: CaveRock
       requiredCount: 1
-  - prefab: {fileID: 6604182722383728026, guid: e15a6e67538a7d942accb4d05df1c001, type: 3}
-    spawnWeight: 1
-    maxCount: 1
-    spawnConditions:
-    - objectType: SmallRock
-      requiredCount: 1
-  - prefab: {fileID: 3711021202871405642, guid: 68063df3c60cb4647919d6d0f2df50c9, type: 3}
-    spawnWeight: 1
-    maxCount: 1
-    spawnConditions:
-    - objectType: SmallRock
+    - objectType: Fish:Shrimp
       requiredCount: 1
   - prefab: {fileID: 9098851794136729662, guid: bd1123a0e6db3ad47a4ab93c0a81e5b5, type: 3}
     spawnWeight: 1
     maxCount: 1
     spawnConditions:
-    - objectType: SmallRock
+    - objectType: Fish:Squid
       requiredCount: 1
   - prefab: {fileID: 3584161462937372268, guid: f9b3d4eb963e31b4682cf8bbff9caaf5, type: 3}
     spawnWeight: 1
     maxCount: 1
     spawnConditions:
-    - objectType: SmallRock
+    - objectType: Fish:Shrimp
       requiredCount: 1
   - prefab: {fileID: 4545456904545728750, guid: 68600d3c789f9de42856cf770e378dee, type: 3}
     spawnWeight: 1
@@ -502,11 +492,15 @@ MonoBehaviour:
     spawnConditions:
     - objectType: SmallRock
       requiredCount: 1
+    - objectType: Fish:Squid
+      requiredCount: 1
   - prefab: {fileID: 5064508121875287516, guid: 8bbc9d3790c78f64d82e8b6bbdd1bbce, type: 3}
     spawnWeight: 1
     maxCount: 1
     spawnConditions:
-    - objectType: SmallRock
+    - objectType: Vine
+      requiredCount: 1
+    - objectType: Fish:Shrimp
       requiredCount: 1
   - prefab: {fileID: 7545713041041511997, guid: 3654f34b1b7a9bf44ae009450fe1d81a, type: 3}
     spawnWeight: 1
@@ -518,19 +512,41 @@ MonoBehaviour:
     spawnWeight: 1
     maxCount: 1
     spawnConditions:
-    - objectType: SmallRock
+    - objectType: Fish:Squid
       requiredCount: 1
   - prefab: {fileID: 4611022983202429129, guid: fe35d020e794d254d8f306929aa91d36, type: 3}
     spawnWeight: 1
     maxCount: 1
     spawnConditions:
-    - objectType: SmallRock
+    - objectType: Fish:Shrimp
       requiredCount: 1
   - prefab: {fileID: 1371206080342295322, guid: 90893aa1843537b479ad576a7499e579, type: 3}
     spawnWeight: 1
     maxCount: 1
     spawnConditions:
-    - objectType: SmallRock
+    - objectType: SnailRock
+      requiredCount: 1
+    - objectType: Fish:Opah
+      requiredCount: 1
+    - objectType: Fish:Bullhead
+      requiredCount: 1
+  - prefab: {fileID: 1371206080342295322, guid: 4e1b728e4004b184d92c93e59f34c2f3, type: 3}
+    spawnWeight: 1
+    maxCount: 1
+    spawnConditions:
+    - objectType: Vine
+      requiredCount: 1
+  - prefab: {fileID: 1371206080342295322, guid: 4e1b728e4004b184d92c93e59f34c2f3, type: 3}
+    spawnWeight: 1
+    maxCount: 1
+    spawnConditions:
+    - objectType: Vine
+      requiredCount: 1
+  - prefab: {fileID: 1371206080342295322, guid: 91210c16b5b6d15418bb7a7e453db336, type: 3}
+    spawnWeight: 1
+    maxCount: 1
+    spawnConditions:
+    - objectType: Fish:Shrimp
       requiredCount: 1
 --- !u!4 &71638648
 Transform:
