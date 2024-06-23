@@ -1,0 +1,65 @@
+{
+    "NewMoveFish": {
+        "checkpoints": [
+            {
+                "steps": 59724,
+                "file_path": "results\\test1\\NewMoveFish\\NewMoveFish-59724.onnx",
+                "reward": 509.5672043710947,
+                "creation_time": 1719136073.0373917,
+                "auxillary_file_paths": [
+                    "results\\test1\\NewMoveFish\\NewMoveFish-59724.pt"
+                ]
+            },
+            {
+                "steps": 76492,
+                "file_path": "results\\test1\\NewMoveFish\\NewMoveFish-76492.onnx",
+                "reward": 220.4962074160576,
+                "creation_time": 1719136839.9206214,
+                "auxillary_file_paths": [
+                    "results\\test1\\NewMoveFish\\NewMoveFish-76492.pt"
+                ]
+            },
+            {
+                "steps": 359516,
+                "file_path": "results\\test1\\NewMoveFish\\NewMoveFish-359516.onnx",
+                "reward": 477.99284704526264,
+                "creation_time": 1719149002.869581,
+                "auxillary_file_paths": [
+                    "results\\test1\\NewMoveFish\\NewMoveFish-359516.pt"
+                ]
+            },
+            {
+                "steps": 499964,
+                "file_path": "results\\test1\\NewMoveFish\\NewMoveFish-499964.onnx",
+                "reward": 530.318881675601,
+                "creation_time": 1719155451.0091567,
+                "auxillary_file_paths": [
+                    "results\\test1\\NewMoveFish\\NewMoveFish-499964.pt"
+                ]
+            },
+            {
+                "steps": 500028,
+                "file_path": "results\\test1\\NewMoveFish\\NewMoveFish-500028.onnx",
+                "reward": 530.318881675601,
+                "creation_time": 1719155451.062228,
+                "auxillary_file_paths": [
+                    "results\\test1\\NewMoveFish\\NewMoveFish-500028.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500028,
+            "file_path": "results\\test1\\NewMoveFish.onnx",
+            "reward": 530.318881675601,
+            "creation_time": 1719155451.062228,
+            "auxillary_file_paths": [
+                "results\\test1\\NewMoveFish\\NewMoveFish-500028.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.7.0+cu110"
+    }
+}

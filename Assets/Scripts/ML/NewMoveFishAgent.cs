@@ -38,6 +38,7 @@ public class NewMoveFishAgent : Agent
     {
         sensor.AddObservation(transform.position);
         sensor.AddObservation(transform.rotation);
+        Debug.Log("AI Input Pos: " + transform.position + " Rot: " + transform.rotation);
 
         // Position of (dis)liked objects and fish
         //likedObjectPosition = fishControl.GetLikedObjectPosition();
@@ -87,14 +88,14 @@ public class NewMoveFishAgent : Agent
     // Calculate all the rewards & penalties
     private void CalcReward()
     {
-        //// Calculate the distance to the like
+        // Calculate the distance to the like
         //float distanceToLike = Vector3.Distance(fishControl.transform.position, likedObjectPosition);
         //float likeReward = DistanceReward(distanceToLike, 20f);
         //Debug.Log(gameObject.name + " Distance Reward: " + likeReward);
         //AddReward(likeReward);
         //cumulativeReward += likeReward;
 
-        //// Calculate the distance to the dislike
+        // Calculate the distance to the dislike
         //float distanceToDislike = Vector3.Distance(fishControl.transform.position, dislikedObjectPosition);
         //float dislikePunishment = -DistanceReward(distanceToDislike, 20f);
         //Debug.Log(gameObject.name + " Distance Punishment: " + dislikePunishment);
