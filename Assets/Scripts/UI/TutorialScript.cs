@@ -79,7 +79,7 @@ public class TutorialScript : MonoBehaviour
             }
             else
             {
-                txt.text = "Poseidon: This is the shop, Juan will help you to organise your ecosystem as best as posible.";
+                txt.text = "Poseidon: This is the shop, Juan will help you to organize your ecosystem as best as possible.";
             }
             changePoseidonAppearance("Poseidon2");
         }
@@ -165,7 +165,7 @@ public class TutorialScript : MonoBehaviour
                     }
                     else
                     {
-                        txt.text = "Poseidon: The next building is the Library, when you click on the library the Findex will open, in the findex you can see which fish you can come by in your ecosystem.";
+                        txt.text = "Poseidon: The next building is the Library, when you click on the library the Findex will open, in the Findex you can see which fish you can come by in your ecosystem.";
                     }
 
                     changeTutorialAppearance("Buildings/LIBRARY");
@@ -174,13 +174,13 @@ public class TutorialScript : MonoBehaviour
                 {
                     if (PlayerPrefs.GetInt("LocaleID") == 1)
                     {
-                        txt.text = "Poseidon: Tot slot hebben we Marcel in zijn tuktuk, wanneer je op hem klikt kom je bij de shop, hier kan je objecten kopen om nieuwe vissen aan te trekken.";
+                        txt.text = "Poseidon: Tot slot hebben we Marcel in zijn Tuk Tuk, wanneer je op hem klikt kom je bij de shop, hier kan je objecten kopen om nieuwe vissen aan te trekken.";
                     }
                     else
                     {
-                        txt.text = "Poseidon: At last we have Juan in his tuktuk, when you click on him you'll go to his shop, in the shop you can buy objects to attract new fish.";
+                        txt.text = "Poseidon: At last we have Juan in his Tuk Tuk, when you click on him you'll go to his shop, in the shop you can buy objects to attract new fish.";
                     }
-                    changeTutorialAppearance("Buildings/TUKTUK");
+                    changeTutorialAppearance("Buildings/SHOP_1");
                     changePoseidonAppearance("Poseidon1");
                 }
                 else if (state == 7)
@@ -234,7 +234,7 @@ public class TutorialScript : MonoBehaviour
                 {
                     if (PlayerPrefs.GetInt("LocaleID") == 1)
                     {
-                        txt.text = "Poseidon: Dit soort stukken afval kunnen terecht komen in je ecosysteem, deze kan je recycelen door erop te klikken.";
+                        txt.text = "Poseidon: Dit soort stukken afval kunnen terecht komen in je ecosysteem, deze kan je recyclen door erop te klikken.";
                     }
                     else
                     {
@@ -263,7 +263,7 @@ public class TutorialScript : MonoBehaviour
                     {
                         txt.text = "Poseidon: The last tutorial is at the shop.";
                     }
-                    changeTutorialAppearance("Buildings/TUKTUK");
+                    changeTutorialAppearance("Buildings/SHOP_1");
                     changePoseidonAppearance("Poseidon2");
                 }
                 else
