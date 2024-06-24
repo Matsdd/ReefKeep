@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1087540590593162179}
   - component: {fileID: 487599103598667528}
   - component: {fileID: 3395125575780520598}
-  - component: {fileID: 303395954522410524}
+  - component: {fileID: 7056028779932223041}
   m_Layer: 0
   m_Name: Turtle
   m_TagString: Untagged
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DecisionPeriod: 10
   TakeActionsBetweenDecisions: 1
---- !u!95 &303395954522410524
+--- !u!95 &7056028779932223041
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ Animator:
   m_GameObject: {fileID: 1371206080342295322}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 43c31855241b25d408c06e70d75bb876, type: 2}
+  m_Controller: {fileID: 9100000, guid: bbc145bbfa263004a867be1c441935af, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
