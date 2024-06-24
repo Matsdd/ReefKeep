@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shirmp
+  m_Name: Sardine
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1982078324, guid: 3552016966cf83844889009f01658fd1, type: 3}
+      value: {fileID: -1838790957, guid: a297f68de4a86eb4b9f7ce78c6d391f9, type: 3}
     - time: 0.5
-      value: {fileID: -1593799713, guid: 3552016966cf83844889009f01658fd1, type: 3}
+      value: {fileID: 800710543, guid: a297f68de4a86eb4b9f7ce78c6d391f9, type: 3}
     - time: 1
-      value: {fileID: -1982078324, guid: 3552016966cf83844889009f01658fd1, type: 3}
+      value: {fileID: -1838790957, guid: a297f68de4a86eb4b9f7ce78c6d391f9, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,9 +48,9 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1982078324, guid: 3552016966cf83844889009f01658fd1, type: 3}
-    - {fileID: -1593799713, guid: 3552016966cf83844889009f01658fd1, type: 3}
-    - {fileID: -1982078324, guid: 3552016966cf83844889009f01658fd1, type: 3}
+    - {fileID: -1838790957, guid: a297f68de4a86eb4b9f7ce78c6d391f9, type: 3}
+    - {fileID: 800710543, guid: a297f68de4a86eb4b9f7ce78c6d391f9, type: 3}
+    - {fileID: -1838790957, guid: a297f68de4a86eb4b9f7ce78c6d391f9, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
