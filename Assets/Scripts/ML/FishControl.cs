@@ -122,6 +122,7 @@ public class FishControl : MonoBehaviour
         else
         {
             transform.position += transform.right * currentSpeed * Time.deltaTime;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             AdjustSpriteOrientation();
         }
     }
