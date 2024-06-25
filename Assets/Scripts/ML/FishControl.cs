@@ -12,6 +12,7 @@ public class FishControl : MonoBehaviour
     public float turnSpeed = 100f;
 
     private float currentSpeed = 1f;
+    private bool fleeing = false;
 
     // Map bounds
     private Vector2 minBounds = new(-28f, -15f);
@@ -85,36 +86,44 @@ public class FishControl : MonoBehaviour
 
     public void Move(float rotationInput, float speedInput)
     {
-        float rotation = Mathf.Clamp(rotationInput, -1f, 1f);
-
-        // Change speed depening on positive or negative number
-        if (speedInput >= 0f)
+        if (!fleeing)
         {
-            // Smoothly increase speed towards maxMoveSpeed for positive values
-            currentSpeed = Mathf.Lerp(currentSpeed, maxMoveSpeed, Mathf.Abs(speedInput) * Time.deltaTime * 2f);
+            float rotation = Mathf.Clamp(rotationInput, -1f, 1f);
+
+            // Change speed depending on positive or negative number
+            if (speedInput >= 0f)
+            {
+                // Smoothly increase speed towards maxMoveSpeed for positive values
+                currentSpeed = Mathf.Lerp(currentSpeed, maxMoveSpeed, Mathf.Abs(speedInput) * Time.deltaTime * 2f);
+            }
+            else
+            {
+                // Smoothly decrease speed towards minMoveSpeed for negative values
+                currentSpeed = Mathf.Lerp(currentSpeed, minMoveSpeed, Mathf.Abs(speedInput) * Time.deltaTime * 2f);
+            }
+
+            // Apply smooth rotation
+            transform.Rotate(Vector3.forward, rotation * turnSpeed * Time.deltaTime);
+
+            Debug.Log("CurrentSpeed:" + currentSpeed);
+
+            // Move forward
+            transform.position += transform.right * currentSpeed * Time.deltaTime;
+
+            // Clamp position within bounds
+            transform.position = new Vector3(
+                Mathf.Clamp(transform.position.x, minBounds.x, maxBounds.x),
+                Mathf.Clamp(transform.position.y, minBounds.y, maxBounds.y),
+                transform.position.z);
+
+            // Adjust sprite orientation to always appear upright
+            AdjustSpriteOrientation();
         }
         else
         {
-            // Smoothly decrease speed towards minMoveSpeed for negative values
-            currentSpeed = Mathf.Lerp(currentSpeed, minMoveSpeed, Mathf.Abs(speedInput) * Time.deltaTime * 2f);
+            transform.position += transform.right * currentSpeed * Time.deltaTime;
+            AdjustSpriteOrientation();
         }
-
-        // Apply smooth rotation
-        transform.Rotate(Vector3.forward, rotation * turnSpeed * Time.deltaTime);
-
-        Debug.Log("CurrentSpeed:" + currentSpeed);
-
-        // Move forward
-        transform.position += transform.right * currentSpeed * Time.deltaTime;
-
-        // Clamp position within bounds
-        transform.position = new Vector3(
-            Mathf.Clamp(transform.position.x, minBounds.x, maxBounds.x),
-            Mathf.Clamp(transform.position.y, minBounds.y, maxBounds.y),
-            transform.position.z);
-
-        // Adjust sprite orientation to always appear upright
-        AdjustSpriteOrientation();
     }
 
 
@@ -137,6 +146,11 @@ public class FishControl : MonoBehaviour
     {
         return transform.position.x >= maxBounds.x || transform.position.x <= minBounds.x ||
                transform.position.y >= maxBounds.y || transform.position.y <= minBounds.y;
+    }
+
+    public void Flee()
+    {
+        fleeing = true;
     }
 
     public Vector3 GetLikedObjectPosition()
