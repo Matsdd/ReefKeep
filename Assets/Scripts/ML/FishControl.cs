@@ -124,6 +124,10 @@ public class FishControl : MonoBehaviour
             transform.position += transform.right * currentSpeed * Time.deltaTime;
             transform.rotation = Quaternion.Euler(0, 0, 0);
             AdjustSpriteOrientation();
+            if(transform.position.x > 30)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 

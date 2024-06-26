@@ -22,7 +22,7 @@
   },
   {
     "name": "Seabass",
-    "likes": "SmallRock, SnailRock, CaveRock, Octopus",
+    "likes": "SmallRock, SnailRock, CaveRock, Squid",
     "dislikes": "StingRay, Thresher, Basking"
   },
   {
@@ -37,12 +37,12 @@
   },
   {
     "name": "StingRay",
-    "likes": "Octopus",
+    "likes": "Squid",
     "dislikes": "SeaBass, Thresher, Basking"
   },
   {
     "name": "Opah",
-    "likes": "Octopus",
+    "likes": "Squid",
     "dislikes": "SeaBass"
   },
   {
@@ -62,7 +62,7 @@
   },
   {
     "name": "Basking",
-    "likes": "Octopus",
+    "likes": "Squid",
     "dislikes": "SeaBass, StingRay, Opah"
   },
   {
@@ -81,7 +81,7 @@
     "dislikes": "SeaTurtle"
   },
   {
-    "name": "Octopus",
+    "name": "Squid",
     "likes": "Shrimp",
     "dislikes": "SeaBass, Salmon"
   }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8809766236799745930}
   - component: {fileID: 2118215335708697193}
   - component: {fileID: 2749747473389268240}
+  - component: {fileID: -2416740576383094686}
   m_Layer: 0
   m_Name: Sturgeon
   m_TagString: Untagged
@@ -187,3 +188,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-2416740576383094686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4611022983202429129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1d358d43b347184ca831e7a351e061f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishName: Sturgeon

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 491219974780491007}
   - component: {fileID: 8205361843058485191}
   - component: {fileID: 956081686811179968}
+  - component: {fileID: -9107790540199686857}
   m_Layer: 0
   m_Name: Salmon
   m_TagString: Untagged
@@ -187,3 +188,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-9107790540199686857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3584161462937372268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1d358d43b347184ca831e7a351e061f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishName: Salmon

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6061320645181048004}
   - component: {fileID: 6033615376590525571}
   - component: {fileID: 5205800124233638119}
+  - component: {fileID: 1116535780792568380}
   m_Layer: 0
   m_Name: StingRay
   m_TagString: Untagged
@@ -187,3 +188,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1116535780792568380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5056656417003757311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1d358d43b347184ca831e7a351e061f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishName: StingRay
