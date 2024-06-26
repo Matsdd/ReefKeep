@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
     private float minZoom = 2.0f;
     private float maxZoom = 12.0f;
 
-    private float currentZoom = 5.0f;
+    private float currentZoom = 7.0f;
 
     private Vector3 dragOrigin;
     private bool allowMovement = false;

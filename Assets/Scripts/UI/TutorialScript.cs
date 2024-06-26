@@ -10,9 +10,7 @@ public class TutorialScript : MonoBehaviour
     public Image tutSpriteRenderer;
     public Image posSpriteRenderer;
     private float tutotimer = 0;
-    //0, boven, 1, onder, 2, shop
-    public float place;
-    public SpriteRenderer spr;
+    public float place; //0, boven, 1, onder, 2, shop
 
     // State of the tutorial
     private int state = 0;
@@ -213,7 +211,6 @@ public class TutorialScript : MonoBehaviour
                     tutCanvas.enabled = false;
                     PlayerPrefs.SetFloat("Tutorial", 1);
                     tutSpriteRenderer.color = new Color(0, 0, 0, 0);
-                    spr.sortingOrder = 10;
                     blockCanvas.enabled = true;
                 }
             }else if(place == 1)
@@ -282,7 +279,7 @@ public class TutorialScript : MonoBehaviour
                     }
                     else
                     {
-                        txt.text = "Poseidon: In the shop we have 4 different section: Rocks, Plants, Decorations and Fish.";
+                        txt.text = "Poseidon: In the shop we have 4 different sections: Rocks, Plants, Decorations and Fish.";
                     }
                     changePoseidonAppearance("Poseidon1");
                 }

@@ -112,7 +112,7 @@ public class TrashManagerScript : MonoBehaviour
         }
         else
         {
-            Debug.LogError("AddOfflineTrash FAIL!");
+            Debug.LogError("AddOfflineTrash Failed, cant get last play time.");
         }
     }
 }

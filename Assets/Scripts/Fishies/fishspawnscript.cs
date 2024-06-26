@@ -259,7 +259,7 @@ public class FishSpawnScript : MonoBehaviour
                         }
                         else
                         {
-                            //Debug.LogError("Could not load prefab for fish: " + fish.name);
+                            Debug.LogError("Could not load prefab for fish: " + fish.name);
                         }
                     }
 
@@ -267,12 +267,12 @@ public class FishSpawnScript : MonoBehaviour
                 }
                 else
                 {
-                    //Debug.LogError("Deserialized data is null or fishObjects list is null.");
+                    Debug.LogError("Deserialized data is null or fishObjects list is null.");
                 }
             }
             catch (Exception e)
             {
-                //Debug.LogError("Error deserializing JSON data: " + e.Message);
+                Debug.LogError("Error Deserializing JSON data: " + e.Message);
             }
         }
         else
